@@ -7,6 +7,21 @@
 <meta name="description" content="Worcester Autism Parent Survey: Findings and Recommendations. Family Needs, Public Accountability, and the Politics of Autism Support. Free Worcester Coalition, July 2026.">
 <style>
 :root {
+  color-scheme: dark;
+  --page: #000000;
+  --surface: #131312;
+  --ink: #ffffff;
+  --ink-2: #c9c8bf;
+  --muted: #92908a;
+  --grid: #262624;
+  --axis: #3a3a37;
+  --border: rgba(255, 255, 255, 0.12);
+  --series-1: #3987e5;
+  --series-1-deep: #5598e7;
+  --link: #86b6ef;
+  --wash: rgba(57, 135, 229, 0.12);
+}
+:root[data-theme="light"] {
   color-scheme: light;
   --page: #f9f9f7;
   --surface: #fcfcfb;
@@ -20,38 +35,6 @@
   --series-1-deep: #256abf;
   --link: #1c5cab;
   --wash: rgba(42, 120, 214, 0.07);
-}
-:root[data-theme="dark"] {
-  color-scheme: dark;
-  --page: #0d0d0d;
-  --surface: #1a1a19;
-  --ink: #ffffff;
-  --ink-2: #c3c2b7;
-  --muted: #898781;
-  --grid: #2c2c2a;
-  --axis: #383835;
-  --border: rgba(255, 255, 255, 0.10);
-  --series-1: #3987e5;
-  --series-1-deep: #5598e7;
-  --link: #86b6ef;
-  --wash: rgba(57, 135, 229, 0.10);
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    color-scheme: dark;
-    --page: #0d0d0d;
-    --surface: #1a1a19;
-    --ink: #ffffff;
-    --ink-2: #c3c2b7;
-    --muted: #898781;
-    --grid: #2c2c2a;
-    --axis: #383835;
-    --border: rgba(255, 255, 255, 0.10);
-    --series-1: #3987e5;
-    --series-1-deep: #5598e7;
-    --link: #86b6ef;
-    --wash: rgba(57, 135, 229, 0.10);
-  }
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -960,7 +943,7 @@ footer.page-foot {
   var media = window.matchMedia('(prefers-color-scheme: dark)');
   function currentTheme() {
     if (root.dataset.theme === 'dark' || root.dataset.theme === 'light') return root.dataset.theme;
-    return media.matches ? 'dark' : 'light';
+    return 'dark';
   }
   function applyStoredTheme() {
     var stored = null;
