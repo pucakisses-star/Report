@@ -14,15 +14,16 @@ figure), a linked table of contents, and light/dark themes.
 
 All photographs are in the public domain (CC0 dedication or US public domain):
 
-- `green-hill-park-playground.jpg` — "Green Hill Park Playground, July 2025"
-  by Peter Cooper Jr., CC0 — https://commons.wikimedia.org/wiki/File:Green_Hill_Park_Playground,_July_2025.jpg
-- `children-at-sunset-documerica.jpg` — "Farm youngsters playing at sunset
-  near their home in Ripley" by Charles O'Rear, EPA DOCUMERICA project, U.S.
-  National Archives (NARA 547738), public domain —
-  https://commons.wikimedia.org/wiki/File:FARM_YOUNGSTERS_PLAYING_AT_SUNSET_NEAR_THEIR_HOME_IN_RIPLEY_-_NARA_-_547738.jpg
-- `children-1920s-loc.jpg` — "Children," Harris & Ewing glass negative,
-  Library of Congress (LCCN 2016888046), public domain —
-  https://commons.wikimedia.org/wiki/File:Children_LCCN2016888046.jpg
+- `former-north-high-school-worcester.jpg` — "Former North High School at 50
+  Salisbury Street, Worcester, MA" by Daderot, CC0 —
+  https://commons.wikimedia.org/wiki/File:Former_North_High_School_at_50_Salisbury_Street,_Worcester,_MA_-_DSC05795.jpg
+- `classroom-engineering-activity.jpg` — "USACE, DoDEA celebrate awesome
+  during Engineers Week 2013," U.S. Army Corps of Engineers Europe District,
+  public domain —
+  https://commons.wikimedia.org/wiki/File:USACE,_DoDEA_celebrate_awesome_during_Engineers_Week_2013_(8492552906).jpg
+- `fourth-grade-classroom-1932.jpg` — "Fourth grade, Boulder City, Nevada,
+  public school," 1932, U.S. National Archives (NARA 293733), public domain —
+  https://commons.wikimedia.org/wiki/File:%22Fourth_grade,_Boulder_City,_Nevada,_public_school.%22_-_NARA_-_293733.jpg
 
 Open `index.html` directly in a browser, or serve the repository with any static
 host (e.g. GitHub Pages) to publish it.
