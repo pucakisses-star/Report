@@ -12,15 +12,17 @@ figure), a linked table of contents, and light/dark themes.
 
 ## Photo credits
 
-All photographs are dedicated to the public domain (CC0) by their authors, via
-Wikimedia Commons:
+All photographs are in the public domain (CC0 dedication or US public domain):
 
-- `worcester-skyline-2024.jpg` — "Worcester Skyline, November 2024" by
-  Anthonyt31201 — https://commons.wikimedia.org/wiki/File:Worcester_Skyline,_November_2024.jpg
-- `worcester-city-hall.jpg` — "Worcester City Hall - Worcester, MA - DSC04106"
-  by Daderot — https://commons.wikimedia.org/wiki/File:Worcester_City_Hall_-_Worcester,_MA_-_DSC04106.jpg
-- `worcester-city-hall-entrance.jpg` — "Worcester City Hall - Worcester, MA -
-  DSC04135" by Daderot — https://commons.wikimedia.org/wiki/File:Worcester_City_Hall_-_Worcester,_MA_-_DSC04135.jpg
+- `green-hill-park-playground.jpg` — "Green Hill Park Playground, July 2025"
+  by Peter Cooper Jr., CC0 — https://commons.wikimedia.org/wiki/File:Green_Hill_Park_Playground,_July_2025.jpg
+- `children-at-sunset-documerica.jpg` — "Farm youngsters playing at sunset
+  near their home in Ripley" by Charles O'Rear, EPA DOCUMERICA project, U.S.
+  National Archives (NARA 547738), public domain —
+  https://commons.wikimedia.org/wiki/File:FARM_YOUNGSTERS_PLAYING_AT_SUNSET_NEAR_THEIR_HOME_IN_RIPLEY_-_NARA_-_547738.jpg
+- `children-1920s-loc.jpg` — "Children," Harris & Ewing glass negative,
+  Library of Congress (LCCN 2016888046), public domain —
+  https://commons.wikimedia.org/wiki/File:Children_LCCN2016888046.jpg
 
 Open `index.html` directly in a browser, or serve the repository with any static
 host (e.g. GitHub Pages) to publish it.
