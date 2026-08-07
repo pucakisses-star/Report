@@ -265,6 +265,13 @@ figure.chart-card figcaption {
   transform: rotate(180deg); writing-mode: vertical-rl; translate: 0 -50%;
   font-size: 0.72rem; color: var(--muted);
 }
+details.refs-list summary {
+  cursor: pointer; color: var(--link); font-size: 0.95rem; font-weight: 600;
+  padding: 0.65rem 0.9rem; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--surface); list-style-position: inside;
+}
+details.refs-list summary:hover { background: var(--wash); }
+details.refs-list[open] summary { margin-bottom: 1.1rem; }
 details.data-table { margin-top: 0.9rem; font-size: 0.88rem; }
 details.data-table summary {
   cursor: pointer; color: var(--link); font-size: 0.85rem;
@@ -927,6 +934,8 @@ footer.page-foot {
 
 <section id="references" class="refs">
   <h2 class="sec">References</h2>
+  <details id="refs-details" class="refs-list">
+  <summary>View the full reference list (22 sources)</summary>
   <p>Attar, S. M., Benavidez, H., Gicheru, C., Alabi, C., Sapano, R., &amp; Stone, W. L. (2025). Co-designing a novel service delivery pathway to increase access to autism identification and care within a non-profit community organization serving culturally and linguistically diverse families. <em>Autism, 29</em>(8), 2097&ndash;2110. <a href="https://doi.org/10.1177/1362361325133570">https://doi.org/10.1177/1362361325133570</a></p>
   <p>Cidav, Z., Marcus, S. C., &amp; Mandell, D. S. (2012). Implications of childhood autism for parental employment and earnings. <em>Pediatrics, 129</em>(4), 617&ndash;623. <a href="https://doi.org/10.1542/peds.2011-2700">https://doi.org/10.1542/peds.2011-2700</a></p>
   <p>Collings, J. (2026, May 22). Parents, staff express outrage at Worcester Alternative School closure. <em>Telegram &amp; Gazette</em>. <a href="https://www.aol.com/articles/parents-staff-express-outrage-worcester-011739241.html">https://www.aol.com/articles/parents-staff-express-outrage-worcester-011739241.html</a></p>
@@ -949,6 +958,7 @@ footer.page-foot {
   <p>Worcester Education Justice Alliance. (2020, September). <em>Worcester parent research on remote learning during the COVID-19 pandemic</em>. <a href="https://worcesteredjustice.org/wp-content/uploads/2020/11/Worcester-Parent-Research-on-Remote-Learning-During-the-COVID-19-Pandemic-FINAL-1.pdf">https://worcesteredjustice.org/wp-content/uploads/2020/11/Worcester-Parent-Research-on-Remote-Learning-During-the-COVID-19-Pandemic-FINAL-1.pdf</a></p>
   <p>Worcester Public Schools. (n.d.). <em>Autism / Life Skills</em>. <a href="https://www.worcesterschools.org/page/autism-life-skills">https://www.worcesterschools.org/page/autism-life-skills</a></p>
   <p>Worcester Public Schools. (2026, May 1). <em>Changes for ACT, Worcester Alternative, and NCC Secondary Programs in 2026&ndash;27</em>. <a href="https://www.worcesterschools.org/article/2860194">https://www.worcesterschools.org/article/2860194</a></p>
+  </details>
 </section>
 
 <footer class="page-foot">
@@ -1315,6 +1325,23 @@ footer.page-foot {
     }, { rootMargin: '-15% 0px -70% 0px' });
     watched.forEach(function (s) { spy.observe(s); });
   }
+
+  /* ---------- References dropdown: open on navigation and for print ---------- */
+  var refsDetails = document.getElementById('refs-details');
+  function openRefsIfTargeted() {
+    if (refsDetails && location.hash === '#references') refsDetails.open = true;
+  }
+  window.addEventListener('hashchange', openRefsIfTargeted);
+  openRefsIfTargeted();
+  window.addEventListener('beforeprint', function () {
+    if (refsDetails) {
+      refsDetails.dataset.wasOpen = refsDetails.open ? '1' : '';
+      refsDetails.open = true;
+    }
+  });
+  window.addEventListener('afterprint', function () {
+    if (refsDetails && !refsDetails.dataset.wasOpen) refsDetails.open = false;
+  });
 })();
 </script>
 </body>
