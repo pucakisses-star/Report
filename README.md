@@ -8,6 +8,9 @@ figure), a linked table of contents, and light/dark themes.
 
 - `index.html` — the full report as a single self-contained web page (no external dependencies)
 - `home.html` — Free Worcester's homepage, adapted from freeworcester.org, linking to the report and resources
+- `about.html` — About Us: history, founder, and community partners
+- `blog.html` — News & Article: the coalition's announcements with their event flyers
+- `contact.html` — Contact Us: address, email, phone, and a message form
 - `Worcester_Autism_Parent_Survey_Findings_and_Recommendations.pdf` — the original report
 - `images/` — public-domain photographs (see credits below)
 

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact Us — Free Worcester</title>
+<meta name="description" content="Contact Free Worcester: 22 Newton Ave, Worcester, MA 01602 · freeworcestercoalition@gmail.com · (551) 250-7252.">
+<style>
+:root {
+  color-scheme: light;
+  --page: #f9f9f7;
+  --surface: #fcfcfb;
+  --ink: #0b0b0b;
+  --ink-2: #52514e;
+  --muted: #898781;
+  --border: rgba(11, 11, 11, 0.10);
+  --series-1: #2a78d6;
+  --series-1-deep: #256abf;
+  --link: #1c5cab;
+  --wash: rgba(42, 120, 214, 0.07);
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #000000;
+  --surface: #131312;
+  --ink: #ffffff;
+  --ink-2: #c9c8bf;
+  --muted: #92908a;
+  --border: rgba(255, 255, 255, 0.12);
+  --series-1: #3987e5;
+  --series-1-deep: #5598e7;
+  --link: #86b6ef;
+  --wash: rgba(57, 135, 229, 0.12);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--page); color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.0625rem; line-height: 1.65;
+}
+a { color: var(--link); }
+.topbar {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; gap: 0.9rem;
+  padding: 0.55rem 1rem; background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.topbar .brand {
+  font-weight: 650; font-size: 0.95rem; color: var(--ink); text-decoration: none;
+  flex: 1 1 auto; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.topbar nav { display: flex; gap: 0.9rem; align-items: center; flex: 0 0 auto; }
+.topbar nav a { font-size: 0.9rem; text-decoration: none; color: var(--ink-2); }
+.topbar nav a[aria-current="page"], .topbar nav a:hover { color: var(--link); }
+.topbar button {
+  flex: 0 0 auto; background: none; border: 1px solid var(--border); border-radius: 8px;
+  color: var(--ink-2); font: inherit; font-size: 0.85rem; padding: 0.3rem 0.7rem; cursor: pointer;
+}
+.topbar button:hover { background: var(--wash); }
+main { max-width: 46rem; margin: 0 auto; padding: 0 1rem 4rem; }
+.hero { padding: 3.2rem 0 0.4rem; }
+.hero .eyebrow {
+  font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--series-1-deep); font-weight: 650; margin: 0 0 0.75rem;
+}
+.hero h1 { font-size: clamp(1.9rem, 4.5vw, 2.7rem); line-height: 1.12; margin: 0 0 0.6rem; letter-spacing: -0.015em; }
+.hero .subtitle { font-size: 1.15rem; color: var(--ink-2); margin: 0 0 1rem; }
+p { margin: 0 0 1.05rem; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 0.85rem; margin: 1.6rem 0; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.1rem; }
+.card h3 { margin: 0 0 0.4rem; font-size: 1.02rem; }
+.card p { margin: 0; font-size: 0.97rem; color: var(--ink-2); overflow-wrap: anywhere; }
+h2.sec { font-size: 1.45rem; line-height: 1.25; margin: 2.6rem 0 0.5rem; letter-spacing: -0.01em; }
+form.msg {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 14px; padding: 1.4rem 1.5rem; margin: 1.2rem 0 2rem;
+}
+form.msg label { display: block; font-size: 0.9rem; font-weight: 650; margin: 0.9rem 0 0.3rem; }
+form.msg input, form.msg textarea {
+  width: 100%; padding: 0.55rem 0.7rem; font: inherit; color: var(--ink);
+  background: var(--page); border: 1px solid var(--border); border-radius: 8px;
+}
+form.msg textarea { min-height: 130px; resize: vertical; }
+form.msg .note { font-size: 0.85rem; color: var(--muted); margin: 0.8rem 0 0; }
+.btn {
+  display: inline-block; padding: 0.62rem 1.15rem; border-radius: 10px;
+  background: var(--series-1); color: #fff; text-decoration: none; font-weight: 650;
+  font-size: 0.97rem; border: none; cursor: pointer; font-family: inherit;
+}
+.btn:hover { background: var(--series-1-deep); }
+form.msg .btn { margin-top: 1.1rem; }
+footer.page-foot {
+  border-top: 1px solid var(--border); margin-top: 3rem; padding-top: 1.25rem;
+  font-size: 0.88rem; color: var(--ink-2);
+}
+@media (max-width: 640px) { .topbar nav { gap: 0.6rem; } }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="brand" href="home.html">Free Worcester</a>
+  <nav aria-label="Site">
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html" aria-current="page">Contact</a>
+    <a href="index.html">The Report</a>
+  </nav>
+  <button id="theme-toggle" aria-pressed="false">Dark mode</button>
+</div>
+<main>
+
+<header class="hero">
+  <p class="eyebrow">Free Worcester Coalition</p>
+  <h1>Contact Us</h1>
+  <p class="subtitle">No matter who you are, we are all in this together &mdash; reach out and be part of the change.</p>
+</header>
+
+<div class="cards">
+  <div class="card">
+    <h3>Address</h3>
+    <p>22 Newton Ave,<br>Worcester, MA 01602</p>
+  </div>
+  <div class="card">
+    <h3>Email</h3>
+    <p><a href="mailto:freeworcestercoalition@gmail.com">freeworcestercoalition@gmail.com</a></p>
+  </div>
+  <div class="card">
+    <h3>Phone</h3>
+    <p><a href="tel:+15512507252">(551) 250-7252</a></p>
+  </div>
+</div>
+
+<h2 class="sec">Send us a message</h2>
+<form class="msg" id="contact-form">
+  <label for="cf-name">Name</label>
+  <input id="cf-name" type="text" autocomplete="name">
+  <label for="cf-subject">Subject</label>
+  <input id="cf-subject" type="text">
+  <label for="cf-message">Message</label>
+  <textarea id="cf-message"></textarea>
+  <button class="btn" type="submit">Compose Email</button>
+  <p class="note">This opens your email app with the message addressed to freeworcestercoalition@gmail.com &mdash; press send there and it&rsquo;s on its way.</p>
+</form>
+
+<footer class="page-foot">
+  <p>Free Worcester is a registered 501(c)(3) charitable organization. &middot; <a href="home.html">Home</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="index.html">Worcester Autism Parent Survey Report</a></p>
+  <p>Copyright &copy; Free Worcester, All rights reserved.</p>
+</footer>
+
+</main>
+<script>
+(function () {
+  'use strict';
+  var root = document.documentElement;
+  var themeBtn = document.getElementById('theme-toggle');
+  function currentTheme() {
+    if (root.dataset.theme === 'dark' || root.dataset.theme === 'light') return root.dataset.theme;
+    return 'light';
+  }
+  function syncThemeBtn() {
+    var dark = currentTheme() === 'dark';
+    themeBtn.textContent = dark ? 'Light mode' : 'Dark mode';
+    themeBtn.setAttribute('aria-pressed', String(dark));
+  }
+  try {
+    var stored = localStorage.getItem('theme');
+    if (stored === 'dark' || stored === 'light') root.dataset.theme = stored;
+  } catch (e) {}
+  themeBtn.addEventListener('click', function () {
+    var next = currentTheme() === 'dark' ? 'light' : 'dark';
+    root.dataset.theme = next;
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    syncThemeBtn();
+  });
+  syncThemeBtn();
+
+  document.getElementById('contact-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = document.getElementById('cf-name').value.trim();
+    var subject = document.getElementById('cf-subject').value.trim() || 'Message from the Free Worcester website';
+    var message = document.getElementById('cf-message').value;
+    var body = message + (name ? '\n\n— ' + name : '');
+    location.href = 'mailto:freeworcestercoalition@gmail.com?subject=' +
+      encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  });
+})();
+</script>
+</body>
+</html>

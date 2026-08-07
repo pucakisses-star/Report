@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Us — Free Worcester</title>
+<meta name="description" content="Free Worcester isn't just an organization; it's a commitment to a brighter, more free tomorrow.">
+<style>
+:root {
+  color-scheme: light;
+  --page: #f9f9f7;
+  --surface: #fcfcfb;
+  --ink: #0b0b0b;
+  --ink-2: #52514e;
+  --muted: #898781;
+  --grid: #e1e0d9;
+  --border: rgba(11, 11, 11, 0.10);
+  --series-1: #2a78d6;
+  --series-1-deep: #256abf;
+  --link: #1c5cab;
+  --wash: rgba(42, 120, 214, 0.07);
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #000000;
+  --surface: #131312;
+  --ink: #ffffff;
+  --ink-2: #c9c8bf;
+  --muted: #92908a;
+  --grid: #262624;
+  --border: rgba(255, 255, 255, 0.12);
+  --series-1: #3987e5;
+  --series-1-deep: #5598e7;
+  --link: #86b6ef;
+  --wash: rgba(57, 135, 229, 0.12);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--page); color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.0625rem; line-height: 1.65;
+}
+a { color: var(--link); }
+.topbar {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; gap: 0.9rem;
+  padding: 0.55rem 1rem; background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.topbar .brand {
+  font-weight: 650; font-size: 0.95rem; color: var(--ink); text-decoration: none;
+  flex: 1 1 auto; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.topbar nav { display: flex; gap: 0.9rem; align-items: center; flex: 0 0 auto; }
+.topbar nav a { font-size: 0.9rem; text-decoration: none; color: var(--ink-2); }
+.topbar nav a[aria-current="page"], .topbar nav a:hover { color: var(--link); }
+.topbar button {
+  flex: 0 0 auto; background: none; border: 1px solid var(--border); border-radius: 8px;
+  color: var(--ink-2); font: inherit; font-size: 0.85rem; padding: 0.3rem 0.7rem; cursor: pointer;
+}
+.topbar button:hover { background: var(--wash); }
+main { max-width: 46rem; margin: 0 auto; padding: 0 1rem 4rem; }
+.hero { padding: 3.2rem 0 0.4rem; }
+.hero .eyebrow {
+  font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--series-1-deep); font-weight: 650; margin: 0 0 0.75rem;
+}
+.hero h1 { font-size: clamp(1.9rem, 4.5vw, 2.7rem); line-height: 1.12; margin: 0 0 0.6rem; letter-spacing: -0.015em; }
+.hero .subtitle { font-size: 1.2rem; color: var(--ink-2); margin: 0 0 1rem; }
+figure.photo { margin: 1.6rem 0; }
+figure.photo img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--border); }
+section { scroll-margin-top: 3.8rem; }
+h2.sec { font-size: 1.55rem; line-height: 1.25; margin: 2.8rem 0 0.35rem; letter-spacing: -0.01em; }
+.sec-lede {
+  font-size: 0.8rem; letter-spacing: 0.09em; text-transform: uppercase;
+  color: var(--series-1-deep); font-weight: 700; margin: 2.8rem 0 -2.4rem;
+}
+p { margin: 0 0 1.05rem; }
+.btn-row { display: flex; flex-wrap: wrap; gap: 0.7rem; margin: 1.3rem 0; }
+.btn {
+  display: inline-block; padding: 0.62rem 1.15rem; border-radius: 10px;
+  background: var(--series-1); color: #fff; text-decoration: none; font-weight: 650; font-size: 0.97rem;
+}
+.btn:hover { background: var(--series-1-deep); }
+.founder {
+  display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 1.4rem;
+  align-items: center; background: var(--surface); border: 1px solid var(--border);
+  border-radius: 14px; padding: 1.4rem 1.5rem; margin: 1.8rem 0;
+}
+.founder img.portrait { width: 100%; height: auto; display: block; }
+.founder h3 { margin: 0 0 0.6rem; font-size: 1.3rem; }
+.founder img.signature { height: 44px; width: auto; display: block; }
+:root[data-theme="dark"] .founder img.signature { filter: invert(1); }
+@media (max-width: 560px) { .founder { grid-template-columns: 1fr; } .founder img.portrait { max-width: 220px; } }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 0.85rem; margin: 1.4rem 0; }
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.1rem; }
+.card h3 { margin: 0 0 0.4rem; font-size: 1.05rem; }
+.card p { margin: 0; font-size: 0.95rem; color: var(--ink-2); }
+.partners { display: flex; flex-wrap: wrap; gap: 0.7rem; align-items: center; margin: 1.4rem 0; }
+.partners .partner {
+  background: #fff; border: 1px solid var(--border); border-radius: 10px;
+  padding: 0.5rem 0.8rem; display: flex; align-items: center;
+}
+.partners .partner img { display: block; height: 46px; width: auto; max-width: 160px; object-fit: contain; }
+.band {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 14px; padding: 1.6rem 1.5rem; margin: 2.6rem 0;
+}
+.band h2 { margin: 0 0 0.6rem; font-size: 1.45rem; line-height: 1.25; }
+.band p { color: var(--ink-2); }
+footer.page-foot {
+  border-top: 1px solid var(--border); margin-top: 3rem; padding-top: 1.25rem;
+  font-size: 0.88rem; color: var(--ink-2);
+}
+@media (max-width: 640px) { .topbar nav { gap: 0.6rem; } }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="brand" href="home.html">Free Worcester</a>
+  <nav aria-label="Site">
+    <a href="about.html" aria-current="page">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+    <a href="index.html">The Report</a>
+  </nav>
+  <button id="theme-toggle" aria-pressed="false">Dark mode</button>
+</div>
+<main>
+
+<header class="hero">
+  <p class="eyebrow">Free Worcester Coalition</p>
+  <h1>About Us</h1>
+  <p class="subtitle">Free Worcester isn&rsquo;t just an organization; it&rsquo;s a commitment to a brighter, more free tomorrow.</p>
+</header>
+
+<section id="who-we-are">
+  <p class="sec-lede">Who We Are</p>
+  <h2 class="sec">Bringing about change one step at a time.</h2>
+  <p>&ldquo;Free Worcester&rdquo; is a grassroots organization dedicated to fostering community solidarity and empowerment in Worcester, Massachusetts. Founded by a group of passionate local activists and volunteers, Free Worcester operates on the principle that access to essential resources and services should be available to everyone, regardless of economic status.</p>
+</section>
+
+<section id="history">
+  <p class="sec-lede">Our Story</p>
+  <h2 class="sec">History About Us</h2>
+  <p>Free Worcester was founded initially in 2019 under the name Free Lakeside. It was started by a group of concerned residents of the Lakeside Public Housing Complex after the community was faced by environmental injustice and exploitation. Close to 200 residents signed the petition asking for change in an unprecedented organizing effort made up of residents, community advocates, students and local leaders.</p>
+  <p>After succeeding in our campaign we decided to expand to combine underserved communities across the city.</p>
+  <p>Since then Free Worcester has worked tirelessly on grassroots community issues that are typically swept under the rug. Whether it&rsquo;s addressing illiteracy in the community or the effects of violence on the youth, Free Worcester has served as the voice for countless people and groups who felt silenced by the culture of the city, allowing us all to speak up and be heard together.</p>
+  <figure class="photo">
+    <img src="images/fw-vigil-crowd.jpg" alt="A large evening gathering of community members downtown, with signs and a speaker at the center" width="1600" height="1067" loading="lazy">
+  </figure>
+</section>
+
+<div class="founder">
+  <img class="portrait" src="images/about-founder-nelly-medina.png" alt="Portrait of Nelly Medina" width="560" height="888" loading="lazy">
+  <div>
+    <h3>Nelly Medina &mdash; Founder</h3>
+    <img class="signature" src="images/about-signature-nelly-medina.png" alt="Nelly Medina's signature" width="326" height="71" loading="lazy">
+  </div>
+</div>
+
+<section id="why-join">
+  <p class="sec-lede">Why Join Us</p>
+  <h2 class="sec">We combine community with responsibility.</h2>
+  <p>Free Worcester is working every day on a myriad of issues to uplift and support a diverse number of communities across Worcester Massachusetts.</p>
+  <div class="cards">
+    <div class="card">
+      <h3>Uplifting Voices</h3>
+      <p>Free Worcester uplifts marginalized voices to empower communities who&rsquo;ve been underrepresented and silenced.</p>
+    </div>
+    <div class="card">
+      <h3>Rallying the Community</h3>
+      <p>Free Worcester brings the community together through collective action and solidarity to address social injustices and drive meaningful change.</p>
+    </div>
+    <div class="card">
+      <h3>Standing for Causes</h3>
+      <p>Free Worcester champions a wide range of critical issues to promote justice, equality, and sustainability within our community.</p>
+    </div>
+  </div>
+  <figure class="photo">
+    <img src="images/fw-mural-event.jpg" alt="A speaker with a microphone addressing a crowd in front of a colorful mural at a community event" width="960" height="720" loading="lazy">
+  </figure>
+</section>
+
+<section id="trust">
+  <p class="sec-lede">An Organization You Can Trust</p>
+  <h2 class="sec">Built on showing up and speaking out</h2>
+  <p>Our commitment to the community isn&rsquo;t just a promise you need to rely on but something born out of a reputation built on showing up and speaking out. Just look at the community partners we work with to see the values we hold and the populations we represent.</p>
+  <div class="partners" aria-label="Community partners">
+    <span class="partner"><img src="images/partner-tenants-union.png" alt="Worcester Tenants Union" loading="lazy"></span>
+    <span class="partner"><img src="images/partner-seven-hills.png" alt="Seven Hills Foundation and Affiliates" loading="lazy"></span>
+    <span class="partner"><img src="images/partner-wcaca.jpg" alt="WCACA — Worcester Caribbean American Carnival Association" loading="lazy"></span>
+    <span class="partner"><img src="images/partner-earn-a-bike.png" alt="Worcester Earn-A-Bike" loading="lazy"></span>
+    <span class="partner"><img src="images/partner-fam-jam.jpg" alt="FAM JAM! Event Group Inc." loading="lazy"></span>
+    <span class="partner"><img src="images/partner-green-rainbow.png" alt="Green-Rainbow Party" loading="lazy"></span>
+    <span class="partner"><img src="images/partner-mass-spring.png" alt="MassSpring" loading="lazy"></span>
+    <span class="partner"><img src="images/partner-pride-worcester.png" alt="Pride Worcester" loading="lazy"></span>
+  </div>
+</section>
+
+<div class="band" id="get-involved">
+  <h2>Get Involved Today</h2>
+  <p>To make a long term change it requires the support of the entire community. No matter who you are we are all in this together and we look forward to you partnering with us to create a Worcester that is free for everyone.</p>
+  <div class="btn-row">
+    <a class="btn" href="contact.html">Let&rsquo;s Go!</a>
+  </div>
+</div>
+
+<footer class="page-foot">
+  <p>Free Worcester is a registered 501(c)(3) charitable organization. &middot; <a href="home.html">Home</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="contact.html">Contact</a> &middot; <a href="index.html">Worcester Autism Parent Survey Report</a></p>
+  <p>Copyright &copy; Free Worcester, All rights reserved.</p>
+</footer>
+
+</main>
+<script>
+(function () {
+  'use strict';
+  var root = document.documentElement;
+  var themeBtn = document.getElementById('theme-toggle');
+  function currentTheme() {
+    if (root.dataset.theme === 'dark' || root.dataset.theme === 'light') return root.dataset.theme;
+    return 'light';
+  }
+  function syncThemeBtn() {
+    var dark = currentTheme() === 'dark';
+    themeBtn.textContent = dark ? 'Light mode' : 'Dark mode';
+    themeBtn.setAttribute('aria-pressed', String(dark));
+  }
+  try {
+    var stored = localStorage.getItem('theme');
+    if (stored === 'dark' || stored === 'light') root.dataset.theme = stored;
+  } catch (e) {}
+  themeBtn.addEventListener('click', function () {
+    var next = currentTheme() === 'dark' ? 'light' : 'dark';
+    root.dataset.theme = next;
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    syncThemeBtn();
+  });
+  syncThemeBtn();
+})();
+</script>
+</body>
+</html>
