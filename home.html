@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home — Free Worcester</title>
+<meta name="description" content="Free Worcester is a grassroots organization dedicated to fostering community solidarity and empowerment in Worcester, Massachusetts.">
+<style>
+:root {
+  color-scheme: light;
+  --page: #f9f9f7;
+  --surface: #fcfcfb;
+  --ink: #0b0b0b;
+  --ink-2: #52514e;
+  --muted: #898781;
+  --grid: #e1e0d9;
+  --axis: #c3c2b7;
+  --border: rgba(11, 11, 11, 0.10);
+  --series-1: #2a78d6;
+  --series-1-deep: #256abf;
+  --link: #1c5cab;
+  --wash: rgba(42, 120, 214, 0.07);
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #000000;
+  --surface: #131312;
+  --ink: #ffffff;
+  --ink-2: #c9c8bf;
+  --muted: #92908a;
+  --grid: #262624;
+  --axis: #3a3a37;
+  --border: rgba(255, 255, 255, 0.12);
+  --series-1: #3987e5;
+  --series-1-deep: #5598e7;
+  --link: #86b6ef;
+  --wash: rgba(57, 135, 229, 0.12);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+a { color: var(--link); }
+.topbar {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; gap: 0.9rem;
+  padding: 0.55rem 1rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+.topbar .brand {
+  font-weight: 650; font-size: 0.95rem;
+  color: var(--ink); text-decoration: none; flex: 1 1 auto; min-width: 0;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.topbar nav { display: flex; gap: 0.9rem; align-items: center; flex: 0 0 auto; }
+.topbar nav a { font-size: 0.9rem; text-decoration: none; color: var(--ink-2); }
+.topbar nav a:hover { color: var(--link); }
+.topbar button {
+  flex: 0 0 auto;
+  background: none; border: 1px solid var(--border); border-radius: 8px;
+  color: var(--ink-2); font: inherit; font-size: 0.85rem;
+  padding: 0.3rem 0.7rem; cursor: pointer;
+}
+.topbar button:hover { background: var(--wash); }
+main { max-width: 46rem; margin: 0 auto; padding: 0 1rem 4rem; }
+.hero { padding: 3.2rem 0 1rem; }
+.site-logo { display: block; height: 130px; width: auto; max-width: 100%; margin: 0 0 1.3rem; }
+.hero .eyebrow {
+  font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--series-1-deep); font-weight: 650; margin: 0 0 0.75rem;
+}
+.hero h1 {
+  font-size: clamp(1.9rem, 4.5vw, 2.9rem);
+  line-height: 1.12; margin: 0 0 0.6rem; letter-spacing: -0.015em;
+}
+.hero .subtitle { font-size: 1.2rem; color: var(--ink-2); margin: 0 0 1.4rem; }
+.btn-row { display: flex; flex-wrap: wrap; gap: 0.7rem; margin: 1.3rem 0; }
+.btn {
+  display: inline-block; padding: 0.62rem 1.15rem; border-radius: 10px;
+  background: var(--series-1); color: #fff; text-decoration: none;
+  font-weight: 650; font-size: 0.97rem;
+}
+.btn:hover { background: var(--series-1-deep); }
+.btn.ghost {
+  background: none; color: var(--link);
+  border: 1px solid var(--border);
+}
+.btn.ghost:hover { background: var(--wash); }
+section { scroll-margin-top: 3.8rem; }
+h2.sec { font-size: 1.55rem; line-height: 1.25; margin: 2.8rem 0 0.35rem; letter-spacing: -0.01em; }
+.sec-lede {
+  font-size: 0.8rem; letter-spacing: 0.09em; text-transform: uppercase;
+  color: var(--series-1-deep); font-weight: 700; margin: 2.8rem 0 -2.4rem;
+}
+p { margin: 0 0 1.05rem; }
+.feature {
+  background: var(--surface); border: 1px solid var(--border);
+  border-left: 3px solid var(--series-1);
+  border-radius: 12px; padding: 1.2rem 1.3rem; margin: 1.6rem 0;
+}
+.feature h3 { margin: 0 0 0.5rem; font-size: 1.15rem; }
+.feature p:last-of-type { margin-bottom: 0.4rem; }
+.cards {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 0.85rem; margin: 1.4rem 0;
+}
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 12px; padding: 1rem 1.1rem;
+}
+.card .num { font-size: 0.78rem; letter-spacing: 0.1em; font-weight: 700; color: var(--series-1-deep); }
+.card h3 { margin: 0.25rem 0 0.4rem; font-size: 1.05rem; }
+.card p { margin: 0; font-size: 0.95rem; color: var(--ink-2); }
+.band {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 14px; padding: 1.6rem 1.5rem; margin: 2.6rem 0;
+}
+.band h2 { margin: 0 0 0.6rem; font-size: 1.45rem; line-height: 1.25; }
+.band p { color: var(--ink-2); }
+.contacts p { margin-bottom: 0.4rem; }
+footer.page-foot {
+  border-top: 1px solid var(--border); margin-top: 3rem; padding-top: 1.25rem;
+  font-size: 0.88rem; color: var(--ink-2);
+}
+@media (max-width: 640px) {
+  .topbar nav { gap: 0.6rem; }
+}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="brand" href="home.html">Free Worcester</a>
+  <nav aria-label="Site">
+    <a href="index.html">The Report</a>
+    <a href="index.html#resources">Resources</a>
+  </nav>
+  <button id="theme-toggle" aria-pressed="false">Dark mode</button>
+</div>
+<main>
+
+<header class="hero">
+  <img class="site-logo" src="images/free-worcester-logo.png" alt="Free Worcester Coalition logo: an illustration of parents and a child at a rally holding signs that read Free Worcester and Free Woo" width="542" height="459">
+  <p class="eyebrow">Free Worcester Coalition</p>
+  <h1>Make the World a Better Place</h1>
+  <p class="subtitle">Join Free Worcester, amplify your impact. Make a difference in your community.</p>
+  <div class="btn-row">
+    <a class="btn" href="index.html">Read the Autism Parent Survey Report</a>
+    <a class="btn ghost" href="mailto:freeworcestercoalition@gmail.com">Get Involved</a>
+  </div>
+</header>
+
+<section id="who-we-are">
+  <p class="sec-lede">Who We Are</p>
+  <h2 class="sec">Bringing about change one step at a time.</h2>
+  <p>&ldquo;Free Worcester&rdquo; is a grassroots organization dedicated to fostering community solidarity and empowerment in Worcester, Massachusetts. Founded by a group of passionate local activists and volunteers, Free Worcester operates on the principle that access to essential resources and services should be available to everyone, regardless of economic status.</p>
+  <p>Free Worcester is a registered 501(c)(3) charitable organization which exists to support and unify the community of Worcester, Massachusetts through providing essential services, educational programs, and outreach initiatives. Our mission is to empower individuals, strengthen families, and build a vibrant and inclusive community.</p>
+</section>
+
+<section id="autism-survey">
+  <p class="sec-lede">Become a part of something greater</p>
+  <h2 class="sec">The Autism Parent Survey</h2>
+  <p>Free Worcester&rsquo;s first Autism Parent Survey, organized with the Worcester Area Autism Task Force, gathered responses from 188 Worcester families between January 2025 and January 2026. The findings and recommendations are now published.</p>
+  <div class="feature">
+    <h3>Worcester Autism Parent Survey: Findings and Recommendations</h3>
+    <p>Family Needs, Public Accountability, and the Politics of Autism Support &mdash; with interactive charts, the full findings, and a guide to local autism resources.</p>
+    <div class="btn-row">
+      <a class="btn" href="index.html">Read the report</a>
+      <a class="btn ghost" href="index.html#resources">Autism Resources</a>
+      <a class="btn ghost" href="Worcester_Autism_Parent_Survey_Findings_and_Recommendations.pdf">Download the PDF</a>
+    </div>
+  </div>
+</section>
+
+<section id="take-action">
+  <p class="sec-lede">Let&rsquo;s Take Action</p>
+  <h2 class="sec">Combining Social Justice and Literacy</h2>
+  <p>Free Worcester&rsquo;s current major campaign is the Today&rsquo;s Readers are Future Leaders / Afterschool Reading Initiative, which aims to provide disadvantaged youths with access to social justice-based educational literature over the summer that will promote equity and inclusiveness across the city of Worcester.</p>
+  <p>Free Worcester is raising funds to buy 5,000 books over the summer to support social justice-focused childhood reading across demographics and age groups.</p>
+</section>
+
+<section id="ways-to-help">
+  <p class="sec-lede">Ways to Help</p>
+  <h2 class="sec">For us to succeed we can&rsquo;t do it alone</h2>
+  <p>Read about all the ways you can help us grow from an organization into a movement.</p>
+  <div class="cards">
+    <div class="card">
+      <span class="num">01</span>
+      <h3>Volunteer</h3>
+      <p>We rely heavily on volunteers to help carry out our mission. Join today and become part of the solution.</p>
+    </div>
+    <div class="card">
+      <span class="num">02</span>
+      <h3>Donate</h3>
+      <p>Every dollar we fundraise goes directly back to improving lives and creating a positive impact.</p>
+    </div>
+    <div class="card">
+      <span class="num">03</span>
+      <h3>Spread the Word</h3>
+      <p>Simply telling others about our work in the community helps us out.</p>
+    </div>
+    <div class="card">
+      <span class="num">04</span>
+      <h3>Attend our Events</h3>
+      <p>Free Worcester holds regular rallies and public events. Keep an eye on our social media to see when they are and show up.</p>
+    </div>
+  </div>
+  <p>To volunteer, donate, or partner with us, reach out at <a href="mailto:freeworcestercoalition@gmail.com">freeworcestercoalition@gmail.com</a>.</p>
+</section>
+
+<section id="trust">
+  <p class="sec-lede">An Organization You Can Trust</p>
+  <h2 class="sec">Built on showing up and speaking out</h2>
+  <p>Our commitment to the community isn&rsquo;t just a promise you need to rely on but something born out of a reputation built on showing up and speaking out. Just look at the community partners we work with to see the values we hold and the populations we represent.</p>
+</section>
+
+<div class="band" id="volunteer">
+  <h2>We get one chance to create the future &mdash; let&rsquo;s do it right.</h2>
+  <p>Change doesn&rsquo;t just happen because we want it. We have to fight for it. Only through a unified approach with people across the city working together to better the community can we achieve sustainable and long-lasting change. Join us today to be a part of that change.</p>
+  <div class="btn-row">
+    <a class="btn" href="mailto:freeworcestercoalition@gmail.com">Become a Volunteer</a>
+  </div>
+</div>
+
+<section id="get-involved">
+  <p class="sec-lede">Get Involved Today</p>
+  <h2 class="sec">We are all in this together</h2>
+  <p>To make a long term change it requires the support of the entire community. No matter who you are we are all in this together and we look forward to you partnering with us to create a Worcester that is free for everyone.</p>
+</section>
+
+<section id="contact" class="contacts">
+  <p class="sec-lede">Contacts</p>
+  <h2 class="sec">Reach Free Worcester</h2>
+  <p>22 Newton Ave, Worcester, MA 01602</p>
+  <p><a href="mailto:freeworcestercoalition@gmail.com">freeworcestercoalition@gmail.com</a></p>
+  <p><a href="tel:+15512507252">(551) 250-7252</a></p>
+</section>
+
+<footer class="page-foot">
+  <p>Free Worcester is a registered 501(c)(3) charitable organization. &middot; <a href="index.html">Worcester Autism Parent Survey Report</a> &middot; <a href="index.html#resources">Autism Resources</a></p>
+  <p>Copyright &copy; Free Worcester, All rights reserved.</p>
+</footer>
+
+</main>
+<script>
+(function () {
+  'use strict';
+  var root = document.documentElement;
+  var themeBtn = document.getElementById('theme-toggle');
+  function currentTheme() {
+    if (root.dataset.theme === 'dark' || root.dataset.theme === 'light') return root.dataset.theme;
+    return 'light';
+  }
+  function syncThemeBtn() {
+    var dark = currentTheme() === 'dark';
+    themeBtn.textContent = dark ? 'Light mode' : 'Dark mode';
+    themeBtn.setAttribute('aria-pressed', String(dark));
+  }
+  try {
+    var stored = localStorage.getItem('theme');
+    if (stored === 'dark' || stored === 'light') root.dataset.theme = stored;
+  } catch (e) {}
+  themeBtn.addEventListener('click', function () {
+    var next = currentTheme() === 'dark' ? 'light' : 'dark';
+    root.dataset.theme = next;
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    syncThemeBtn();
+  });
+  syncThemeBtn();
+})();
+</script>
+</body>
+</html>

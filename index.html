@@ -65,6 +65,10 @@ a { color: var(--link); }
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
   color: var(--ink); text-decoration: none; flex: 1 1 auto; min-width: 0;
 }
+.topbar .topbar-link {
+  flex: 0 0 auto; font-size: 0.9rem; text-decoration: none; color: var(--ink-2);
+}
+.topbar .topbar-link:hover { color: var(--link); }
 .topbar button {
   flex: 0 0 auto;
   background: none; border: 1px solid var(--border); border-radius: 8px;
@@ -355,6 +359,7 @@ footer.page-foot {
 <a class="skip-link" href="#main">Skip to content</a>
 <div class="topbar">
   <a class="brand" href="#top">Worcester Autism Parent Survey</a>
+  <a class="topbar-link" href="home.html">Home</a>
   <button id="nav-toggle" aria-expanded="false" aria-controls="toc">Contents</button>
   <button id="theme-toggle" aria-pressed="false">Dark mode</button>
 </div>

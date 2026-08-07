@@ -7,6 +7,7 @@ interactive charts (hover/keyboard tooltips and a data-table view for each
 figure), a linked table of contents, and light/dark themes.
 
 - `index.html` — the full report as a single self-contained web page (no external dependencies)
+- `home.html` — Free Worcester's homepage, adapted from freeworcester.org, linking to the report and resources
 - `Worcester_Autism_Parent_Survey_Findings_and_Recommendations.pdf` — the original report
 - `images/` — public-domain photographs (see credits below)
 
