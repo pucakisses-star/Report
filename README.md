@@ -12,18 +12,17 @@ figure), a linked table of contents, and light/dark themes.
 
 ## Photo credits
 
-All photographs are in the public domain (CC0 dedication or US public domain):
+The photographs in `images/` are from Worcester Public Schools and are used
+with the district's permission, obtained by the report's publishers. They are
+not public domain; any further reuse requires Worcester Public Schools'
+permission.
 
-- `former-north-high-school-worcester.jpg` — "Former North High School at 50
-  Salisbury Street, Worcester, MA" by Daderot, CC0 —
-  https://commons.wikimedia.org/wiki/File:Former_North_High_School_at_50_Salisbury_Street,_Worcester,_MA_-_DSC05795.jpg
-- `classroom-engineering-activity.jpg` — "USACE, DoDEA celebrate awesome
-  during Engineers Week 2013," U.S. Army Corps of Engineers Europe District,
-  public domain —
-  https://commons.wikimedia.org/wiki/File:USACE,_DoDEA_celebrate_awesome_during_Engineers_Week_2013_(8492552906).jpg
-- `fourth-grade-classroom-1932.jpg` — "Fourth grade, Boulder City, Nevada,
-  public school," 1932, U.S. National Archives (NARA 293733), public domain —
-  https://commons.wikimedia.org/wiki/File:%22Fourth_grade,_Boulder_City,_Nevada,_public_school.%22_-_NARA_-_293733.jpg
+- `wps-classroom-group.jpg` — courtesy of Worcester Public Schools
+  (worcesterschools.org)
+- `wps-classroom-desks.jpg` — courtesy of Worcester Public Schools
+  (worcesterschools.org)
+- `wps-teacher-student.jpg` — photo by Reba Saldanha for Worcester Public
+  Schools, May 2023, courtesy of Worcester Public Schools
 
 Open `index.html` directly in a browser, or serve the repository with any static
 host (e.g. GitHub Pages) to publish it.
