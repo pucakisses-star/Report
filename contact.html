@@ -5,186 +5,152 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contact Us — Free Worcester</title>
 <meta name="description" content="Contact Free Worcester: 22 Newton Ave, Worcester, MA 01602 · freeworcestercoalition@gmail.com · (551) 250-7252.">
-<style>
-:root {
-  color-scheme: light;
-  --page: #f9f9f7;
-  --surface: #fcfcfb;
-  --ink: #0b0b0b;
-  --ink-2: #52514e;
-  --muted: #898781;
-  --border: rgba(11, 11, 11, 0.10);
-  --series-1: #2a78d6;
-  --series-1-deep: #256abf;
-  --link: #1c5cab;
-  --wash: rgba(42, 120, 214, 0.07);
-}
-:root[data-theme="dark"] {
-  color-scheme: dark;
-  --page: #000000;
-  --surface: #131312;
-  --ink: #ffffff;
-  --ink-2: #c9c8bf;
-  --muted: #92908a;
-  --border: rgba(255, 255, 255, 0.12);
-  --series-1: #3987e5;
-  --series-1-deep: #5598e7;
-  --link: #86b6ef;
-  --wash: rgba(57, 135, 229, 0.12);
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0; background: var(--page); color: var(--ink);
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-  font-size: 1.0625rem; line-height: 1.65;
-}
-a { color: var(--link); }
-.topbar {
-  position: sticky; top: 0; z-index: 50;
-  display: flex; align-items: center; gap: 0.9rem;
-  padding: 0.55rem 1rem; background: var(--surface);
-  border-bottom: 1px solid var(--border);
-}
-.topbar .brand {
-  font-weight: 650; font-size: 0.95rem; color: var(--ink); text-decoration: none;
-  flex: 1 1 auto; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
-.topbar nav { display: flex; gap: 0.9rem; align-items: center; flex: 0 0 auto; }
-.topbar nav a { font-size: 0.9rem; text-decoration: none; color: var(--ink-2); }
-.topbar nav a[aria-current="page"], .topbar nav a:hover { color: var(--link); }
-.topbar button {
-  flex: 0 0 auto; background: none; border: 1px solid var(--border); border-radius: 8px;
-  color: var(--ink-2); font: inherit; font-size: 0.85rem; padding: 0.3rem 0.7rem; cursor: pointer;
-}
-.topbar button:hover { background: var(--wash); }
-main { max-width: 46rem; margin: 0 auto; padding: 0 1rem 4rem; }
-.hero { padding: 3.2rem 0 0.4rem; }
-.hero .eyebrow {
-  font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--series-1-deep); font-weight: 650; margin: 0 0 0.75rem;
-}
-.hero h1 { font-size: clamp(1.9rem, 4.5vw, 2.7rem); line-height: 1.12; margin: 0 0 0.6rem; letter-spacing: -0.015em; }
-.hero .subtitle { font-size: 1.15rem; color: var(--ink-2); margin: 0 0 1rem; }
-p { margin: 0 0 1.05rem; }
-.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 0.85rem; margin: 1.6rem 0; }
-.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.1rem; }
-.card h3 { margin: 0 0 0.4rem; font-size: 1.02rem; }
-.card p { margin: 0; font-size: 0.97rem; color: var(--ink-2); overflow-wrap: anywhere; }
-h2.sec { font-size: 1.45rem; line-height: 1.25; margin: 2.6rem 0 0.5rem; letter-spacing: -0.01em; }
-form.msg {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: 14px; padding: 1.4rem 1.5rem; margin: 1.2rem 0 2rem;
-}
-form.msg label { display: block; font-size: 0.9rem; font-weight: 650; margin: 0.9rem 0 0.3rem; }
-form.msg input, form.msg textarea {
-  width: 100%; padding: 0.55rem 0.7rem; font: inherit; color: var(--ink);
-  background: var(--page); border: 1px solid var(--border); border-radius: 8px;
-}
-form.msg textarea { min-height: 130px; resize: vertical; }
-form.msg .note { font-size: 0.85rem; color: var(--muted); margin: 0.8rem 0 0; }
-.btn {
-  display: inline-block; padding: 0.62rem 1.15rem; border-radius: 10px;
-  background: var(--series-1); color: #fff; text-decoration: none; font-weight: 650;
-  font-size: 0.97rem; border: none; cursor: pointer; font-family: inherit;
-}
-.btn:hover { background: var(--series-1-deep); }
-form.msg .btn { margin-top: 1.1rem; }
-footer.page-foot {
-  border-top: 1px solid var(--border); margin-top: 3rem; padding-top: 1.25rem;
-  font-size: 0.88rem; color: var(--ink-2);
-}
-@media (max-width: 640px) { .topbar nav { gap: 0.6rem; } }
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/fw.css">
+<script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t;}catch(e){}</script>
 </head>
 <body>
-<div class="topbar">
-  <a class="brand" href="home.html">Free Worcester</a>
-  <nav aria-label="Site">
-    <a href="about.html">About</a>
-    <a href="blog.html">Blog</a>
-    <a href="contact.html" aria-current="page">Contact</a>
-    <a href="index.html">The Report</a>
-  </nav>
-  <button id="theme-toggle" aria-pressed="false">Dark mode</button>
-</div>
-<main>
 
-<header class="hero">
-  <p class="eyebrow">Free Worcester Coalition</p>
-  <h1>Contact Us</h1>
-  <p class="subtitle">No matter who you are, we are all in this together &mdash; reach out and be part of the change.</p>
+<header class="site-head">
+  <div class="bar">
+    <a class="brand" href="home.html"><img src="images/free-worcester-logo.png" alt="">Free Worcester</a>
+    <nav class="main" aria-label="Site">
+      <a href="home.html">Home</a>
+      <a href="about.html">About Us</a>
+      <span class="has-sub">
+        <a href="index.html">Programs <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+        <span class="sub">
+          <a href="index.html">Autism Parent Survey<span class="hint">Findings and Recommendations report</span></a>
+          <a href="home.html#take-action">Social Justice Literacy Initiative<span class="hint">Today&rsquo;s Readers are Future Leaders</span></a>
+        </span>
+      </span>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html" aria-current="page">Contact Us</a>
+    </nav>
+    <a class="head-cta" href="contact.html">Donate Now</a>
+    <button class="icon-btn" id="theme-toggle" aria-pressed="false" aria-label="Switch to dark mode">
+      <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <button class="icon-btn nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Site">
+    <a href="home.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a class="subitem" href="index.html">Programs: Autism Parent Survey</a>
+    <a class="subitem" href="home.html#take-action">Programs: Literacy Initiative</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="contact.html">Donate Now</a>
+  </nav>
 </header>
 
-<div class="cards">
-  <div class="card">
-    <h3>Address</h3>
-    <p>22 Newton Ave,<br>Worcester, MA 01602</p>
-  </div>
-  <div class="card">
-    <h3>Email</h3>
-    <p><a href="mailto:freeworcestercoalition@gmail.com">freeworcestercoalition@gmail.com</a></p>
-  </div>
-  <div class="card">
-    <h3>Phone</h3>
-    <p><a href="tel:+15512507252">(551) 250-7252</a></p>
-  </div>
-</div>
+<main>
 
-<h2 class="sec">Send us a message</h2>
-<form class="msg" id="contact-form">
-  <label for="cf-name">Name</label>
-  <input id="cf-name" type="text" autocomplete="name">
-  <label for="cf-subject">Subject</label>
-  <input id="cf-subject" type="text">
-  <label for="cf-message">Message</label>
-  <textarea id="cf-message"></textarea>
-  <button class="btn" type="submit">Compose Email</button>
-  <p class="note">This opens your email app with the message addressed to freeworcestercoalition@gmail.com &mdash; press send there and it&rsquo;s on its way.</p>
-</form>
+<section class="section band-accent">
+  <div class="container center rv" style="max-width: 760px;">
+    <span class="eyebrow">Free Worcester Coalition</span>
+    <h1 class="display">Contact Us</h1>
+    <p class="lead" style="margin-bottom: 0;">No matter who you are, we are all in this together &mdash; reach out and be part of the change.</p>
+  </div>
+</section>
 
-<footer class="page-foot">
-  <p>Free Worcester is a registered 501(c)(3) charitable organization. &middot; <a href="home.html">Home</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="index.html">Worcester Autism Parent Survey Report</a></p>
-  <p>Copyright &copy; Free Worcester, All rights reserved.</p>
-</footer>
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="stack rv">
+        <div class="fcard info-card">
+          <div class="icon-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <h3>Address</h3>
+            <p>22 Newton Ave, Worcester, MA 01602</p>
+          </div>
+        </div>
+        <div class="fcard info-card">
+          <div class="icon-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div>
+            <h3>Email</h3>
+            <p><a href="mailto:freeworcestercoalition@gmail.com">freeworcestercoalition@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="fcard info-card">
+          <div class="icon-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div>
+            <h3>Phone</h3>
+            <p><a href="tel:+15512507252">(551) 250-7252</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="fcard rv" style="padding: 1.8rem 1.7rem;">
+        <h2 class="title" style="font-size: 1.4rem; margin-bottom: 1.1rem;">Send us a message</h2>
+        <form class="msg" id="contact-form">
+          <label for="cf-name">Name</label>
+          <input id="cf-name" type="text" autocomplete="name">
+          <label for="cf-subject">Subject</label>
+          <input id="cf-subject" type="text">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message"></textarea>
+          <button class="btn" type="submit">Compose Email</button>
+          <p class="note">This opens your email app with the message addressed to freeworcestercoalition@gmail.com &mdash; press send there and it&rsquo;s on its way.</p>
+        </form>
+      </div>
+    </div>
+    <div class="map-frame rv">
+      <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-71.8338%2C42.2671%2C-71.8138%2C42.2771&amp;layer=mapnik&amp;marker=42.27207%2C-71.82384" title="Map showing 22 Newton Ave, Worcester, MA" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
 
 </main>
-<script>
-(function () {
-  'use strict';
-  var root = document.documentElement;
-  var themeBtn = document.getElementById('theme-toggle');
-  function currentTheme() {
-    if (root.dataset.theme === 'dark' || root.dataset.theme === 'light') return root.dataset.theme;
-    return 'light';
-  }
-  function syncThemeBtn() {
-    var dark = currentTheme() === 'dark';
-    themeBtn.textContent = dark ? 'Light mode' : 'Dark mode';
-    themeBtn.setAttribute('aria-pressed', String(dark));
-  }
-  try {
-    var stored = localStorage.getItem('theme');
-    if (stored === 'dark' || stored === 'light') root.dataset.theme = stored;
-  } catch (e) {}
-  themeBtn.addEventListener('click', function () {
-    var next = currentTheme() === 'dark' ? 'light' : 'dark';
-    root.dataset.theme = next;
-    try { localStorage.setItem('theme', next); } catch (e) {}
-    syncThemeBtn();
-  });
-  syncThemeBtn();
 
-  document.getElementById('contact-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    var name = document.getElementById('cf-name').value.trim();
-    var subject = document.getElementById('cf-subject').value.trim() || 'Message from the Free Worcester website';
-    var message = document.getElementById('cf-message').value;
-    var body = message + (name ? '\n\n— ' + name : '');
-    location.href = 'mailto:freeworcestercoalition@gmail.com?subject=' +
-      encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-  });
-})();
-</script>
+<footer class="site-foot">
+  <div class="cols">
+    <div>
+      <span class="logo-chip"><img src="images/free-worcester-logo.png" alt="Free Worcester logo"></span>
+      <p>Free Worcester is a registered 501(c)(3) charitable organization which exists to support and unify the community of Worcester, Massachusetts through providing essential services, educational programs, and outreach initiatives. Our mission is to empower individuals, strengthen families, and build a vibrant and inclusive community.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="about.html">Mission</a></li>
+        <li><a href="index.html">Accountability</a></li>
+        <li><a href="blog.html">Newsroom</a></li>
+        <li><a href="blog.html">Find Events</a></li>
+        <li><a href="contact.html">Volunteer</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html">Careers</a></li>
+        <li><a href="contact.html">Partnership</a></li>
+        <li><a href="index.html">Autism Parent Survey Report</a></li>
+        <li><a href="index.html#resources">Autism Resources</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contacts</h4>
+      <ul>
+        <li>22 Newton Ave, Worcester, MA 01602</li>
+        <li><a href="mailto:freeworcestercoalition@gmail.com">freeworcestercoalition@gmail.com</a></li>
+        <li><a href="tel:+15512507252">(551) 250-7252</a></li>
+      </ul>
+      <h4 style="margin-top: 1.5rem;">Subscribe Newsletter</h4>
+      <p>Signup our newsletter to get update information, news &amp; insight.</p>
+      <form class="newsletter" id="newsletter-form">
+        <input id="nl-email" type="email" placeholder="Email" aria-label="Email address" required>
+        <button class="btn" type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+  <div class="base">Copyright &copy; Free Worcester, All rights reserved.</div>
+</footer>
+
+<script src="assets/fw.js"></script>
 </body>
 </html>
