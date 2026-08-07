@@ -57,7 +57,7 @@ body {
   line-height: 1.7;
 }
 a { color: var(--green); }
-:root[data-theme="dark"] a { color: var(--pink); }
+:root[data-theme="dark"] main a:not(.btn) { color: var(--pink); }
 img { max-width: 100%; }
 
 /* ---------- Header ---------- */
