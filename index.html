@@ -3,1600 +3,271 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Worcester Autism Parent Survey — Findings and Recommendations</title>
-<meta name="description" content="Worcester Autism Parent Survey: Findings and Recommendations. Family Needs, Public Accountability, and the Politics of Autism Support. Free Worcester Coalition, July 2026.">
-<style>
-:root {
-  color-scheme: light;
-  --page: #f9f9f7;
-  --surface: #fcfcfb;
-  --ink: #0b0b0b;
-  --ink-2: #52514e;
-  --muted: #898781;
-  --grid: #e1e0d9;
-  --axis: #c3c2b7;
-  --border: rgba(11, 11, 11, 0.10);
-  --series-1: #2a78d6;
-  --series-1-deep: #256abf;
-  --link: #1c5cab;
-  --wash: rgba(42, 120, 214, 0.07);
-}
-:root[data-theme="dark"] {
-  color-scheme: dark;
-  --page: #000000;
-  --surface: #131312;
-  --ink: #ffffff;
-  --ink-2: #c9c8bf;
-  --muted: #92908a;
-  --grid: #262624;
-  --axis: #3a3a37;
-  --border: rgba(255, 255, 255, 0.12);
-  --series-1: #3987e5;
-  --series-1-deep: #5598e7;
-  --link: #86b6ef;
-  --wash: rgba(57, 135, 229, 0.12);
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  background: var(--page);
-  color: var(--ink);
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-  font-size: 1.0625rem;
-  line-height: 1.65;
-}
-.skip-link {
-  position: absolute; left: -9999px; top: 0;
-  background: var(--surface); color: var(--ink);
-  padding: 0.5rem 1rem; z-index: 100; border: 1px solid var(--border);
-}
-.skip-link:focus { left: 0.5rem; top: 0.5rem; }
-a { color: var(--link); }
-.topbar {
-  position: sticky; top: 0; z-index: 50;
-  display: flex; align-items: center; gap: 0.75rem;
-  padding: 0.55rem 1rem;
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-}
-.topbar .brand {
-  font-weight: 650; font-size: 0.95rem;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-  color: var(--ink); text-decoration: none; flex: 1 1 auto; min-width: 0;
-}
-.topbar .topbar-link {
-  flex: 0 0 auto; font-size: 0.9rem; text-decoration: none; color: var(--ink-2);
-}
-.topbar .topbar-link:hover { color: var(--link); }
-.topbar button {
-  flex: 0 0 auto;
-  background: none; border: 1px solid var(--border); border-radius: 8px;
-  color: var(--ink-2); font: inherit; font-size: 0.85rem;
-  padding: 0.3rem 0.7rem; cursor: pointer;
-}
-.topbar button:hover { background: var(--wash); }
-#nav-toggle { display: none; }
-.layout {
-  display: grid;
-  grid-template-columns: 280px minmax(0, 1fr);
-  gap: 2rem;
-  max-width: 1240px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-.toc {
-  position: sticky; top: 3.2rem;
-  align-self: start;
-  max-height: calc(100vh - 3.2rem);
-  overflow-y: auto;
-  padding: 1.25rem 0.25rem 2rem 0;
-  font-size: 0.875rem;
-}
-.toc h2 {
-  font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--muted); margin: 0 0 0.5rem; font-weight: 650;
-}
-.toc ol { list-style: none; margin: 0; padding: 0; }
-.toc li { margin: 0; }
-.toc a {
-  display: block; padding: 0.28rem 0.6rem;
-  color: var(--ink-2); text-decoration: none;
-  border-left: 2px solid transparent; border-radius: 0 6px 6px 0;
-}
-.toc a:hover { background: var(--wash); }
-.toc a.active { color: var(--link); border-left-color: var(--series-1); font-weight: 600; }
-.toc .sub a { padding-left: 1.4rem; font-size: 0.82rem; }
-main { min-width: 0; padding-bottom: 4rem; }
-.content { max-width: 46rem; }
-.hero { padding: 3.5rem 0 1.5rem; }
-.site-logo {
-  display: block; height: 110px; width: auto; max-width: 100%;
-  margin: 0 0 1.2rem;
-}
-.hero .eyebrow {
-  font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--series-1-deep); font-weight: 650; margin: 0 0 0.75rem;
-}
-.hero h1 {
-  font-size: clamp(1.9rem, 4.5vw, 2.9rem);
-  line-height: 1.12; margin: 0 0 0.6rem; letter-spacing: -0.015em;
-}
-.hero .subtitle { font-size: 1.15rem; color: var(--ink-2); margin: 0 0 1.1rem; }
-.hero .byline { font-size: 0.92rem; color: var(--muted); margin: 0 0 0.3rem; }
-.hero .pdf-link { font-size: 0.9rem; }
-section { scroll-margin-top: 3.8rem; }
-h2.sec {
-  font-size: 1.55rem; line-height: 1.25; margin: 3rem 0 0.35rem;
-  letter-spacing: -0.01em;
-}
-.sec-lede { color: var(--ink-2); font-style: italic; margin: 0 0 1.2rem; }
-h3 { font-size: 1.14rem; margin: 2rem 0 0.6rem; }
-h4 { font-size: 1.02rem; margin: 1.6rem 0 0.5rem; }
-p { margin: 0 0 1.05rem; }
-ul, ol { margin: 0 0 1.05rem; padding-left: 1.4rem; }
-li { margin-bottom: 0.35rem; }
-.front-matter {
-  border-top: 1px solid var(--border);
-  padding-top: 1.5rem; margin-top: 1.5rem;
-  font-size: 0.95rem;
-}
-.front-matter dl { display: grid; grid-template-columns: max-content 1fr; gap: 0.35rem 1.25rem; margin: 0 0 1rem; }
-.front-matter dt { font-weight: 650; color: var(--ink-2); }
-.front-matter dd { margin: 0; }
-table.simple {
-  border-collapse: collapse; width: 100%; margin: 0 0 1.2rem;
-  font-size: 0.95rem;
-}
-table.simple th, table.simple td {
-  text-align: left; padding: 0.5rem 0.75rem;
-  border-bottom: 1px solid var(--grid); vertical-align: top;
-}
-table.simple th { color: var(--ink-2); font-weight: 650; }
-table.simple td:first-child { white-space: nowrap; font-weight: 600; }
-.glance-tiles {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-  gap: 0.75rem; margin: 1.2rem 0;
-}
-.tile {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: 12px; padding: 0.9rem 1rem;
-}
-.tile .value { font-size: 1.85rem; font-weight: 650; line-height: 1.15; }
-.tile .label { font-size: 0.86rem; color: var(--ink-2); margin-top: 0.25rem; line-height: 1.4; }
-.callout {
-  background: var(--surface); border: 1px solid var(--border);
-  border-left: 3px solid var(--series-1);
-  border-radius: 10px; padding: 0.9rem 1.1rem; margin: 1.4rem 0;
-}
-.callout .tag {
-  display: block; font-size: 0.72rem; letter-spacing: 0.09em;
-  text-transform: uppercase; font-weight: 700; color: var(--series-1-deep);
-  margin-bottom: 0.35rem;
-}
-.callout p { margin: 0 0 0.5rem; }
-.callout p:last-child { margin-bottom: 0; }
-.callout.voice p.quote { font-style: italic; font-size: 1.05rem; }
-.callout .stat-line { display: flex; gap: 0.6rem; align-items: baseline; margin-bottom: 0.4rem; }
-.callout .stat-line:last-child { margin-bottom: 0; }
-.callout .stat-line .big { font-size: 1.45rem; font-weight: 650; white-space: nowrap; }
-.callout .stat-line .rest { color: var(--ink-2); font-size: 0.95rem; }
-figure.photo { margin: 1.6rem 0; }
-figure.photo img {
-  display: block; width: 100%; height: auto;
-  border-radius: 14px; border: 1px solid var(--border);
-}
-figure.photo figcaption {
-  font-size: 0.8rem; color: var(--muted); margin-top: 0.45rem; line-height: 1.45;
-}
-figure.photo.hero-photo { margin: 1.8rem 0 0.4rem; }
-figure.chart-card {
-  margin: 1.6rem 0;
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: 14px; padding: 1.15rem 1.25rem 1rem;
-}
-figure.chart-card .chart-title { font-weight: 650; font-size: 1.02rem; margin: 0 0 1rem; }
-figure.chart-card figcaption {
-  font-size: 0.85rem; color: var(--ink-2); line-height: 1.5;
-  border-top: 1px solid var(--grid); margin-top: 1rem; padding-top: 0.75rem;
-}
-.chart { position: relative; }
-.hbar-row { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 0.65rem; align-items: center; margin-bottom: 8px; }
-.hbar-label { font-size: 0.83rem; color: var(--ink-2); text-align: right; line-height: 1.3; }
-.hbar-track { position: relative; height: 30px; display: flex; align-items: center; cursor: default; border-radius: 6px; min-width: 0; }
-.chart.in .hbar-fill { width: var(--w); }
-.chart.in .cols .col-fill { height: var(--h); }
-.hbar-value.inside { position: absolute; color: #fff; margin-left: 0; font-weight: 600; }
-.visually-hidden {
-  position: absolute; width: 1px; height: 1px; margin: -1px;
-  clip-path: inset(50%); overflow: hidden; white-space: nowrap;
-}
-.hbar-track:hover, .hbar-track:focus-visible { background: var(--wash); }
-.hbar-track:focus-visible { outline: 2px solid var(--series-1); outline-offset: 1px; }
-.hbar-fill {
-  height: 22px; max-height: 22px; background: var(--series-1);
-  border-radius: 0 4px 4px 0;
-  width: 0; transition: width 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
-}
-.hbar-track:hover .hbar-fill, .hbar-track:focus-visible .hbar-fill { filter: brightness(1.12); }
-.hbar-value {
-  font-size: 0.82rem; color: var(--ink); margin-left: 0.5rem; white-space: nowrap;
-  font-variant-numeric: tabular-nums;
-  opacity: 0; transition: opacity 0.4s ease 0.45s;
-}
-.chart.in .hbar-value { opacity: 1; }
-.hbar-plot { position: relative; }
-.hbar-grid { position: absolute; inset: 0 0 0 0; pointer-events: none; }
-.hbar-grid .gl { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--grid); }
-.hbar-grid .gl.zero { background: var(--axis); }
-.hbar-axis { position: relative; height: 1.4rem; margin-top: 2px; }
-.hbar-axis .tick {
-  position: absolute; transform: translateX(-50%);
-  font-size: 0.75rem; color: var(--muted); font-variant-numeric: tabular-nums;
-}
-.axis-title { text-align: center; font-size: 0.78rem; color: var(--muted); margin-top: 0.1rem; }
-.axis-title-left { text-align: left; margin: 0 0 0.35rem; }
-.cols { position: relative; height: 300px; margin-top: 0.5rem; }
-.cols .ygrid { position: absolute; left: 2.6rem; right: 0; height: 1px; background: var(--grid); }
-.cols .ygrid.zero { background: var(--axis); }
-.cols .ylab {
-  position: absolute; left: 0; width: 2.1rem; text-align: right;
-  transform: translateY(-50%); font-size: 0.75rem; color: var(--muted);
-  font-variant-numeric: tabular-nums;
-}
-.cols .col-band {
-  position: absolute; bottom: 0; top: 0; display: flex;
-  flex-direction: column; justify-content: flex-end; align-items: center;
-  cursor: default; border-radius: 6px;
-}
-.cols .col-band:hover, .cols .col-band:focus-visible { background: var(--wash); }
-.cols .col-band:focus-visible { outline: 2px solid var(--series-1); outline-offset: 1px; }
-.cols .col-fill {
-  width: 24px; background: var(--series-1); border-radius: 4px 4px 0 0;
-  height: 0; transition: height 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
-}
-.cols .col-band:hover .col-fill, .cols .col-band:focus-visible .col-fill { filter: brightness(1.12); }
-.cols .col-label {
-  font-size: 0.8rem; color: var(--ink); text-align: center; line-height: 1.3;
-  margin-bottom: 0.4rem; font-variant-numeric: tabular-nums;
-  opacity: 0; transition: opacity 0.4s ease 0.45s;
-}
-.chart.in .cols .col-label { opacity: 1; }
-.cols .col-label .sub { color: var(--ink-2); font-size: 0.74rem; }
-.col-xlabels { position: relative; height: 1.5rem; margin-top: 0.35rem; }
-.col-xlabels .xl {
-  position: absolute; transform: translateX(-50%);
-  font-size: 0.8rem; color: var(--ink-2); white-space: nowrap;
-}
-.y-axis-title {
-  position: absolute; left: -1rem; top: 50%;
-  transform: rotate(180deg); writing-mode: vertical-rl; translate: 0 -50%;
-  font-size: 0.72rem; color: var(--muted);
-}
-#resources h3 {
-  font-size: 0.85rem; letter-spacing: 0.09em; text-transform: uppercase;
-  color: var(--series-1-deep); margin: 2.4rem 0 0.6rem; font-weight: 700;
-}
-#resources h4 { margin: 1.6rem 0 0.25rem; font-size: 1.05rem; }
-.res-contact { color: var(--ink-2); font-size: 0.93rem; margin: 0 0 0.5rem; line-height: 1.55; }
-.res-joiner {
-  font-size: 0.78rem; letter-spacing: 0.14em; font-weight: 700;
-  color: var(--muted); margin: 1.3rem 0 0.2rem;
-}
-details.refs-list summary {
-  cursor: pointer; color: var(--link); font-size: 0.95rem; font-weight: 600;
-  padding: 0.65rem 0.9rem; border: 1px solid var(--border); border-radius: 10px;
-  background: var(--surface); list-style-position: inside;
-}
-details.refs-list summary:hover { background: var(--wash); }
-details.refs-list[open] summary { margin-bottom: 1.1rem; }
-details.data-table { margin-top: 0.9rem; font-size: 0.88rem; }
-details.data-table summary {
-  cursor: pointer; color: var(--link); font-size: 0.85rem;
-  list-style-position: inside;
-}
-details.data-table table { margin-top: 0.6rem; margin-bottom: 0.3rem; }
-details.data-table td, details.data-table th { font-variant-numeric: tabular-nums; }
-#tooltip {
-  position: fixed; z-index: 90; pointer-events: none;
-  background: var(--surface); color: var(--ink);
-  border: 1px solid var(--border); border-radius: 10px;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.16);
-  padding: 0.55rem 0.75rem; font-size: 0.85rem; line-height: 1.45;
-  max-width: 280px; opacity: 0; transition: opacity 0.12s ease;
-}
-#tooltip.show { opacity: 1; }
-#tooltip .t-title { font-weight: 650; margin-bottom: 0.15rem; }
-#tooltip .t-row .t-val { font-weight: 650; }
-#tooltip .t-row .t-lab { color: var(--ink-2); }
-.refs p { padding-left: 1.6rem; text-indent: -1.6rem; font-size: 0.93rem; overflow-wrap: break-word; }
-.phase-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 0.75rem; margin: 1.2rem 0; }
-.phase {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: 12px; padding: 0.9rem 1rem; font-size: 0.92rem;
-}
-.phase .ph-name { font-size: 0.74rem; letter-spacing: 0.09em; text-transform: uppercase; font-weight: 700; color: var(--series-1-deep); }
-.phase .ph-time { font-weight: 650; margin: 0.15rem 0 0.5rem; }
-.phase ul { padding-left: 1.1rem; margin: 0; }
-.phase li { margin-bottom: 0.45rem; }
-footer.page-foot {
-  border-top: 1px solid var(--border); margin-top: 3rem; padding-top: 1.25rem;
-  font-size: 0.88rem; color: var(--ink-2);
-}
-@media (max-width: 980px) {
-  .layout { grid-template-columns: minmax(0, 1fr); }
-  #nav-toggle { display: inline-block; }
-  .toc {
-    display: none;
-    position: fixed; top: 3.1rem; left: 0; right: 0; z-index: 45;
-    background: var(--surface); border-bottom: 1px solid var(--border);
-    padding: 0.75rem 1rem 1rem; max-height: 70vh;
-  }
-  .toc.open { display: block; }
-}
-@media (max-width: 640px) {
-  .col-xlabels .xl { font-size: 0.7rem; }
-  .hbar-row { grid-template-columns: minmax(0, 1fr); gap: 0.1rem; margin-bottom: 10px; }
-  .hbar-label { text-align: left; }
-  .hbar-axis .tick.minor, .hbar-grid .gl.minor { display: none; }
-  .front-matter dl { grid-template-columns: 1fr; gap: 0.1rem; }
-  .front-matter dt { margin-top: 0.5rem; }
-}
-@media print {
-  .topbar, .toc, #tooltip, .skip-link { display: none !important; }
-  .layout { grid-template-columns: 1fr; }
-  .hbar-fill, .cols .col-fill { transition: none; }
-  .hbar-value, .cols .col-label { opacity: 1; }
-}
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .hbar-fill, .cols .col-fill { transition: none; }
-  .hbar-value, .cols .col-label { opacity: 1; transition: none; }
-}
-</style>
+<title>Home — Free Worcester</title>
+<meta name="description" content="Free Worcester is a grassroots organization dedicated to fostering community solidarity and empowerment in Worcester, Massachusetts.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/fw.css">
+<script>try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t;}catch(e){}</script>
+<script>(function(){var h=location.hash.slice(1);var r=["glance", "acknowledgments", "acronyms", "executive-summary", "introduction", "methodology", "data-results", "sec-4-1", "sec-4-2", "sec-4-3", "sec-4-4", "sec-4-5", "sec-4-6", "local-context", "background-research", "recommendations", "conclusion", "references", "resources", "fig1", "fig2", "fig3"];if(h&&r.indexOf(h)>-1)location.replace("autism-survey-report.html#"+h);})();</script>
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
-<div class="topbar">
-  <a class="brand" href="#top">Worcester Autism Parent Survey</a>
-  <a class="topbar-link" href="home.html">Home</a>
-  <button id="nav-toggle" aria-expanded="false" aria-controls="toc">Contents</button>
-  <button id="theme-toggle" aria-pressed="false">Dark mode</button>
-</div>
-<div class="layout">
-<nav class="toc" id="toc" aria-label="Table of Contents">
-  <h2>Table of Contents</h2>
-  <ol>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-    <li><a href="#acronyms">Acronyms and Abbreviations</a></li>
-    <li><a href="#glance">Report at a Glance</a></li>
-    <li><a href="#executive-summary">1. Executive Summary</a></li>
-    <li><a href="#introduction">2. Introduction</a></li>
-    <li><a href="#methodology">3. Methodology</a></li>
-    <li><a href="#data-results">4. Data and Results</a>
-      <ol class="sub">
-        <li><a href="#sec-4-1">4.1 Barriers to Services</a></li>
-        <li><a href="#sec-4-2">4.2 Schools and IEP Navigation</a></li>
-        <li><a href="#sec-4-3">4.3 Behavioral Health</a></li>
-        <li><a href="#sec-4-4">4.4 Language Access</a></li>
-        <li><a href="#sec-4-5">4.5 Parent Connection</a></li>
-        <li><a href="#sec-4-6">4.6 Age and Support Needs</a></li>
-      </ol>
-    </li>
-    <li><a href="#local-context">5. Local Institutional and Political Context</a></li>
-    <li><a href="#background-research">6. Background Research and Systemic Context</a></li>
-    <li><a href="#recommendations">7. Recommendations and Next Steps</a></li>
-    <li><a href="#conclusion">8. Conclusion</a></li>
-    <li><a href="#references">References</a></li>
-    <li><a href="#resources">Autism Resources</a></li>
-  </ol>
-</nav>
-<main id="main">
-<div class="content">
-<header class="hero" id="top">
-  <img class="site-logo" src="images/free-worcester-logo.png" alt="Free Worcester Coalition logo: an illustration of parents and a child at a rally holding signs that read Free Worcester and Free Woo" width="1100" height="929">
-  <p class="eyebrow">Free Worcester Coalition</p>
-  <h1>Worcester Autism Parent Survey Findings and Recommendations</h1>
-  <p class="subtitle">Family Needs, Public Accountability, and the Politics of Autism Support</p>
-  <p class="byline">Survey organized by the Free Worcester Coalition in collaboration with the Worcester Area Autism Task Force</p>
-  <p class="byline">Report by Addison Turner &middot; July 2026</p>
-  <p class="pdf-link"><a href="Worcester_Autism_Parent_Survey_Findings_and_Recommendations.pdf">Download the original report (PDF)</a></p>
 
-  <figure class="photo hero-photo">
-    <img src="images/wps-classroom-group.jpg" alt="A classroom of young Worcester students gathered on a colorful rug, smiling toward the camera" width="1280" height="609">
-    <figcaption>Students in a Worcester Public Schools classroom. Photograph courtesy of Worcester Public Schools.</figcaption>
-  </figure>
-
-  <div class="front-matter">
-    <dl>
-      <dt>Published by</dt><dd>Free Worcester Coalition</dd>
-      <dt>In collaboration with</dt><dd>Worcester Area Autism Task Force and its coalition partners</dd>
-      <dt>Survey leadership and development</dt><dd>Free Worcester Co-founder Nelly Medina<br>Parent Leaders Natalie Cintron and Hope Fisher<br>Members and coalition partners of the Worcester Area Autism Task Force</dd>
-      <dt>Research, data analysis, and report</dt><dd>Addison Turner</dd>
-      <dt>Survey period</dt><dd>January 2025 through January 2026</dd>
-      <dt>Funding</dt><dd>This project received partial funding through a grant awarded by the Greater Worcester Community Foundation.</dd>
-      <dt>Publication date</dt><dd>July 2026</dd>
-      <dt>Contact</dt><dd><a href="mailto:freeworcestercoalition@gmail.com">freeworcestercoalition@gmail.com</a></dd>
-      <dt>Suggested citation</dt><dd>Turner, A. (2026). <em>Worcester Autism Parent Survey: Findings and Recommendations</em>. Prepared for the Free Worcester Coalition and the Worcester Area Autism Task Force.</dd>
-      <dt>Permission to share</dt><dd>This report may be shared and reproduced for educational, advocacy, and noncommercial purposes with attribution to the Free Worcester Coalition, the Worcester Area Autism Task Force, and the report author.</dd>
-    </dl>
+<header class="site-head">
+  <div class="bar">
+    <a class="brand" href="index.html"><img src="images/free-worcester-logo.png" alt="">Free Worcester</a>
+    <nav class="main" aria-label="Site">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="about.html">About Us</a>
+      <span class="has-sub">
+        <a href="autism-survey-report.html">Programs <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+        <span class="sub">
+          <a href="autism-survey-report.html">Autism Parent Survey<span class="hint">Findings and Recommendations report</span></a>
+          <a href="index.html#take-action">Social Justice Literacy Initiative<span class="hint">Today&rsquo;s Readers are Future Leaders</span></a>
+        </span>
+      </span>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+    <a class="head-cta" href="contact.html">Donate Now</a>
+    <button class="icon-btn" id="theme-toggle" aria-pressed="false" aria-label="Switch to dark mode">
+      <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+    </button>
+    <button class="icon-btn nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
   </div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Site">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a class="subitem" href="autism-survey-report.html">Programs: Autism Parent Survey</a>
+    <a class="subitem" href="index.html#take-action">Programs: Literacy Initiative</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact Us</a>
+    <a href="contact.html">Donate Now</a>
+  </nav>
 </header>
 
-<section id="acknowledgments">
-  <h2 class="sec">Acknowledgments</h2>
-  <p>The Free Worcester Coalition and the report author extend their deepest gratitude to the parents and caregivers who participated in the Worcester Autism Parent Survey. Their willingness to describe the support they have received, the barriers they continue to face, and the changes they believe are needed made this report possible.</p>
-  <p>Special recognition is due to parent leaders Nelly Medina, Natalie Cintron, and Hope Fisher, whose leadership helped guide the development, organization, and distribution of the survey. The survey was developed collaboratively over six months through consensus-based discussion during the monthly online meetings of the Worcester Area Autism Task Force.</p>
-  <p>We also acknowledge the members and coalition partners of the Worcester Area Autism Task Force who contributed to the survey questions, supported outreach, distributed the survey through their networks, and helped ensure that the project remained connected to the experiences and priorities of Worcester families.</p>
-  <p>The survey was organized and distributed by the <strong>Free Worcester Coalition</strong>, in collaboration with the Worcester Area Autism Task Force and its coalition partners, through email, social media, and direct outreach to parents. The survey was open from January 2025 through January 2026.</p>
-  <p>This project received partial funding through a grant awarded by the <strong>Greater Worcester Community Foundation</strong>. That support helped make the survey process and the preparation of this report possible.</p>
-  <p>Finally, we recognize the educators, advocates, interpreters, service providers, community organizations, and family-support networks whose work contributed to outreach, discussion, and the broader local effort to improve autism support in Worcester.</p>
-  <p>The findings and recommendations presented in this report are grounded primarily in the experiences shared by participating parents and caregivers. Their voices remain the central source of evidence and the foundation for the actions proposed here.</p>
-</section>
+<main>
 
-<section id="acronyms">
-  <h2 class="sec">Acronyms and Abbreviations</h2>
-  <table class="simple">
-    <thead><tr><th scope="col">Acronym</th><th scope="col">Meaning</th></tr></thead>
-    <tbody>
-      <tr><td>IEP</td><td>Individualized Education Program</td></tr>
-      <tr><td>MOU</td><td>Memorandum of Understanding</td></tr>
-      <tr><td>SAIL</td><td>Specialized Approaches to Individual Learning</td></tr>
-      <tr><td>SPED PAC / SEPAC</td><td>Special Education Parent Advisory Council</td></tr>
-      <tr><td>SSI</td><td>Supplemental Security Income</td></tr>
-      <tr><td>WEJA</td><td>Worcester Education Justice Alliance</td></tr>
-    </tbody>
-  </table>
-</section>
-
-<section id="glance">
-  <h2 class="sec">Report at a Glance</h2>
-  <div class="glance-tiles">
-    <div class="tile">
-      <div class="value">188</div>
-      <div class="label">retained survey responses &mdash; 175 English-language and 13 Spanish-language responses</div>
-    </div>
-    <div class="tile">
-      <div class="value">38.8%</div>
-      <div class="label">reported being on a waiting list without adequate follow-up</div>
-    </div>
-    <div class="tile">
-      <div class="value">79.0%</div>
-      <div class="label">reported that their child also experienced behavioral health challenges</div>
-    </div>
-    <div class="tile">
-      <div class="value">69.5%</div>
-      <div class="label">expressed interest in becoming involved in advocacy</div>
+<section class="section">
+  <div class="container">
+    <div class="split">
+      <div class="rv">
+        <span class="eyebrow">Free Worcester Coalition</span>
+        <h1 class="display">Make the World a Better Place</h1>
+        <p class="lead">Join Free Worcester, amplify your impact. Make a difference in your community.</p>
+        <div class="btn-row">
+          <a class="btn" href="autism-survey-report.html">Read the Autism Parent Survey Report</a>
+          <a class="btn ghost" href="contact.html">Get Involved</a>
+        </div>
+      </div>
+      <div class="media-right rv">
+        <img class="hero-art" src="images/free-worcester-logo.png" alt="Illustration of parents and a child at a rally holding signs that read Free Worcester and Free Woo" width="1100" height="929">
+      </div>
     </div>
   </div>
-  <h3>Five major areas of concern</h3>
-  <ul>
-    <li>Service access and navigation</li>
-    <li>School communication and IEP support</li>
-    <li>Behavioral health and related services</li>
-    <li>Language access and cultural responsiveness</li>
-    <li>Parent connection and collective advocacy</li>
-  </ul>
-  <h3>Central conclusion</h3>
-  <p>Worcester needs both immediate service reforms and a longer-term process through which parents can organize, institutions can be held accountable, and a more coherent social infrastructure can be built around autistic children and their families.</p>
-  <h3>How to Read This Report</h3>
-  <p>This report combines structured survey results, thematic analysis of open-ended responses, relevant research, and local institutional context. The survey findings remain the primary source of evidence. The research literature and local materials are used to interpret those findings and situate them within broader patterns and current Worcester conditions.</p>
-</section>
-<section id="executive-summary">
-  <h2 class="sec">1. Executive Summary</h2>
-  <p class="sec-lede">The report&rsquo;s central findings, argument, and proposed path forward.</p>
-  <p>This report documents what parents describe about the current organization of support for autistic children and their families in Worcester, MA. The findings make clear that families are faced with a system that is hard to access, move through, and rely on once they get there. The survey also shows that many parents want to stay connected and involved in advocacy, suggesting a promising foundation for sustained parent organization and systemic change.</p>
-  <p>Across the merged English- and Spanish-language survey data, four major themes came through clearly. <strong>First, families face serious barriers to getting services and support.</strong> Long waitlists, insurance barriers, weak coordination, unclear pathways, and practical barriers such as transportation and childcare all appear in the data. The data also demonstrate that the burden of finding, interpreting, coordinating, and sustaining support is being pushed back onto households.</p>
-  <p><strong>Second, schools remain a major site of both support and strain.</strong> As such, the school system is playing a dual role. For some families, school and special education are among the few places where meaningful help is available. At the same time, school communication, IEP follow-through, staffing, and advocacy needs remain some of the strongest pressure points. Some participating parents also described bullying, isolation, and school environments in which their children did not feel safe or fully included.</p>
-  <p><strong>Third, behavioral health and related support gaps emerged as one of the strongest themes in the dataset.</strong> Behavioral health needs are widespread in this sample, but the qualitative data make clear that access is often unstable, continuity is weak, and available supports do not always match what children and families actually need.</p>
-  <p><strong>Fourth, language access, trust, and ongoing parent support shape whether families can use systems at all.</strong> Interpretation barriers, lack of translated materials, cultural misunderstanding, and the need for more durable support all appear clearly in the data. Families are suffering from a lack of support they can actually understand, use, and rely on over time.</p>
-  <p>Taken together, these findings point to a system fragmented across service providers, schools, and support structures. Worcester therefore needs both stronger services and better coordination among them, with families able to influence how support is organized and held accountable. The experiences documented by participating families show what happens when that larger system does not function as a coherent whole.</p>
-  <p>Recent local political developments reinforce this picture. Worcester has a formal network of autism and special education programs, and parent organizing has already compelled public recognition of autism acceptance as an important district-wide concern. At the same time, recent changes to specialized educational programs have generated serious public debate over continuity, transparency, and the role of families in decisions affecting their children. The findings should therefore be read as evidence entering an active local struggle over how support for autistic children and their families will be organized.</p>
-  <p>Fortunately, the survey also shows that many parents want to stay connected and involved in advocacy, revealing the potential to deepen and strengthen existing parent organizing. This is one of the most important findings in the report. Our analysis of the data reveals the need for a committed process through which parents can stay engaged, institutions can be brought into an accountable relationship with families, and Worcester can move toward building the kind of village that, together, the families who participated in this study are telling us is missing.</p>
-  <p>For that reason, the central recommendation of this report is a commitment to a process: consolidating shared understanding of the findings, identifying and supporting parent leaders, bringing together the institutional actors who are in a position to move the needle, and developing a formal plan with a timeline, benchmarks, and accountability. That process should also include systematic research to learn from other communities and models that have developed more coherent approaches to autism support, coordinated care, school-family partnership, behavioral health integration, language access, and parent leadership.</p>
-  <p>The good news is that Worcester is not starting from nothing. The city has real institutions, dedicated professionals, and enough civic capacity to build a more coherent system of support. But recent program cuts attributed to long-term fiscal pressures reveal that the city is not simply a neutral partner standing on the same side as families and professionals. Public officials are mediating between the support families are demanding and fiscal and administrative pressures that may push in the opposite direction. That conflict should be acknowledged openly. Transparency requires the city to explain when budgetary priorities constrain or override continuity, access, and quality; to identify how those competing priorities are being weighed; and to give affected families a meaningful role before decisions are finalized. The question is whether the city is willing to make these competing pressures visible and remain publicly accountable for how it resolves them.</p>
 </section>
 
-<section id="introduction">
-  <h2 class="sec">2. Introduction</h2>
-  <p class="sec-lede">Why the study was undertaken and what its findings place at stake.</p>
-
-  <h3 id="sec-2-1">2.1 Study Purpose and Premise</h3>
-  <p>Free Worcester is a grassroots coalition dedicated to uplifting the community of Worcester, Massachusetts, through essential services, educational programming, civic engagement, and social justice advocacy. This report grew out of a collaborative, community-led research process organized by the Free Worcester Coalition in partnership with the Worcester Area Autism Task Force and its coalition partners, including parent leaders Nelly Medina, Natalie Cintron, and Hope Fisher.</p>
-  <p>The study formed part of a broader commitment to understanding community conditions, amplifying parent voice, and creating a basis for collective solutions in Worcester. It began from the premise that the best way to improve autism services is to listen to the parents and families attempting to access, navigate, and rely upon them. The survey was designed to identify the information needed by parents, caregivers, service providers, educational institutions, and community advocates to better understand the barriers families face and the forms of support they require.</p>
-  <p>The results support that premise. They identify key problems and point toward both immediate reforms and longer-term strategies for concerted action.</p>
-
-  <h3 id="sec-2-2">2.2 Autism Support and the Wider Social Infrastructure</h3>
-  <p>At one level, this survey documents a familiar set of problems. Parents describe long waitlists, unclear next steps, weak follow-through, inconsistent school communication, gaps in behavioral health support, language barriers, and the ongoing need for advocacy. Taken together, the survey findings point to a pattern of fragmentation across the institutions that shape children&rsquo;s lives. Many participating families described navigating systems that did not function as a coherent whole, and the burden of that fragmentation is being carried at the household level.</p>
-  <p>The experiences documented by families rearing autistic children are important in their own right, while also illuminating a broader issue in the city. Children require continuity, coordination, trust, communication, and durable support across multiple institutions, and when those supports are weak, families are forced to absorb the strain themselves. These autism-specific findings also provide a concentrated account of what happens when the larger social infrastructure surrounding children and families is inadequate.</p>
-  <p>In that sense, this report may be read in conjunction with the earlier Worcester parent research on remote learning during COVID-19 (Worcester Education Justice Alliance, 2020). That earlier report showed that Worcester families were already carrying household strain, communication breakdowns, emotional stress, and inadequate support for students with special needs and IEPs. The present survey documents a distinct but connected set of conditions facing families rearing autistic children. It shows how broader institutional weaknesses interact with the particular need for consistency, behavioral support, language access, specialized education, and long-term coordination.</p>
-  <p>The larger question is whether Worcester is willing to build the social infrastructure needed to share the work of rearing children, especially autistic children whose needs require a level of continuity and coordination that fragmented systems cannot provide.</p>
-
-  <h3 id="sec-2-3">2.3 Scope and Direction of the Report</h3>
-  <p>This report remains centered on the experiences of families rearing autistic children and on the particular educational, behavioral, clinical, linguistic, and institutional supports those children require. The broader implications developed throughout the report arise from those autism-specific findings rather than replacing them. The survey therefore speaks first to the organization of autism support in Worcester and, second, to what those findings reveal about the wider social infrastructure surrounding children and families.</p>
-  <p>The coalition understands the survey as Worcester&rsquo;s first community-led effort of this scope to systematically document barriers to autism support across service access, education, behavioral health, language, culture, and family advocacy. This report documents what participating families are experiencing, situates those experiences within their broader institutional context, and proposes a process through which parents, institutions, and community actors can improve immediate services while building durable structures of coordination and accountability. Its findings are intended to inform service providers and educational institutions, influence funding and policy decisions, promote stronger practices, and support continued parent leadership within Worcester&rsquo;s diverse autism community.</p>
-</section>
-
-<section id="methodology">
-  <h2 class="sec">3. Methodology</h2>
-  <p class="sec-lede">How the survey data were prepared, analyzed, interpreted, and contextualized.</p>
-
-  <h3 id="sec-3-1">3.1 Survey Development, Distribution, and Data Preparation</h3>
-  <p>The Free Worcester Coalition, in collaboration with the Worcester Area Autism Task Force and its coalition partners, including parent leaders Nelly Medina, Natalie Cintron, and Hope Fisher, organized and distributed the Autism Parent Survey through email, social media, and direct outreach to parents. The survey was open from January 2025 through January 2026 and received partial funding from a grant awarded by the Greater Worcester Community Foundation. Its development took six months, with questions crafted through consensus during the Autism Task Force&rsquo;s monthly online meetings.</p>
-  <p>The survey questions were designed to gather the information and data needed by members of the Worcester Area Autism Task Force Coalition to better understand how to serve parents, caregivers, and service providers facing challenges in connecting with autism-related services and supports. The data collected were intended to inform service providers and educational institutions, influence funding decisions, and promote best practices for supporting Worcester&rsquo;s diverse autism community.</p>
-  <p>The Autism Parent Survey was made available in English, Spanish, Portuguese, Albanian, Arabic, Vietnamese, Kiswahili, and Haitian Creole in an effort to reach families across Worcester's major language communities. However, only the English- and Spanish-language versions received enough responses to support meaningful analysis. This report is therefore based on a merged review of those two datasets. The survey generated both structured and open-ended data, making it possible to examine not only how often particular barriers and needs were reported, but also how parents described those experiences in their own words.</p>
-  <p>Before analysis began, the survey data went through a preparation process to create a usable working file. That process included reviewing the field structure of the original survey exports, separating analytic fields from non-analytic or administrative fields, assigning response IDs, and documenting exclusions. In the English-language dataset, 185 submitted responses were reviewed, and 10 responses were excluded because they appeared non-substantive, synthetic, or otherwise not appropriate to include in a credible findings report. In the Spanish-language dataset, 14 responses were reviewed, and 1 response was excluded because it was out of scope. After that cleaning process, the final merged analysis set included 188 retained responses: 175 from the English-language survey and 13 from the Spanish-language survey.</p>
-  <p>The survey included a mix of question types, including single-select items, yes/no items, multi-select questions, rating questions, and open-ended responses. Structured questions were summarized using counts and percentages. Because many items were optional, percentages were calculated on a question-by-question basis rather than assuming that every respondent answered every question. Multi-select questions were analyzed by counting how many respondents selected each option, which means percentages for those items do not sum to 100 percent.</p>
-  <p>For multi-select items, semantically equivalent English- and Spanish-language options were harmonized into common categories and counted once per respondent. Because some option labels themselves contained commas, categories were reconstructed from the original response strings rather than by treating every comma-delimited fragment as a separate option.</p>
-  <p>Eight English-language responses and three Spanish-language responses were retained with documented cautions because they remained sufficiently relevant and interpretable for descriptive analysis. A sensitivity check excluding these responses did not materially alter the report&rsquo;s principal findings.</p>
-
-  <h3 id="sec-3-2">3.2 Qualitative Analysis</h3>
-  <p>Open-ended responses were reviewed thematically. The analysis began with a close reading of the merged open-text responses, including translated Spanish-language responses alongside the original text where relevant. Rather than beginning with predetermined categories, themes were developed inductively from the responses themselves. As recurring patterns emerged, responses were grouped into themes such as service navigation, school communication, IEP confusion, behavioral health gaps, language access, caregiver strain, and parent support. Those themes were then reviewed alongside the structured survey results in order to identify the strongest cross-cutting findings in the dataset.</p>
-  <p>The qualitative coding process was conducted by the primary report author, Addison Turner, with input from members of the Free Worcester team that led the study. Where responses were difficult to interpret or could reasonably support more than one reading, they were analyzed to the best of the research team's ability based on the available context while remaining grounded in the language used by participants.</p>
-  <p>For purposes of the qualitative analysis, a coded open-ended response refers to one respondent&rsquo;s answer to one open-ended survey question that was assigned to a thematic category. A single answer could be assigned to more than one theme, and an individual respondent could contribute multiple coded responses to the same theme through answers to different questions. The report therefore presents both the number of coded open-ended responses associated with each theme and the number of unique respondents who discussed that theme. These figures should be understood as descriptive measures of how often themes appeared in the qualitative data, not as estimates of their prevalence among all Worcester families.</p>
-
-  <h3 id="sec-3-3">3.3 Scope and Interpretation</h3>
-  <p>This report does not claim to be a statistically representative study of all families in Worcester. It is better understood as a grounded parent survey that documents recurring experiences, pressures, and priorities among the families who participated. Its strength lies in the combination of breadth and specificity: the structured responses make it possible to identify recurring patterns, while the open-ended responses provide a richer understanding of how those patterns are experienced in everyday life. The goal of the analysis was not simply to describe the survey results but to understand what they reveal about the conditions under which families are trying to rear autistic children in Worcester.</p>
-  <p>An exploratory age-based analysis was also conducted. Responses identifying a single age range were grouped into four broader bands: ages 2&ndash;6, ages 7&ndash;11, ages 12&ndash;17, and ages 19 and older. Five responses identifying children in multiple age ranges were not included in the single-band comparisons. Because age information was missing from 31 responses and the resulting groups were uneven, especially for children ages 19 and older, these comparisons should be treated as descriptive patterns within the survey rather than as population estimates or evidence that age itself caused the reported differences.</p>
-
-  <h3 id="sec-3-4">3.4 Targeted Narrative Review</h3>
-  <p>To help interpret the survey findings, the research team conducted a targeted narrative review of relevant literature on autism service systems, disability studies, care coordination, family navigation, caregiver support, language access, behavioral health, and parent engagement. Rather than serving as an independent body of evidence overriding the survey itself, this review provided a broader research context within which to situate the findings, evaluate possible interpretations, and inform the development of recommendations. Throughout the analysis, parent testimony remained the primary source of evidence, while the literature was used to assess how the experiences reported in Worcester related to broader patterns identified in existing research.</p>
-
-  <h3 id="sec-3-5">3.5 Local Institutional and Political Context</h3>
-  <p>To situate the survey findings within their local institutional and political setting, the analysis also included a targeted review of Worcester Public Schools program descriptions, School Committee actions, district announcements, local news coverage, and community discussions related to autism services and special education. These materials were not treated as equivalent to the survey responses or used to override what parents reported. Rather, they were used to document the formal structure of local services, recent policy developments, public commitments made by institutions, and ongoing debates surrounding those developments.</p>
-  <p>Official district materials were used primarily to establish how programs, services, and decisions have been formally described. News reporting and community discussions were used to document the concerns, questions, and perspectives raised by parents, educators, advocates, and other stakeholders. Reading these sources alongside the survey made it possible to distinguish between the formal existence of programs and families' practical ability to understand, access, navigate, and rely upon them in practice.</p>
-
-  <h3 id="sec-3-6">3.6 Study Limitations</h3>
-  <p>This report should be understood as a grounded qualitative and descriptive survey rather than a statistically representative study of all families in Worcester. While the findings identify recurring patterns across the experiences of participating families, they should not be interpreted as estimates of the prevalence of those experiences throughout the city's entire population. Instead, the survey provides insight into the kinds of barriers, pressures, and priorities reported by the families who chose to participate.</p>
-</section>
-<section id="data-results">
-  <h2 class="sec">4. Data and Results</h2>
-  <p class="sec-lede">What participating families reported about access, schools, behavioral health, language, and advocacy.</p>
-  <p>Across the merged English- and Spanish-language survey data, four major problem areas emerged clearly: (1) barriers to getting services, (2) school communication and advocacy needs, (3) behavioral health and related support gaps, and (4) language access and cultural responsiveness. A fifth, cross-cutting finding was the substantial interest participants expressed in continued peer connection and advocacy. The survey therefore documents both the barriers participating families face and the potential foundation for a more sustained process of parent organization and collective action.</p>
-
-  <h3 id="sec-4-1">4.1 Barriers to Getting Services and Support</h3>
-  <p>One of the clearest patterns in the survey is that many families are left to figure the system out on their own. Even at the front end, parents often described having to piece together information from different places and guess at what the next step was supposed to be. In the structured data, the most common source of first guidance was self-directed research or online searching (26 respondents, 21.0%), followed by school or special education (24 respondents, 19.4%). It suggests that families are often left to trailblaze the way forward for themselves in the absence of a clear path into services.</p>
-
-  <div class="callout voice">
-    <span class="tag">Parent Voice</span>
-    <p class="quote">&ldquo;Transparency / Not told of ALL of the supports available and my rights.&rdquo;</p>
-  </div>
-
-  <p>The barriers question reinforces the image of an arduous path forward. Among the 178 respondents who answered the question, 69 respondents (38.8%) reported being on a waiting list without adequate follow-up, either because they were not hearing back or because they had not received updates. Insurance was identified as a barrier by 46 respondents (25.8%), while 30 respondents (16.9%) said they needed help navigating or understanding information. In the qualitative review, service navigation and unclear next steps appeared in 73 coded open-ended responses contributed by 53 unique respondents. Provider knowledge or autism-specific competence appeared in 99 coded open-ended responses contributed by 66 unique respondents.</p>
-
-  <div class="callout">
-    <span class="tag">Survey Data</span>
-    <div class="stat-line"><span class="big">38.8%</span><span class="rest">reported being on a waiting list without adequate follow-up.</span></div>
-    <div class="stat-line"><span class="big">25.8%</span><span class="rest">identified insurance as a barrier</span></div>
-    <div class="stat-line"><span class="big">17.4%</span><span class="rest">identified transportation as a barrier.</span></div>
-  </div>
-
-  <figure class="chart-card" id="fig1">
-    <p class="chart-title">Most Frequently Reported Barriers to Accessing Services</p>
-    <div class="chart" id="chart-barriers" data-chart="barriers"></div>
-    <details class="data-table">
-      <summary>View this figure as a data table</summary>
-      <table class="simple">
-        <caption class="visually-hidden">Most Frequently Reported Barriers to Accessing Services</caption>
-        <thead><tr><th scope="col">Barrier</th><th scope="col">Number of respondents</th><th scope="col">Percent of 178</th></tr></thead>
-        <tbody>
-          <tr><td>Waiting list without adequate follow-up</td><td>69</td><td>38.8%</td></tr>
-          <tr><td>Insurance barrier</td><td>46</td><td>25.8%</td></tr>
-          <tr><td>Interpretation not available</td><td>42</td><td>23.6%</td></tr>
-          <tr><td>Written documents not translated</td><td>38</td><td>21.3%</td></tr>
-          <tr><td>Transportation barrier</td><td>31</td><td>17.4%</td></tr>
-          <tr><td>Need help navigating information</td><td>30</td><td>16.9%</td></tr>
-          <tr><td>Insufficient inclusion in camps/childcare (under 6)</td><td>30</td><td>16.9%</td></tr>
-          <tr><td>No childcare that could accommodate child&rsquo;s needs</td><td>27</td><td>15.2%</td></tr>
-        </tbody>
-      </table>
-    </details>
-    <figcaption><strong>Figure 1. Most Frequently Reported Barriers to Accessing Services.</strong> Based on 178 respondents who answered the barriers question. The most commonly reported barrier was being on a waiting list without adequate follow-up, followed by insurance barriers, lack of interpretation, untranslated written information, and practical access barriers such as transportation and childcare.</figcaption>
-  </figure>
-
-  <p>Taken together, these results point to a problem that is bigger than simple service scarcity. Many families are saying that the path into services is unclear, poorly coordinated, and difficult to interpret. Sometimes that came through in very direct terms. One parent simply described the need &ldquo;to figure out where I can test my child for autism.&rdquo; Another named the issue as &ldquo;Transparency / Not told of ALL of the supports available and my rights.&rdquo; Those responses get at the same underlying problem that even when services exist, families are often left without a clear way to find or move through them.</p>
-  <p>Practical barriers are part of this scenario as well. Transportation was selected as a barrier by 31 respondents (17.4%), insufficient inclusion in camps and childcare settings for children under six by 30 respondents (16.9%), and the inability to find childcare that could accommodate a child&rsquo;s needs by 27 respondents (15.2%).</p>
-
-  <div class="callout">
-    <span class="tag">Key Finding</span>
-    <p>Families are left to navigate unclear pathways, weak follow-up, and disconnected institutions.</p>
-  </div>
-
-  <h3 id="sec-4-2">4.2 School Communication, Advocacy, and IEP Navigation</h3>
-  <p>Schools play a contradictory dual role in the results, appearing as both a meaningful source of help and a major site of frustration. In the structured data, schools, special education, or other educational institutions were collectively the most common source of help, named by 47 respondents (38.5%). At the same time, the qualitative data show that school communication, IEP follow-through, staffing, and advocacy needs remain among the strongest pressure points in the survey.</p>
-
-  <div class="callout voice">
-    <span class="tag">Parent Voice</span>
-    <p class="quote">&ldquo;The special education department was supportive, but regular staff do not review the IEP.&rdquo;</p>
-  </div>
-
-  <p>Here it is appropriate to note that an IEP, once accepted, establishes legally enforceable obligations for the school district. Federal regulations require that the IEP be accessible to every teacher and service provider responsible for its implementation and that each person understand their specific responsibilities, including the accommodations, modifications, and supports that must be provided. Massachusetts regulations likewise require school districts to implement all accepted elements of an IEP without delay. When staff do not review or consistently carry out an IEP, the problem is weak communication and is also a matter of legal compliance and the protection of a student&rsquo;s educational rights. This is a critical part of the institutional context in which to interpret the results.</p>
-  <p>In the coded responses, school communication and special education coordination appeared in 207 coded open-ended responses contributed by 95 unique respondents. IEP process confusion and advocacy needs appeared in 65 coded open-ended responses contributed by 43 unique respondents. School staffing or service-intensity gaps appeared in 77 coded open-ended responses contributed by 27 unique respondents. Together, these findings make school communication and special education coordination one of the strongest patterns in the mixed dataset.</p>
-  <p>Bullying and school safety also emerged as a distinct, though secondary, concern. The broader qualitative category of bullying, school safety, or poor school fit appeared in 35 coded open-ended responses contributed by 32 unique respondents. Because this category also includes unsafe conditions and school-placement concerns, these figures should not be interpreted as 32 reports of bullying alone. Nevertheless, several respondents named bullying directly, including one who said that &ldquo;bullying was the worst&rdquo; and another who described their child being bullied on the school bus. These responses show that, for some families, the problems encountered at school are not limited to communication or IEP procedure. They also concern whether children are safe, included, and able to participate in school without mistreatment or isolation.</p>
-  <p>The structured data support that reading. In response to the question about school-based opportunities, 50 respondents (29.2%) said they were not aware of these opportunities. So while many families reported attending educational parent trainings or SPED PAC-related activities, a significant portion of respondents still appear disconnected from those channels or unaware that they exist.</p>
-
-  <div class="callout">
-    <span class="tag">Survey Data</span>
-    <div class="stat-line"><span class="big">38.5%</span><span class="rest">identified schools, special education, or other educational institutions as their most common source of help.</span></div>
-    <div class="stat-line"><span class="big">29.2%</span><span class="rest">were unaware of school-based opportunities.</span></div>
-  </div>
-
-  <p>The open-ended responses further concretize this pattern. One respondent answered the IEP-related question with just four words: &ldquo;An advocate to be present.&rdquo; Another described the contradiction within school support this way: &ldquo;Special education department was supportive but regular staff do not review the IEP.&rdquo; This sharpens the issue raised by the survey. The question is whether schools are meeting their legal responsibility to ensure that staff understand and carry out the services, accommodations, modifications, and supports contained in each student&rsquo;s accepted IEP.</p>
-
-  <div class="callout">
-    <span class="tag">Key Finding</span>
-    <p>Schools are both a major source of support and a major site of strain. Families&rsquo; concerns extend from communication and IEP implementation to bullying, safety, belonging, and poor school fit. Formal rights and services matter only when they are consistently implemented and children are safe and included in practice. Because an accepted IEP establishes legally enforceable obligations, inconsistent staff review or implementation is a student-rights and institutional-compliance issue.</p>
-  </div>
-
-  <h3 id="sec-4-3">4.3 Behavioral Health and Co-Occurring Service Gaps</h3>
-  <p>Among the 181 respondents who answered whether their child also struggled with behavioral health challenges, 143 respondents (79.0%) said yes. Among those 143 respondents, 119 (83.2%) reported having used behavioral health services, while 24 (16.8%) had not. This indicates both that behavioral health need is widespread in this sample and that many families are already trying to obtain help, while a meaningful group reporting behavioral health challenges had not used services.</p>
-
-  <div class="callout">
-    <span class="tag">Survey Data</span>
-    <div class="stat-line"><span class="big">79.0%</span><span class="rest">reported that their child also experienced behavioral health challenges.</span></div>
-    <div class="stat-line"><span class="big">83.2%</span><span class="rest">Among those families, 83.2% had used behavioral health services.</span></div>
-  </div>
-
-  <p>At the same time, the qualitative data make clear that contact with services does not mean families feel adequately supported. &ldquo;Behavioral health service gaps&rdquo; was the most frequently assigned theme in the qualitative review, appearing in 234 coded open-ended responses contributed by 78 unique respondents. Related themes reinforce the same pattern: missing social, emotional, and life-skills supports appeared in 87 coded open-ended responses contributed by 59 unique respondents. Caregiver health or stress needs appeared in 96 coded open-ended responses contributed by 54 unique respondents.</p>
-
-  <div class="callout voice">
-    <span class="tag">Parent Voice</span>
-    <p class="quote">&ldquo;I&rsquo;m happy that I have a therapist for my son, that is one of the very real issues trying to get them and keep them.&rdquo;</p>
-  </div>
-
-  <p>One parent described how fragile access can feel even when support is technically in place: &ldquo;I&rsquo;m happy that I have a therapist for my son, that is one of the very real issues trying to get them and keep them.&rdquo; Another named a more specific gap: &ldquo;Trying to find a speech therapist that does in-home services for my son after age 3, I am still currently looking.&rdquo; These responses point to an unmet need for therapy in addition to a broader set of supports around regulation, peer connection, and life skills.</p>
-  <p>These service gaps also contribute to caregiver strain. Families are carrying school demands, appointments, stress, and service instability at the same time. Behavioral health should therefore be understood as both a child-level and family-level support issue.</p>
-
-  <h3 id="sec-4-4">4.4 Language Access, Trust, and Cultural Responsiveness</h3>
-  <p>Language access is one of the conditions shaping whether families can use services at all. Among the 178 respondents who answered the barriers question, 42 respondents (23.6%) reported that spoken interpretation services were not available in their language, and 38 respondents (21.3%) reported that written documents were not translated into a language they could use or understand. Respondents also selected barriers related to autism not being understood or accepted in their culture (32 respondents, 18.0%) and staff not understanding their culture (25 respondents, 14.0%). This suggests that resolving the problem at the level of language does not necessarily resolve it at the level of culture.</p>
-  <p>The qualitative data reinforce that point. Language access and translation appeared in 63 coded open-ended responses contributed by 38 unique respondents. Cultural responsiveness and stigma appeared in 25 coded open-ended responses contributed by 25 unique respondents. One Spanish-language respondent put it plainly: &ldquo;Many institutions and programs only have information in English. Even therapists often only speak English, and it is difficult to have direct communication.&rdquo; That is a direct, inequitable barrier to care.</p>
-
-  <div class="callout voice">
-    <span class="tag">Parent Voice</span>
-    <p class="quote">&ldquo;Many institutions and programs only have information in English. Even therapists often only speak English, and it is difficult to have direct communication.&rdquo;</p>
-    <p>(Translated from Spanish)</p>
-  </div>
-
-  <p>Taken together, these findings demonstrate the need for support that participating families can understand and use, delivered through accessible channels and sustained beyond the first point of contact.</p>
-
-  <div class="callout">
-    <span class="tag">Key Finding</span>
-    <p>Access is not meaningful unless support is stable, appropriate, culturally responsive, and available in a language families can understand and use.</p>
-  </div>
-
-  <h3 id="sec-4-5">4.5 Parent Connection, Advocacy, and the Potential for Organization</h3>
-  <p>A major cross-cutting finding is that many participating parents want continued connection, mutual support, and opportunities to advocate beyond the survey itself. Parent support and peer connection appeared in 52 coded open-ended responses contributed by 44 unique respondents, while 123 respondents (69.5%) said they would like to become involved in advocacy work. Parents also directly requested spaces where families could connect, including &ldquo;opportunities to gather with other families who have kids on spectrum&rdquo; and &ldquo;an autism support group for other parents specific to my child&rsquo;s school.&rdquo;</p>
-
-  <div class="callout voice">
-    <span class="tag">Parent Voice</span>
-    <p class="quote">&ldquo;Opportunities to gather with other families who have kids on spectrum.&rdquo;</p>
-  </div>
-
-  <p>The survey also provides practical information about how continued engagement could begin. Respondents most often identified email, selected by 93 respondents (52.0%), and phone, selected by 58 respondents (32.4%), as the best ways to receive information.</p>
-
-  <div class="callout">
-    <span class="tag">Survey Data</span>
-    <div class="stat-line"><span class="big">69.5%</span><span class="rest">expressed interest in becoming involved in advocacy.</span></div>
-    <div class="stat-line"><span class="big">52.0%</span><span class="rest">preferred receiving information by email.</span></div>
-  </div>
-
-  <p>These findings identify substantial interest and a potential foundation for building a sustained parent network. A sustained process of outreach, relationship-building, leadership development, and accessible parent-to-parent connection would be necessary to determine whether that expressed interest can develop into lasting collective capacity.</p>
-
-  <div class="callout">
-    <span class="tag">Key Finding</span>
-    <p>Parent interest creates a real opening for collective action, but lasting organization will require intentional outreach, accessible participation, leadership development, and material support.</p>
-  </div>
-
-  <h3 id="sec-4-6">4.6 Age and the Changing Form of Family Support Needs</h3>
-  <p>Age-based comparison suggests that the major problems documented in this report do not appear in exactly the same form throughout childhood, adolescence, and the transition into adulthood. These differences should be interpreted cautiously because the age groups were uneven and the survey was not designed to produce statistically representative age comparisons. Nevertheless, several descriptive patterns are visible.</p>
-
-  <figure class="chart-card" id="fig2">
-    <p class="chart-title">Age Distribution of Children Represented in the Survey</p>
-    <div class="chart" id="chart-ages" data-chart="ages"></div>
-    <details class="data-table">
-      <summary>View this figure as a data table</summary>
-      <table class="simple">
-        <caption class="visually-hidden">Age Distribution of Children Represented in the Survey</caption>
-        <thead><tr><th scope="col">Age group</th><th scope="col">Number of respondents</th></tr></thead>
-        <tbody>
-          <tr><td>Ages 2&ndash;3</td><td>29</td></tr>
-          <tr><td>Ages 3&ndash;4</td><td>35</td></tr>
-          <tr><td>Ages 5&ndash;6</td><td>14</td></tr>
-          <tr><td>Ages 7&ndash;8</td><td>23</td></tr>
-          <tr><td>Ages 9&ndash;11</td><td>14</td></tr>
-          <tr><td>Ages 12&ndash;13</td><td>10</td></tr>
-          <tr><td>Ages 14&ndash;15</td><td>13</td></tr>
-          <tr><td>Ages 16&ndash;17</td><td>6</td></tr>
-          <tr><td>Ages 19&ndash;20</td><td>1</td></tr>
-          <tr><td>Age 20+</td><td>7</td></tr>
-          <tr><td>Multiple age groups</td><td>5</td></tr>
-        </tbody>
-      </table>
-    </details>
-    <figcaption><strong>Figure 2. Age Distribution of Children Represented in the Survey.</strong> Age information was provided by 157 respondents. Five respondents selected more than one age range. The concentration of responses among families with younger children should be considered when interpreting the report&rsquo;s age-based findings.</figcaption>
-  </figure>
-
-  <p>Among families with children ages 2&ndash;6, the coded responses concentrated heavily on communication and coordination with schools and special education, confusion or need for advocacy around the IEP process, provider knowledge, and the difficulty of identifying an appropriate pathway into services. Childcare and the lack of inclusive camps and care settings also appeared as particularly relevant practical concerns. These responses reflect the demands families encounter while entering early intervention, diagnosis, school-based services, and formal special education systems.</p>
-  <p>Among families with children ages 7&ndash;11, bullying, school safety, and poor school fit became especially visible. The broader qualitative category of bullying, school safety, or poor fit appeared in responses from 17 of the 37 respondents in this age group. The structured school question shows the same concentration, with numerous respondents in the 7&ndash;11 group directly selecting bullying as a need faced at their child&rsquo;s school.</p>
-
-  <figure class="chart-card" id="fig3">
-    <p class="chart-title">Reported Behavioral Health Challenges by Age Group</p>
-    <div class="chart" id="chart-bh" data-chart="bh"></div>
-    <details class="data-table">
-      <summary>View this figure as a data table</summary>
-      <table class="simple">
-        <caption class="visually-hidden">Reported Behavioral Health Challenges by Age Group</caption>
-        <thead><tr><th scope="col">Age group</th><th scope="col">Percent reporting behavioral health challenges</th><th scope="col">Respondents</th></tr></thead>
-        <tbody>
-          <tr><td>Ages 2&ndash;6</td><td>69.3%</td><td>52 of 75</td></tr>
-          <tr><td>Ages 7&ndash;11</td><td>91.9%</td><td>34 of 37</td></tr>
-          <tr><td>Ages 12&ndash;17</td><td>79.3%</td><td>23 of 29</td></tr>
-          <tr><td>Ages 19+</td><td>57.1%</td><td>4 of 7</td></tr>
-        </tbody>
-      </table>
-    </details>
-    <figcaption><strong>Figure 3. Reported Behavioral Health Challenges by Age Group.</strong> Percentages are descriptive of participating families and should not be interpreted as age-specific prevalence estimates for Worcester. Reported behavioral health challenges were especially prominent among families with children ages 7&ndash;11 in this survey. The ages 19 and older group is small and should be interpreted cautiously.</figcaption>
-  </figure>
-
-  <p>Behavioral health challenges were also particularly prominent among families of school-age children. Thirty-four of the 37 respondents with children ages 7&ndash;11, or 91.9 percent, reported that their child experienced behavioral health challenges. Among respondents with children ages 12&ndash;17, 23 of 29, or 79.3 percent, reported the same, compared with 52 of the 75 respondents with children ages 2&ndash;6 who answered the question, or 69.3 percent. These differences should not be treated as estimates of age-specific prevalence in Worcester. They do, however, suggest that behavioral health needs were especially visible among families of school-age children in this survey.</p>
-  <p>For families with children ages 12&ndash;17, the qualitative data placed greater emphasis on service navigation, behavioral health continuity, caregiver strain, social and emotional development, life skills, and preparation for the transition out of school-based systems. Parents described difficulty finding age-appropriate peer and social opportunities, obtaining practical life experiences, coordinating services, and preparing for housing, employment, further education, and adult support. The responses suggest that adolescence does not replace earlier service and school problems but adds a new layer of transition planning and uncertainty. Examples include requests for practical social and emotional groups, life experiences outside school, coordinated support, and help preparing for what comes after school-based eligibility.</p>
-  <p>The group representing children and young adults ages 19 and older was too small for meaningful percentage comparison. Still, several of these respondents described a recognizable set of transition-age concerns, including guardianship, SSI and other legal paperwork, higher education, adult services, housing, employment, service eligibility, and the loss of supports after aging out of school. One parent wrote that &ldquo;everything goes away after the transition age, but these young adults still need the supports,&rdquo; while others described the legal aspects of transition, the need for information about higher education, and services ending at ages 21 or 22.</p>
-  <p>Taken together, these patterns suggest that Worcester should not approach autism support as a single, uniform service pathway. Families need continuity across developmental stages, but the form of support must change as children move from diagnosis and early intervention into school and peer environments, through adolescence, and into adult life. A coherent system should anticipate these transitions rather than requiring families to reconstruct a new support network at every stage.</p>
-</section>
-<section id="local-context">
-  <h2 class="sec">5. Local Institutional and Political Context</h2>
-  <p class="sec-lede">How Worcester&rsquo;s institutions, public decisions, and competing priorities shape family experience.</p>
-  <p>The survey findings emerged within a city that already has a formal network of autism and special education programs, an active history of parent advocacy, and an ongoing struggle over the future of specialized supports. This context clarifies the institutional terrain parents are navigating and helps explain why the barriers they reported cannot be reduced to individual confusion or isolated administrative failures. At the same time, the presence of programs, advocacy, and public discussion should not be treated as evidence that the current approach is adequate. These features show that an institutional infrastructure exists and that families are actively pressing for improvement, but they do not resolve the access, coordination, and continuity gaps identified in the survey. The central contradiction is that services may formally exist while remaining difficult for families to understand, navigate, or rely upon in practice.</p>
-
-  <figure class="photo">
-    <img src="images/wps-classroom-desks.jpg" alt="Students working on laptops at their desks in a Worcester Public Schools classroom, one raising a hand" width="1280" height="720" loading="lazy">
-    <figcaption>Students at work in a Worcester Public Schools classroom. Photograph courtesy of Worcester Public Schools.</figcaption>
-  </figure>
-
-  <h3 id="sec-5-1">5.1 Formal Services and Lived Access</h3>
-  <p>Worcester Public Schools formally describes a range of specialized services for autistic students and students with related support needs. These include Autism/Life Skills and Specialized Approaches to Individual Learning, commonly known as SAIL, supported by special education teachers, paraeducators, Board Certified Behavior Analysts, and related-service providers. Autism/Life Skills is described as providing individualized instruction, functional skills development, behavioral support, and related services required by a student&rsquo;s individualized education program (Worcester Public Schools, n.d.; Gates Lane School of International Studies, n.d.).</p>
-  <p>The survey does not describe a city in which services are entirely absent. It documents a gap between formal availability and lived access. Programs may exist while families remain unaware of them, uncertain how to enter them, or unable to coordinate support across schools, clinical providers, behavioral health services, and community organizations. The issue is therefore whether families can identify, navigate, and rely upon them in practice.</p>
-
-  <h3 id="sec-5-2">5.2 Parent Advocacy and the 2025 Autism Resolution</h3>
-  <p>In April 2025, a parent-led public petition proposed a Worcester School Committee resolution recognizing Autism Acceptance and Awareness Month. The resolution received public support and was passed unanimously by the committee (Doyle, 2025). This history shows that autism-related concerns were already the subject of local organizing and public debate before this report was completed and that institutional recognition emerged through the work of parents and community advocates rather than spontaneously.</p>
-
-  <div class="callout">
-    <span class="tag">Local Context</span>
-    <p>In April 2025, parent organizing led the Worcester School Committee to unanimously adopt a resolution recognizing Autism Acceptance and Awareness Month.</p>
-  </div>
-
-  <p>The April 2025 resolution establishes a public standard against which implementation can be assessed. The resolution also establishes a basis for assessing whether public recognition is being translated into culturally and linguistically accessible information, meaningful professional development for educators, stronger responses to bullying, and more inclusive school practices. Answering those questions will require public documentation, measurable benchmarks, and continued review by the families most directly affected.</p>
-  <p>The survey does not establish how prevalent bullying is across Worcester schools, but it confirms that bullying and school safety are concrete concerns for a subset of participating families. The resolution&rsquo;s implementation should therefore be assessed by whether schools document incidents, respond effectively, improve student and staff understanding, and demonstrate that autistic students are safer and more fully included.</p>
-  <p>The organizing that produced the resolution also provides important context for one of the survey&rsquo;s most significant findings: a large majority of participants expressed interest in continued peer networking and advocacy. The survey systematically documents broader interest in parent leadership and collective advocacy beyond the parents already beginning to shape local discussion.</p>
-
-  <h3 id="sec-5-3">5.3 The 2026 Restructuring of Specialized Programs</h3>
-  <p>The urgency of these questions increased in May 2026, when Worcester Public Schools announced that the Academic Center for Transition and Worcester Alternative School would close at the end of the school year. Both programs served students with individualized education programs in therapeutic and individualized settings. The district announced that affected students would be referred to programs operated by the Central Massachusetts Collaborative and cited fiscal constraints and the reduction of duplicated services as reasons for the changes (Worcester Public Schools, 2026). Worcester Public Schools did not describe these schools as autism-specific programs. They are nevertheless relevant to the larger educational environment in which autistic students and their families seek support, particularly because they served students with complex academic, behavioral, and therapeutic needs.</p>
-
-  <div class="callout">
-    <span class="tag">Local Context</span>
-    <p>In May 2026, Worcester Public Schools announced the closure of the Academic Center for Transition and Worcester Alternative School, citing fiscal constraints and the reduction of duplicated services.</p>
-  </div>
-
-  <p>Parents, educators, and community members publicly challenged the closures. Their concerns included the possible disruption of trusted relationships, established routines, individualized supports, and the stability required by students with significant needs. Participants in the public debate also questioned the transparency of the decision-making process and the extent to which affected families and staff had been meaningfully involved before the changes were announced (Collings, 2026).</p>
-  <p>The district framed the changes primarily in terms of fiscal responsibility, efficiency, and avoiding duplication. Families and educators emphasized continuity, relationships, stability, and the particular needs of individual students. These concerns are not necessarily addressed by determining whether a similar service technically exists somewhere else. A placement may appear equivalent administratively while producing a very different experience for a child and family.</p>
-  <p>The debate reveals competing interests in the organization of support. The district is responding to fiscal and administrative pressures that may favor consolidation and cost reduction, while families and professionals are emphasizing continuity, stability, individualized support, and service quality. These priorities may not always be reconcilable. The city should therefore be transparent about how it weighs them, whose needs are subordinated when conflicts arise, and how affected families can participate before decisions are finalized.</p>
-
-  <h3 id="sec-5-4">5.4 Implications for the Survey Findings</h3>
-  <p>The local context sharpens the meaning of the survey findings. Parents&rsquo; difficulties concern the relationships between programs, the stability of those programs, the flow of information between institutions, and the degree of influence families possess over decisions that reshape their children&rsquo;s lives. A system can contain numerous programs, trained professionals, and public commitments while still remaining difficult to navigate and unreliable as a whole. This happens when the connections between its parts are weak, when families are required to perform the work of coordination themselves, and when major institutional decisions are made at a distance from the people who will live with their consequences.</p>
-  <p>The local record therefore supports the report&rsquo;s broader conclusion: Worcester needs stronger connective tissue between schools, providers, public agencies, community organizations, and families. That requires changes not only in service delivery but also in how institutions share information, make decisions, distribute authority, and remain accountable to the public.</p>
-  <p>To the extent that some of the local developments described here occurred after the survey was administered, they should not be presented as causes of the responses. They are subsequent developments that heighten the relevance of what parents had already reported and demonstrate how questions of access, continuity, trust, and family participation continue to unfold in practice.</p>
-</section>
-
-<section id="background-research">
-  <h2 class="sec">6. Background Research and Systemic Context</h2>
-  <p class="sec-lede">How the Worcester findings relate to broader research on disability, caregiving, and fragmented support systems.</p>
-
-  <h3 id="sec-6-1">6.1 National Research and Fragmented Support Systems</h3>
-  <p>Research on autism service systems, disability, care coordination, family navigation, language access, and caregiver support provides a broader context for situating the Worcester findings, testing possible interpretations, and developing informed recommendations. Nationally, autism identification has continued to rise (Shaw et al., 2025). Research also documents persistent disparities in geographic access and service use, including barriers connected to race, ethnicity, and language (Liu et al., 2023; Smith et al., 2020; St. Amant et al., 2018). Other studies identify continuing problems in care coordination, continuity, and the integration of educational, clinical, behavioral health, and community supports (Jafarabadi et al., 2021; Parker et al., 2020; Todorow et al., 2018).</p>
-
-  <div class="callout">
-    <span class="tag">Research Context</span>
-    <p>National research documents persistent disparities in service access, along with continuing problems in care coordination, continuity, and the integration of educational, clinical, behavioral health, and community support.</p>
-  </div>
-
-  <p>Within this broader pattern, parents are often required to act as navigators, case managers, advocates, translators, school negotiators, schedulers, therapist finders, and long-term strategists, sometimes all at once. In the Worcester dataset, these demands appear as a transfer of coordination, navigation, and advocacy work from institutions onto private households. Clearer pathways, better follow-up, stronger school communication, improved language access, and more behavioral health support are all necessary. But by themselves, they treat the problem primarily as an administrative malfunction. The data point to the persistent insufficiency of the collective structures required to support autistic children and their families.</p>
-
-  <h3 id="sec-6-2">6.2 Disability, Environment, and Institutional Barriers</h3>
-  <p>This is where the social model of disability is helpful (Oliver, 1990; Goering, 2015). The social model does not require denying the real embodied, developmental, sensory, communicative, or behavioral support needs that autistic children may experience. Rather, it directs attention to how social barriers and institutional arrangements interact with those needs and can make them more difficult for children and families to navigate.</p>
-  <p>Much of what participating families describe is not attributable to autism alone, but to inaccessible information, fragmented services, inadequate accommodations, weak coordination, and institutions that transfer the work of securing support back onto caregivers. In that sense, the surrounding environment does not create every support need, but it can substantially intensify the disabling conditions experienced by children and their families.</p>
-
-  <h3 id="sec-6-3">6.3 Social Reproduction and Caregiver Burden</h3>
-  <p>The survey also points to the question of social reproduction. The labor required to keep children safe, regulated, educated, connected to care, and moving forward does not disappear when institutions fail. It is transferred into the home as unpaid care, stress, time, vigilance, transportation, advocacy, and constant follow-up. The survey does not independently measure how this work is distributed within participating households. However, research on autism caregiving has found that women, especially mothers, often provide more hours of care and experience greater objective and subjective burden than men. U.S. research also indicates that the employment and earnings consequences associated with raising an autistic child fall primarily on mothers rather than fathers (Cidav et al., 2012; Herrero et al., 2024). The institutional failures reflected in this survey should therefore be situated within the broader gendered organization of the everyday labor required to sustain family life.</p>
-
-  <h3 id="sec-6-4">6.4 Promising Directions and Comparative Learning</h3>
-  <p>At the same time, the research suggests that more promising directions are not one-off information interventions or better referral sheets alone, but family navigation, coordinated and family-centered care, caregiver training embedded in daily life, and integrated pathways with real continuity and accountability. The literature also points toward peer support and co-design with families as important emerging directions, though the evidence base for those remains less developed (Attar et al., 2025; Fulceri et al., 2023; Lee et al., 2024; Li et al., 2025; Pacione, 2022; Todorow et al., 2018). What these approaches share is that they aim to distribute coordination and responsibility more effectively around the child and family.</p>
-
-  <div class="callout">
-    <span class="tag">Research Context</span>
-    <p>Promising approaches include family navigation, coordinated and family-centered care, caregiver training embedded in daily life, integrated service pathways, peer support, and family co-design.</p>
-  </div>
-
-  <p>That does not mean there is some perfect model elsewhere waiting to be copied into Worcester. There is no plug-and-play solution. But it does mean that Worcester should undertake systematic learning from other communities, systems, and jurisdictions that have built more coherent approaches to autism support, school coordination, language access, behavioral health integration, and parent leadership. The point would be to study what has been built elsewhere, under what conditions, with what results, and what elements are actually transferable here.</p>
-
-  <h3 id="sec-6-5">6.5 Worcester Context and the Village as Social Infrastructure</h3>
-  <p>This survey also needs to be placed in relation to the earlier Worcester parent report on remote learning during COVID-19 (WEJA, 2020). That report identified four major themes: household challenges, communication challenges, mental and emotional well-being concerns, and remote learning challenges. It showed that the crisis of distance education did not create structural inequality from nothing. It exposed and intensified weaknesses that were already present. The earlier report provides useful context for interpreting the present findings, but this survey documents a distinct set of autism-specific educational, behavioral, clinical, linguistic, and caregiving needs. Those needs are not detached from the larger condition of child-rearing in Worcester, but neither should they be reduced to it. The present survey shows how broader problems of fragmentation and inadequate support take on particular forms in the lives of families rearing autistic children, where the need for continuity, coordination, trust, language access, behavioral support, and specialized services is especially pronounced.</p>
-  <p>In that sense, the two reports support one another. The earlier report showed that Worcester families were already carrying scheduling strain, weak school communication, emotional stress, and inadequate support for students with special needs and IEPs. The present survey extends the local research record by documenting how autism, behavioral health, disability, and long-term care coordination generate particular demands that fragmented systems are poorly equipped to meet. These findings are consistent with the earlier Worcester research, but they also identify needs and contradictions specific to families rearing autistic children.</p>
-  <p>What is missing is the village that it still takes to raise a child. This should not be understood sentimentally. The &ldquo;village&rdquo; means a real social arrangement in which the labor, responsibility, and knowledge required to rear children are shared across durable relationships, institutions, and organized people. Parents are not left to confront schools, providers, and agencies as isolated individuals. Communication is sustained through relationships, accountability does not depend on which family can push hardest, and the work of rearing children is treated as collective work. That village does not yet exist at the level participating families need. The task is to develop the organized capacity required to address existing contradictions rather than simply manage them more efficiently.</p>
-</section>
-<section id="recommendations">
-  <h2 class="sec">7. Recommendations and Next Steps</h2>
-  <p class="sec-lede">Immediate reforms and longer-term structures for parent organization, accountability, and system building.</p>
-
-  <figure class="photo">
-    <img src="images/wps-teacher-student.jpg" alt="A teacher works one-on-one with a student using a laptop in a Worcester Public Schools classroom" width="1280" height="853" loading="lazy">
-    <figcaption>A teacher works one-on-one with a student in a Worcester Public Schools classroom. Photograph courtesy of Worcester Public Schools (photo: Reba Saldanha).</figcaption>
-  </figure>
-
-  <p>The findings call for action on two related levels. First, families need immediate improvements in access, communication, language support, behavioral health continuity, school navigation, and practical assistance. These reforms will not resolve the deeper fragmentation identified in this report, but they can reduce urgent burdens while longer-term work proceeds. Second, Worcester needs a sustained structural process through which parents can organize together, institutional actors can be brought into an accountable relationship with families, and a shared plan can be developed for building the social infrastructure that participating families are telling us is missing. Immediate reforms and long-term transformation should not be treated as competing approaches. Each is necessary, and progress on one should not be used to postpone the other.</p>
-
-  <h3 id="sec-7-glance">Recommendations at a Glance</h3>
-  <p>The report recommends action on two related tracks. Immediate improvements should reduce urgent burdens on families, while longer-term organizing and accountability work builds the capacity to secure, evaluate, and deepen those reforms.</p>
-  <table class="simple">
-    <thead>
-      <tr>
-        <th scope="col">Immediate Service and Access Reforms</th>
-        <th scope="col">Long-Term Organization, Accountability, and System Building</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td style="white-space:normal;font-weight:400">Centralized family navigation and waitlist follow-up</td><td>An autonomous and materially supported parent organization</td></tr>
-      <tr><td style="white-space:normal;font-weight:400">Clearer school communication and independent IEP support</td><td>A parent-led institutional accountability process</td></tr>
-      <tr><td style="white-space:normal;font-weight:400">Meaningful interpretation, translation, and cultural responsiveness</td><td>Formal commitments, benchmarks, timelines, and public reporting</td></tr>
-      <tr><td style="white-space:normal;font-weight:400">Improved behavioral health continuity and coordination</td><td>Comparative research and locally testable reforms</td></tr>
-      <tr><td style="white-space:normal;font-weight:400">Transportation, childcare, scheduling, and accessibility support</td><td>A phased public action plan extending from the first 90 days through three years</td></tr>
-    </tbody>
-  </table>
-  <p>Neither track should be made conditional upon completion of the other. Urgent service improvements should begin immediately, while parent organization and structural planning develop the capacity to secure, evaluate, and deepen those reforms over time.</p>
-
-  <h3 id="sec-7-1">7.1 Immediate Service and Access Reforms</h3>
-
-  <h4>1. Establish centralized family navigation and waitlist follow-up</h4>
-  <p>Worcester should establish a clearly identified navigation pathway through which families can learn what services exist, determine eligibility, receive help completing referrals, and obtain regular updates while on waiting lists. Families should not be required to contact multiple institutions repeatedly in order to determine the status of a referral or identify the next step. The navigation process should include clear points of contact, accessible explanations of available services, assistance resolving insurance or eligibility barriers, and procedures for following up when referrals stall. Families should receive updates even when no placement or service has yet become available.</p>
-  <p>Furthermore, navigation should be organized around developmental stages and major transition points rather than offered as a single undifferentiated information service. The data point toward the conclusion that families should receive proactive guidance when entering early intervention or school-based services, moving between school levels, approaching adolescence, preparing for postsecondary education or employment, and aging out of school-based eligibility. Support should begin before each transition rather than only after services have ended or a family has encountered a crisis.</p>
-
-  <h4>2. Strengthen school communication, independent IEP support, and responses to bullying</h4>
-  <p>Families should receive clear and accessible explanations of IEP rights, available school supports, implementation procedures, and complaint or appeal options. Families who need additional assistance should have access to trained advocates who can help them prepare for and participate in school meetings. Because an accepted IEP establishes enforceable obligations, implementation should be treated as a district compliance responsibility rather than something families must monitor and enforce on their own. Parents should not have to repeatedly identify failures before schools determine whether required services and accommodations are being provided.</p>
-  <p>Schools should also establish procedures for confirming that relevant staff have reviewed each student&rsquo;s IEP and are implementing the required accommodations and services. Communication should not depend entirely on individual parents repeatedly contacting teachers, administrators, and service providers to determine whether agreed-upon supports are being delivered.</p>
-  <p>Schools should also establish clear and accessible procedures for preventing, reporting, investigating, and following up on bullying involving autistic students. Families should know who is responsible for responding, what steps will follow a report, how the student will be protected during the process, and how recurring incidents will be addressed. Prevention should include autism- and neurodiversity-informed education for staff and students, attention to social exclusion and isolation as well as overt harassment, and regular review with affected families.</p>
-
-  <h4>3. Guarantee meaningful language access</h4>
-  <p>Interpretation and translated materials should be available throughout the service process, not only at the point of intake. Families should be able to communicate directly with schools, providers, and agencies in a language they understand when discussing eligibility, consent, treatment, IEPs, complaints, service changes, and major decisions affecting their children.</p>
-  <p>Language access should also include attention to cultural responsiveness. Translation alone cannot resolve barriers created when families believe that providers do not understand their cultural context or when autism is poorly understood within the institutions and communities with which they interact. Language-access standards should be monitored through public reporting and direct feedback from families.</p>
-
-  <h4>4. Improve behavioral health continuity and coordination</h4>
-  <p>Families should receive assistance locating appropriate behavioral health, speech, therapeutic, social-emotional, and life-skills services. Support should also be available when a provider leaves, a service ends, a child ages out of a program, or a family is forced to restart the referral process.</p>
-  <p>Schools, clinical providers, behavioral health organizations, and community institutions should develop clearer procedures for coordinating care, sharing appropriate information with family consent, and preventing caregivers from becoming the sole link between disconnected systems. Service contact should not be treated as proof that a family&rsquo;s needs have been adequately met. Continuity, quality, appropriateness, and stability must also be assessed.</p>
-
-  <h4>5. Address transportation, childcare, and other practical barriers</h4>
-  <p>Transportation, childcare, scheduling, and accessibility should be treated as service-access issues rather than private household problems. A service is not meaningfully accessible when a family cannot reach it, cannot find appropriate care for another child, or cannot attend during the hours offered. Parent meetings, training, advocacy activities, and major planning processes should therefore include transportation assistance, childcare, remote-participation options, interpretation, and scheduling designed around caregiver availability whenever possible. These supports should also be included in the design of the longer-term parent organization and accountability process described below.</p>
-
-  <h3 id="sec-7-2">7.2 Long-Term Organization, Accountability, and System Building</h3>
-
-  <h4>1. Build and resource an autonomous parent organization</h4>
-  <p>Free Worcester should begin by inviting survey participants and other affected families into an accessible process of continued communication, mutual support, and organization. The survey documents substantial interest from which a sustained parent network could be developed, but transforming that interest into durable collective capacity will require intentional outreach, relationship-building, and material support.</p>
-  <p>Parent leaders should be identified through an open process rather than selected solely by institutions or service providers. Particular attention should be given to families who are often excluded by language, transportation, childcare, work schedules, disability access, or previous negative experiences with institutions. Participation should include interpretation, translated materials, childcare, transportation assistance, remote-participation options, and compensation for substantial leadership or advisory work.</p>
-  <p>The parent organization should retain the ability to meet independently, develop its own analysis, determine priorities, select representatives, and act publicly in its own name. Free Worcester may initially provide outreach, coordination, meeting space, and administrative support, but it should not permanently control the organization or substitute its own leadership for parent leadership. Institutional partnership matters, but it cannot replace organized parent power.</p>
-
-  <h4>2. Establish a parent-led accountability and institutional commitment process</h4>
-  <p>A parent-led accountability process should bring together representatives with actual decision-making authority from Worcester Public Schools, special education leadership, relevant city agencies, behavioral health and clinical providers, language-access offices, and community organizations. The process should begin by creating a shared public record of what the survey establishes, what questions remain unresolved, and which institutions hold responsibility for the barriers identified. The purpose should be to identify the decisions, resources, and policies over which they have authority and make specific commitments connected to the findings.</p>
-  <p>Those commitments should be formalized through a memorandum of understanding that names responsible parties, timelines, measurable benchmarks, reporting requirements, and procedures for corrective action when commitments are not met. The MOU should identify what the participating parties agree the findings show, what additional research or documentation is needed, and how progress will be publicly evaluated.</p>
-  <p>Parents of autistic children should have a meaningful role in designing the accountability process, selecting benchmarks, interpreting results, and determining what corrective action is necessary. Family participation should occur before major decisions are finalized, not only after changes have already been announced. The process should include continued public review of the 2025 autism resolution, the effects of special education program changes, staffing, program capacity, waitlists, transfers, language access, service continuity, and family experiences.</p>
-  <p>The city and school district should also be transparent about the competing pressures shaping their decisions. Fiscal and administrative pressures may favor consolidation, cost reduction, or the elimination of programs, while families and professionals may emphasize continuity, stability, individualized support, and service quality. These priorities may not always be reconcilable. Public institutions should explain how they weigh them, whose needs are subordinated when conflicts arise, and how affected families can intervene before decisions are finalized.</p>
-
-  <h4>3. Conduct comparative research and develop locally testable reforms</h4>
-  <p>Worcester should undertake a structured review of approaches used in other communities and systems in areas such as family navigation, coordinated care, behavioral health continuity, school-family partnership, language access, caregiver support, peer connection, and parent leadership. The purpose should be to identify what other communities have built, under what conditions, with what resources, and with what results. The research should assess which elements respond to the particular barriers documented in Worcester and which could realistically be adapted to local conditions.</p>
-  <p>The comparative-learning process should produce a limited number of locally testable reforms. Parents should participate in selecting, designing, and evaluating those pilots. Each pilot should identify:</p>
-  <ul>
-    <li>the barrier it is intended to address;</li>
-    <li>the population it is intended to serve;</li>
-    <li>the institution responsible for implementation;</li>
-    <li>the resources required;</li>
-    <li>the duration of the pilot;</li>
-    <li>the measures by which success will be evaluated;</li>
-    <li>and the process for revising, expanding, or discontinuing it.</li>
-  </ul>
-  <p>Research should lead to action. The completion of another study or planning document should not be treated as an adequate outcome by itself.</p>
-
-  <h4>4. Adopt a phased public action plan</h4>
-  <p>The recommendations should be implemented through a phased public process with named responsibilities, deadlines, resource commitments, and regular opportunities for review.</p>
-
-  <div class="phase-grid">
-    <div class="phase">
-      <span class="ph-name">Launch</span>
-      <p class="ph-time">First 90 Days</p>
-      <ul>
-        <li>Distribute the findings in accessible languages and formats.</li>
-        <li>Begin outreach to survey participants and other affected families.</li>
-        <li>Identify an interim group of parent leaders.</li>
-        <li>Convene institutional representatives with decision-making authority.</li>
-        <li>Clarify unresolved questions about the data and its implications.</li>
-      </ul>
-    </div>
-    <div class="phase">
-      <span class="ph-name">Build</span>
-      <p class="ph-time">3 to 12 Months</p>
-      <ul>
-        <li>Establish and resource the parent organization.</li>
-        <li>Negotiate a memorandum of understanding among participating institutions.</li>
-        <li>Select public accountability benchmarks and reporting requirements.</li>
-        <li>Complete the comparative research process.</li>
-        <li>Launch immediate reforms and a limited number of locally testable pilots.</li>
-      </ul>
-    </div>
-    <div class="phase">
-      <span class="ph-name">Institutionalize</span>
-      <p class="ph-time">1 to 3 Years</p>
-      <ul>
-        <li>Evaluate the reforms and pilot programs.</li>
-        <li>Expand approaches that demonstrate value.</li>
-        <li>Establish durable funding for successful programs and structures.</li>
-        <li>Integrate parent oversight into major institutional decisions.</li>
-        <li>Maintain continuing systems of public reporting and corrective action.</li>
-      </ul>
+<section class="section tight">
+  <div class="container rv">
+    <p class="strip-label">Our community partners</p>
+    <div class="logo-strip" aria-label="Community partners">
+      <span class="partner"><img src="images/partner-tenants-union.png" alt="Worcester Tenants Union" loading="lazy"></span>
+      <span class="partner"><img src="images/partner-seven-hills.png" alt="Seven Hills Foundation and Affiliates" loading="lazy"></span>
+      <span class="partner"><img src="images/partner-wcaca.jpg" alt="WCACA — Worcester Caribbean American Carnival Association" loading="lazy"></span>
+      <span class="partner"><img src="images/partner-earn-a-bike.png" alt="Worcester Earn-A-Bike" loading="lazy"></span>
+      <span class="partner"><img src="images/partner-fam-jam.jpg" alt="FAM JAM! Event Group Inc." loading="lazy"></span>
+      <span class="partner"><img src="images/partner-green-rainbow.png" alt="Green-Rainbow Party" loading="lazy"></span>
+      <span class="partner"><img src="images/partner-mass-spring.png" alt="MassSpring" loading="lazy"></span>
+      <span class="partner"><img src="images/partner-pride-worcester.png" alt="Pride Worcester" loading="lazy"></span>
     </div>
   </div>
-
-  <p>Progress reports should identify what has been completed, what remains delayed, why delays have occurred, how resources have been used, and what corrective action will follow. The long-term objective is to build relationships, institutions, habits, and forms of shared responsibility that do not depend upon a single grant, administration, organization, or staff champion.</p>
-  <p><strong>Note:</strong> Neither track should be made conditional upon completion of the other. Urgent service improvements should begin immediately, while parent organization and structural planning develop the capacity to secure, evaluate, and deepen those reforms over time. The goal is to build a durable social infrastructure through which families no longer face these systems alone.</p>
 </section>
 
-<section id="conclusion">
-  <h2 class="sec">8. Conclusion</h2>
-  <p class="sec-lede">What the findings demand and the collective capacity Worcester must now build.</p>
-  <p>The parents who participated in this survey described long waitlists, weak follow-through, school confusion, behavioral health gaps, language barriers, and the continuing burden of coordinating systems that do not reliably coordinate themselves. Together, these barriers show how difficulties in access, continuity, communication, and accountability accumulate at the household level.</p>
-  <p>The report also identifies a path forward. Many participating parents expressed interest in remaining connected, sharing information, and advocating collectively, suggesting a promising foundation upon which a sustained parent organization could be developed. Immediate improvements in navigation, language access, school support, behavioral health continuity, transportation, and childcare should begin now. At the same time, parents must be supported in building the organized capacity necessary to shape priorities, oversee implementation, and hold institutions accountable over time.</p>
-  <p>This report should therefore be understood as clarifying the contours of an opening through which all actors committed to the well-being of Worcester&rsquo;s autistic children and their families can act. The task now is to act on the findings, organize around them, and build the durable social infrastructure, the village, through which autistic children and their families can thrive.</p>
+<section class="section" id="who-we-are">
+  <div class="container">
+    <div class="split">
+      <figure class="ph rv">
+        <img src="images/fw-community-meeting.jpg" alt="A Free Worcester community meeting outdoors in a park, with a bilingual agenda in English and Spanish on an easel" width="1600" height="1201" loading="lazy">
+      </figure>
+      <div class="rv">
+        <span class="eyebrow">Who We Are</span>
+        <h2 class="title">Bringing about change one step at a time.</h2>
+        <p>&ldquo;Free Worcester&rdquo; is a grassroots organization dedicated to fostering community solidarity and empowerment in Worcester, Massachusetts. Founded by a group of passionate local activists and volunteers, Free Worcester operates on the principle that access to essential resources and services should be available to everyone, regardless of economic status.</p>
+        <div class="btn-row">
+          <a class="btn ghost" href="about.html">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="references" class="refs">
-  <h2 class="sec">References</h2>
-  <details id="refs-details" class="refs-list">
-  <summary>View the full reference list (22 sources)</summary>
-  <p>Attar, S. M., Benavidez, H., Gicheru, C., Alabi, C., Sapano, R., &amp; Stone, W. L. (2025). Co-designing a novel service delivery pathway to increase access to autism identification and care within a non-profit community organization serving culturally and linguistically diverse families. <em>Autism, 29</em>(8), 2097&ndash;2110. <a href="https://doi.org/10.1177/1362361325133570">https://doi.org/10.1177/1362361325133570</a></p>
-  <p>Cidav, Z., Marcus, S. C., &amp; Mandell, D. S. (2012). Implications of childhood autism for parental employment and earnings. <em>Pediatrics, 129</em>(4), 617&ndash;623. <a href="https://doi.org/10.1542/peds.2011-2700">https://doi.org/10.1542/peds.2011-2700</a></p>
-  <p>Collings, J. (2026, May 22). Parents, staff express outrage at Worcester Alternative School closure. <em>Telegram &amp; Gazette</em>. <a href="https://www.aol.com/articles/parents-staff-express-outrage-worcester-011739241.html">https://www.aol.com/articles/parents-staff-express-outrage-worcester-011739241.html</a></p>
-  <p>Doyle, A. (2025, April 26). <em>WPS in brief April 2025</em>. Worcester Sucks and I Love It. <a href="https://www.worcestersucks.email/p/wps-in-brief-april-2025">https://www.worcestersucks.email/p/wps-in-brief-april-2025</a></p>
-  <p>Fulceri, F., Gila, L., Caruso, A., Micai, M., Romano, G., &amp; Scattoni, M. L. (2023). Building bricks of integrated care pathway for autism spectrum disorder: A systematic review. <em>International Journal of Molecular Sciences, 24</em>(7), 6222. <a href="https://doi.org/10.3390/ijms24076222">https://doi.org/10.3390/ijms24076222</a></p>
-  <p>Gates Lane School of International Studies. (n.d.). <em>About us</em>. Worcester Public Schools. <a href="https://www.worcesterschools.org/o/glsofis/page/about-us">https://www.worcesterschools.org/o/glsofis/page/about-us</a></p>
-  <p>Goering, S. (2015). Rethinking disability: The social model of disability and chronic disease. <em>Current Reviews in Musculoskeletal Medicine, 8</em>(2), 134&ndash;138. <a href="https://doi.org/10.1007/s12178-015-9273-z">https://doi.org/10.1007/s12178-015-9273-z</a></p>
-  <p>Herrero, R., D&iacute;az, A., &amp; Zueco, J. (2024). The burden and psychological distress of family caregivers of individuals with autism spectrum disorder: A gender approach. <em>Journal of Clinical Medicine, 13</em>(10), 2861. <a href="https://doi.org/10.3390/jcm13102861">https://doi.org/10.3390/jcm13102861</a></p>
-  <p>Jafarabadi, M. A., Gholipour, K., Shahrokhi, H., Malek, A., Ghiasi, A., Pourasghari, H., &amp; Iezadi, S. (2021). Disparities in the quality of and access to services in children with autism spectrum disorders: A structural equation modeling. <em>Archives of Public Health, 79</em>, Article 58. <a href="https://doi.org/10.1186/s13690-021-00577-5">https://doi.org/10.1186/s13690-021-00577-5</a></p>
-  <p>Lee, J. D., Terol, A. K., Yoon, C. D., &amp; Meadan, H. (2024). Parent-to-parent support among parents of children with autism: A review of the literature. <em>Autism, 28</em>(2), 263&ndash;275. <a href="https://doi.org/10.1177/13623613221146444">https://doi.org/10.1177/13623613221146444</a></p>
-  <p>Li, F., Li, Q., Shen, Q., Zhang, X., Leng, H., Liu, Y., &amp; Zheng, X. (2025). Family navigation programs for children with autism spectrum disorder: A scoping review. <em>Pediatrics, 155</em>(4), e2024067947. <a href="https://doi.org/10.1542/peds.2024-067947">https://doi.org/10.1542/peds.2024-067947</a></p>
-  <p>Liu, B. M., Paskov, K., Kent, J., McNealis, M., Sutaria, S., Dods, O., Harjadi, C., Stockham, N., Ostrovsky, A., &amp; Wall, D. P. (2023). Racial and ethnic disparities in geographic access to autism resources across the US. <em>JAMA Network Open, 6</em>(1), e2251182. <a href="https://doi.org/10.1001/jamanetworkopen.2022.51182">https://doi.org/10.1001/jamanetworkopen.2022.51182</a></p>
-  <p>Oliver, M. (1990). <em>The politics of disablement</em>. Macmillan.</p>
-  <p>Pacione, L. (2022). Telehealth-delivered caregiver training for autism: Recent innovations. <em>Frontiers in Psychiatry, 13</em>, 916532. <a href="https://doi.org/10.3389/fpsyt.2022.916532">https://doi.org/10.3389/fpsyt.2022.916532</a></p>
-  <p>Parker, M. L., Diamond, R. M., &amp; Del Guercio, A. D. (2020). Care coordination of autism spectrum disorder: A solution-focused approach. <em>Issues in Mental Health Nursing, 41</em>(2), 138&ndash;145. <a href="https://doi.org/10.1080/01612840.2019.1624899">https://doi.org/10.1080/01612840.2019.1624899</a></p>
-  <p>Shaw, K. A., Williams, S., Patrick, M. E., Valencia-Prado, M., Durkin, M. S., Howerton, E. M., Ladd-Acosta, C. M., Pas, E. T., Bakian, A. V., Bartholomew, P., Nieves-Mu&ntilde;oz, N., Sidwell, K., Alford, A., Bilder, D. A., DiRienzo, M., Fitzgerald, R. T., Furnier, S. M., Hudson, A. E., Pokoski, O. M., . . . Maenner, M. J. (2025). Prevalence and early identification of autism spectrum disorder among children aged 4 and 8 years&mdash;Autism and Developmental Disabilities Monitoring Network, 16 sites, United States, 2022. <em>MMWR Surveillance Summaries, 74</em>(2), 1&ndash;22. <a href="https://doi.org/10.15585/mmwr.ss7402a1">https://doi.org/10.15585/mmwr.ss7402a1</a></p>
-  <p>Smith, K. A., Gehricke, J.-G., Iadarola, S., Wolfe, A., &amp; Kuhlthau, K. A. (2020). Disparities in service use among children with autism: A systematic review. <em>Pediatrics, 145</em>(Supplement 1), S35&ndash;S46. <a href="https://doi.org/10.1542/peds.2019-1895G">https://doi.org/10.1542/peds.2019-1895G</a></p>
-  <p>St. Amant, H. G., Schrager, S. M., Pe&ntilde;a-Ricardo, C., Williams, M. E., &amp; Vanderbilt, D. L. (2018). Language barriers impact access to services for children with autism spectrum disorders. <em>Journal of Autism and Developmental Disorders, 48</em>(2), 333&ndash;340. <a href="https://doi.org/10.1007/s10803-017-3330-y">https://doi.org/10.1007/s10803-017-3330-y</a></p>
-  <p>Todorow, C., Connell, J., &amp; Turchi, R. M. (2018). The medical home for children with autism spectrum disorder: An essential element whose time has come. <em>Current Opinion in Pediatrics, 30</em>(2), 311&ndash;317. <a href="https://doi.org/10.1097/MOP.0000000000000605">https://doi.org/10.1097/MOP.0000000000000605</a></p>
-  <p>Worcester Education Justice Alliance. (2020, September). <em>Worcester parent research on remote learning during the COVID-19 pandemic</em>. <a href="https://worcesteredjustice.org/wp-content/uploads/2020/11/Worcester-Parent-Research-on-Remote-Learning-During-the-COVID-19-Pandemic-FINAL-1.pdf">https://worcesteredjustice.org/wp-content/uploads/2020/11/Worcester-Parent-Research-on-Remote-Learning-During-the-COVID-19-Pandemic-FINAL-1.pdf</a></p>
-  <p>Worcester Public Schools. (n.d.). <em>Autism / Life Skills</em>. <a href="https://www.worcesterschools.org/page/autism-life-skills">https://www.worcesterschools.org/page/autism-life-skills</a></p>
-  <p>Worcester Public Schools. (2026, May 1). <em>Changes for ACT, Worcester Alternative, and NCC Secondary Programs in 2026&ndash;27</em>. <a href="https://www.worcesterschools.org/article/2860194">https://www.worcesterschools.org/article/2860194</a></p>
-  </details>
+<section class="section band-accent" id="autism-survey">
+  <div class="container">
+    <div class="split">
+      <div class="rv">
+        <span class="eyebrow">Become a part of something greater</span>
+        <h2 class="title">The Autism Parent Survey</h2>
+        <p>Free Worcester&rsquo;s first Autism Parent Survey, organized with the Worcester Area Autism Task Force, gathered responses from 188 Worcester families between January 2025 and January 2026. The findings and recommendations are now published, with interactive charts and a guide to local autism resources.</p>
+        <div class="btn-row">
+          <a class="btn" href="autism-survey-report.html">Read the report</a>
+          <a class="btn ghost" href="autism-survey-report.html#resources">Autism Resources</a>
+          <a class="btn ghost" href="Worcester_Autism_Parent_Survey_Findings_and_Recommendations.pdf">Download the PDF</a>
+        </div>
+      </div>
+      <figure class="ph media-right rv">
+        <img src="images/wps-classroom-desks.jpg" alt="Students working on laptops at their desks in a Worcester Public Schools classroom, one raising a hand" width="1280" height="720" loading="lazy">
+      </figure>
+    </div>
+  </div>
 </section>
 
-<section id="resources">
-  <h2 class="sec">Autism Resources</h2>
-  <p class="sec-lede">From the Worcester Area Autism Task Force &mdash; Guide for parents in seeking services.</p>
-
-  <h3>First Step</h3>
-  <h4 id="res-arc">Advocates Autism Resource Center, of Worcester</h4>
-  <p class="res-contact">Speak to: Someone is always available to take the call!<br>
-  <a href="https://www.autismresourcecentral.org/">autismresourcecentral.org</a><br>
-  712 Plantation St., Worcester, MA 01605 &middot; <a href="tel:+15088354278">508-835-4278</a></p>
-  <ul>
-    <li>Serve 64 towns in Central Mass</li>
-    <li>Information and Referral to local services</li>
-    <li>Parent Support groups</li>
-    <li>Various activities and groups for children and young adults</li>
-    <li>Various trainings and groups including Autism 101, 102 &amp; 103</li>
-    <li>Parent workshops</li>
-    <li>Stay at home camps, family activities</li>
-    <li>Parent workshops on financial planning, estate planning, letters of intent, transition</li>
-    <li>Assistance with DDS applications</li>
-    <li>Mental Health Clinician on site Mondays from 9&ndash;12 for consultation and referral to appropriate services</li>
-  </ul>
-
-  <p class="res-joiner">AND</p>
-  <h4 id="res-wps-sped">Worcester Public Schools Special Education Services</h4>
-  <p class="res-contact">Visit <a href="https://www.worcesterschools.org/page/special-education-intervention-services">worcesterschools.org/page/special-education-intervention-services</a> for the list of services and contacts.<br>
-  For general inquiries, please call the Special Education Department: <a href="tel:+15087993055">508-799-3055</a>. OR: Isamar Matos Fuentes, Early Education Secretary, at <a href="tel:+15087998165">508-799-8165</a> / <a href="mailto:matosfuentesi@worcesterschools.net">matosfuentesi@worcesterschools.net</a>. Or Colleen Newell, Early Education Coordinator, at <a href="tel:+15087993093">508-799-3093</a> / <a href="mailto:newellce@worcesterschools.net">newellce@worcesterschools.net</a></p>
-
-  <p class="res-joiner">OR</p>
-  <h4>Worcester Public Schools Special Education Services</h4>
-  <p class="res-contact">Please visit our website for specific information on services and programs: <a href="https://worcesterpsma.sites.thrillshare.com/page/special-education-intervention-services">worcesterpsma.sites.thrillshare.com/page/special-education-intervention-services</a><br>
-  For general inquiries, please contact the Special Education Department, by phone: <a href="tel:+15087993055">508-799-3055</a> or mailing address: 20 Irving St., Worcester 01609</p>
-
-  <h4>Worcester Public Schools: Early Childhood Assessment</h4>
-  <p>Please view the <a href="https://worcesterpsma.sites.thrillshare.com/o/wps/page/early-childhood-assessment-process">Early Childhood Assessment Process webpage</a> to view all the details on how to schedule an initial screening and/or evaluation for your child (ages 2 years and 9 months through 5 years old) if they have a suspected disability. The page will outline the steps needed to receive services or to enroll your child with a disability into preschool (Pre-K), Head Start, or kindergarten.</p>
-  <p class="res-contact">To schedule an evaluation, please email <a href="mailto:arena@worcesterschools.net">arena@worcesterschools.net</a>. You will be asked to sign an evaluation consent form.</p>
-
-  <h4>Worcester Public Schools: New Enrollment/Registration</h4>
-  <p class="res-contact">Please call the Parent Information Center <a href="tel:+15087993194">508-799-3194</a> to make an in-person appointment. The Parent Information Center is open Monday through Friday from 8:30 AM to 4:00 PM.<br>
-  Address: 768 Main Street, Worcester, MA 01610</p>
-  <p>The Parent Information Center (PIC) is available to all families to help with:</p>
-  <ul>
-    <li>Student registration</li>
-    <li>Transfer information and forms</li>
-    <li>Immunizations</li>
-    <li>Connecting with community resources</li>
-    <li>English language assessments</li>
-    <li>Referrals for special education assessments</li>
-  </ul>
-
-  <h3>Step 2</h3>
-  <p>Connect with one of the State&rsquo;s DDS (Department of Developmental Services) Family Support Centers to connect with DDS services and additional broad supports</p>
-
-  <p class="res-joiner">OR / AND</p>
-  <h4>THRIVE Family Support Center</h4>
-  <p class="res-contact">Speak to: Claire Jean-Michel &ndash; Director of Family Support Services<br>
-  m <a href="tel:+15086304063">(508) 630-4063</a> | o <a href="tel:+17747033033">(774) 703-3033</a> | <a href="mailto:cjeanmichel@icanthrive.org">cjeanmichel@icanthrive.org</a><br>
-  100 Grove Street, Suite 104, Worcester, MA 01605 &middot; <a href="tel:+17747033033">774-703-3033</a></p>
-  <ul>
-    <li>Free Workshops</li>
-    <li>Assistance with DDS Eligibility Applications</li>
-    <li>Recreational Programming and Outings</li>
-    <li>Board Certified Behavior Analyst Consultations</li>
-    <li>Multilingual Resource Navigation and Referral (English, Spanish, Haitian Creole, ASL)</li>
-    <li>IEP Trainings (English and Spanish)</li>
-    <li>Para-transit Workshops</li>
-    <li>Food Pantry in Worcester for DDS families Mon 5&ndash;7p, Th 5&ndash;7, Sat 10am&ndash;1pm w/ Allergen-Aware Options</li>
-  </ul>
-
-  <p class="res-joiner">AND</p>
-  <h4>CENTRO &mdash; Worcester Multicultural Family Support Center</h4>
-  <p class="res-contact">11 Sycamore Street, Worcester, MA 01608<br>
-  <a href="https://www.centroinc.org">www.centroinc.org</a> (for online referrals)<br>
-  Charlotte A. Monnott, Assistant Director / <a href="mailto:cmonnott@centroinc.org">cmonnott@centroinc.org</a> &middot; (P) <a href="tel:+15087981900">508-798-1900</a> Ext. 266<br>
-  Rosa Ramos, MS, DDS Program Coordinator / <a href="mailto:rramos@centroinc.org">rramos@centroinc.org</a> &middot; (P) <a href="tel:+15087981900">508-798-1900</a> Ext. 230 | (C) <a href="tel:+15089195277">508-919-5277</a><br>
-  Closed Referral System through DDS. Open to the public to assist w/ the DDS eligibility application</p>
-  <p>Services Offered:</p>
-  <ul>
-    <li>Navigation Services: One-on-one support for families with intensive needs</li>
-    <li>Monthly Calendar features recreational, educational activities</li>
-    <li>Transition Services: Support for individuals transitioning into adulthood (as defined by DDS)</li>
-    <li>Autism Support Group: Dedicated space for families and caregivers of individuals on the autism spectrum to connect and share resources</li>
-    <li>Coffee Time: An open monthly support group for all parents to talk, share experiences, and receive peer support</li>
-    <li>Access to DDS flexible funding / Respite &amp; Dropping service</li>
-    <li>Emergency Food Pantry / Adult Foster Care referrals (AFC)</li>
-  </ul>
-
-  <h3>Step 3</h3>
-  <h4>Insurance Resource Center for Autism and Behavioral Health</h4>
-  <p class="res-contact">(of the UMass Chan Medical School Shriver Center) &mdash; For All Insurance Related Questions<br>
-  Our phone number for IRC is <a href="tel:+17744554056">774-455-4056</a>. &middot; <a href="https://massairc.org/">massairc.org</a></p>
-  <ul>
-    <li>Information and referral on issues related to Insurance Coverage for Treatments and Services</li>
-    <li>Technical assistance and support</li>
-    <li>Fact Sheet Library on range of insurance-related topics covering both public and private insurance &mdash; available in multiple languages</li>
-    <li>Support for Employers and Individuals covered by Self-Funded (ERISA) Plans</li>
-    <li>Webinars and trainings on insurance laws and related topics</li>
-  </ul>
-
-  <h3>Other Helpful Resources</h3>
-  <h4>Autism Speaks</h4>
-  <p class="res-contact"><a href="https://www.autismspeaks.org/">autismspeaks.org</a></p>
-  <ul>
-    <li>Tool Kits / i.e., What do you put in place for the first 100 days</li>
-  </ul>
-
-  <h4>IMPORTANT! Children&rsquo;s Autism Waiver</h4>
-  <p>The (AWP) allows children to receive Expanded Habilitation, Education, in-home services and supports, such as Applied Behavioral Analysis (ABA) and Floor Time, for a total of up to 3 years. After this, the child may access ongoing Supplemental Services (for example respite and goods and services, etc.) that meet the child&rsquo;s needs and help with the transition out of the intensive Autism Waiver Program until the child&rsquo;s 10th birthday.</p>
-  <ul>
-    <li><a href="https://www.mass.gov/dds-autism-waiver-service-program-overview">mass.gov/dds-autism-waiver-service-program-overview</a></li>
-    <li>An Annual Application Period is held in October only!! Information and application materials are released in September.</li>
-    <li>Families should begin the DDS eligibility process as early as possible, since DDS eligibility is required before a child can enroll in the Autism Waiver Program</li>
-  </ul>
-
-  <h4>Early Intervention</h4>
-  <p>Services and supports designed to help babies and toddlers (from birth to age 3) who have developmental delays or disabilities. Children under the age of 3 with a diagnosis of autism are eligible and children with developmental concerns may be eligible.</p>
-  <p class="res-contact">LINK to information about EI: <a href="https://www.mass.gov/info-details/about-massachusetts-early-intervention-ei">mass.gov/info-details/about-massachusetts-early-intervention-ei</a><br>
-  LINK to find local programs: <a href="https://www.mass.gov/info-details/ei-program-contact-information">mass.gov/info-details/ei-program-contact-information</a></p>
-
-  <h4>MCPAP for Early Childhood</h4>
-  <p>Provides rapid access to Early Childhood Mental Health consultation and autism diagnostic support for children ages 1&ndash;5 through the child&rsquo;s Primary Care Provider (PCP).</p>
-  <p><strong>Families should speak with their child&rsquo;s pediatrician or PCP, who initiates the referral to MCPAP for Early Childhood Autism Diagnosis Project when appropriate.</strong></p>
-  <p class="res-contact">Program Information: <a href="https://www.umassmed.edu/psychiatry/clinicalservices/child-adolescent-clinical-services/early-childhood-autism-diagnosis-project/">umassmed.edu &mdash; Early Childhood Autism Diagnosis Project</a><br>
-  MCPAP Contact Information: <a href="https://www.mcpap.com/About/">mcpap.com/About</a></p>
-
-  <h4>Family Leadership Program</h4>
-  <p class="res-contact">Contact <a href="mailto:info@familyleadershipma.org">info@familyleadershipma.org</a> or Haran Phaneuf, Central Program Director, at <a href="mailto:haranphaneuf@mcsnet.org">haranphaneuf@mcsnet.org</a></p>
-  <p>Offers education, leadership and advocacy skill development, and mentoring for family members and caregivers of children and adults with developmental disabilities. / <a href="https://familyleadershipma.org">familyleadershipma.org</a></p>
-
-  <h3>Education Support</h3>
-  <h4>Worcester Public Schools Special Education Services</h4>
-  <p class="res-contact"><a href="#res-wps-sped">See above</a>.</p>
-
-  <h4>The Federation for Children with Special Needs</h4>
-  <p class="res-contact">For additional education support &mdash; <a href="https://www.fcsn.org">www.fcsn.org</a> &mdash; Fill out the intake form online!</p>
-  <ul>
-    <li>The Federation empowers families (with children birth to adulthood) so that they have the information and resources they need for their children.</li>
-    <li>We focus on education, early intervention, health care, transitions, children in foster care and group homes, and building strong family engagement.</li>
-  </ul>
-
-  <h4>Worcester Public Schools (WPS) Special Education Parents Advisory Council (SEPAC)</h4>
-  <p>Offers informational forums for parents and caregivers of students with special needs. SEPAC is overseen by parent volunteers with assistance from the WPS Special Education Department.</p>
-  <ul>
-    <li>SEPAC works to: Increase disability awareness / Provide resources for schools and families / Collaborate closely with WPS to develop targeted workshops for families</li>
-    <li>Support and provides the voice of parents/caregivers &amp; students with special needs.</li>
-  </ul>
-  <p class="res-contact">Contact Perla Gillitlie &mdash; <a href="mailto:worcestersepac@gmail.com">worcestersepac@gmail.com</a> or call the WPS Special Education Department at <a href="tel:+15087993055">508-799-3055</a>.<br>
-  <a href="https://www.worcesterschools.org/o/wps/page/special-education-parent-advisory-council">worcesterschools.org &mdash; Special Education Parent Advisory Council</a> / and visit on Facebook!</p>
-
-  <h4>Massachusetts Inclusive Concurrent Enrollment Initiative (MAICEI)</h4>
-  <p>Provides opportunities for students with intellectual disabilities and/or autism, aged 18&ndash;22, to participate in inclusive college experiences at participating MA community colleges. This initiative allows students to take college courses for credit or audit, participate in campus life, and develop independence and self-determination.</p>
-  <p class="res-contact">GO TO: <a href="https://www.mass.edu/strategic/maicei.asp">mass.edu/strategic/maicei.asp</a><br>
-  <strong>Go to the website and inquire with your school district!</strong></p>
-
-  <h3>Transition to Adulthood</h3>
-  <h4>Transition to Adulthood &mdash; DESE/DDS Program</h4>
-  <ul>
-    <li>A collaborative program between the Massachusetts Department of Developmental Services (DDS) and the Department of Elementary and Secondary Education (DESE) that helps eligible students receiving publicly funded special education services successfully transition from school to adult life.</li>
-    <li>Students who are eligible for DDS services may receive coordinated transition planning and wraparound supports while enrolled in special education.</li>
-    <li>For more information: DESE DDS Program | Mass.gov</li>
-  </ul>
-
-  <h4>YOUR ACCESS ADVOCATES (formerly Center for Living and Working Transition to Adult Program)</h4>
-  <p class="res-contact">18 Chestnut Street, Worcester</p>
-  <ul>
-    <li>Provides consumer-directed services to students between the ages of 14 and 21 who are in high school with a disability</li>
-    <li>Done through the provision of four core services: Skills Training, Peer Counseling, Advocacy (both individual and in the community) and Information and Referral. Works with students who are motivated or want to become motivated to reach their independent living goals.</li>
-    <li>Utilizes the &ldquo;Peer Model&rdquo; approach. Trained Skills Trainers work with consumers to develop an independent living plan and together, work towards attaining consumer-directed goals.</li>
-  </ul>
-  <p class="res-contact">Contact: <a href="tel:+15087980350">508 798 0350</a> / <a href="https://www.centerlw.org/services/youth/transition-to-adulthood-program/">centerlw.org &mdash; Transition to Adulthood Program</a></p>
-
-  <h4>FCSNTransition (Google Groups)</h4>
-  <p>A discussion group hosted by the Federation for Children with Special Needs (FCSN) for sharing postsecondary transition topics, planning strategies, resources, and ideas related to students with disabilities ages 14&ndash;22, with a focus on Massachusetts.</p>
-
-  <h3>Mental Health &amp; Sibling Support</h3>
-  <h4>MCPAP for ASD-ID</h4>
-  <p>Provides consultation and support to Emergency Services Program (ESP)/Mobile Crisis Intervention (MCI) clinicians working with children and young adults with Autism Spectrum Disorder (ASD) or Intellectual Disabilities (ID) who are experiencing a behavioral health crisis.</p>
-  <p><strong>Important:</strong> Families typically access this service through Mobile Crisis Intervention (MCI). The MCI clinician consults with MCPAP for ASD-ID when specialized autism or intellectual disability expertise is needed.</p>
-  <p class="res-contact">GO TO: <a href="https://www.mcpap.com/ASDID/overview.aspx">mcpap.com/ASDID/overview.aspx</a></p>
-
-  <h4>Statewide Sibling Support Group</h4>
-  <p>Intended for Siblings and Parents/Caregivers of Youth with Autism Spectrum Disorder, Developmental Disabilities and/or Mental Health Issues.</p>
-  <p class="res-contact">Contact Emily Rubin, LICSW and Director of Sibling Support, at <a href="mailto:emily.rubin@umassmed.edu">emily.rubin@umassmed.edu</a> or call <a href="tel:+18575231145">857-523-1145</a><br>
-  <a href="https://shriver.umassmed.edu/programs/sibling-support/">shriver.umassmed.edu/programs/sibling-support</a></p>
-
-  <h4>AANE: Association for Autism and Neurodiversity</h4>
-  <p class="res-contact"><a href="https://aane.org/">aane.org</a></p>
-  <p>Helps Autistic and similarly Neurodivergent people build meaningful, connected lives. We provide individuals, families, and professionals with education, community, and support in an inclusive atmosphere of validation and respect.</p>
-
-  <h4>CBHI Services &mdash; Children&rsquo;s Behavioral Health Initiative (CBHI)</h4>
-  <p>Helps provide MassHealth children with behavioral, emotional, and mental health needs and their families with integrated behavioral health services and a comprehensive, community-based system of care.</p>
-  <ul>
-    <li>Intensive Care Coordination (ICC)</li>
-    <li>In Home Therapy (IHT)</li>
-    <li>Therapeutic Mentoring (TM)</li>
-    <li>In Home Behavioral Services (IHBS)</li>
-    <li>Mobile Crisis Intervention (MCI)</li>
-  </ul>
-  <p class="res-contact">To Find A Provider: <a href="https://www.mabhaccess.com/Search.aspx">mabhaccess.com/Search.aspx</a></p>
-  <p><strong>IMPORTANT:</strong> Children with Autism Spectrum Disorder may qualify for CBHI services if they meet the medical necessity criteria. When making a referral, clearly describe all behavioral, emotional, and functional concerns in addition to the autism diagnosis. Some CBHI services (such as IHBS) may not be authorized at the same time as insurance-funded ABA because the services overlap.</p>
-
-  <h4>Insurance Resource Center for Autism and Behavioral Health</h4>
-  <p class="res-contact">For additional assistance (of the UMass Chan Medical School Shriver Center)<br>
-  <a href="tel:+17744554056">774-455-4056</a> / <a href="mailto:AIRC@umassmed.edu">AIRC@umassmed.edu</a></p>
-
-  <h4>PPAL / the Parent Professional Advocacy League</h4>
-  <ul>
-    <li>Free support to families when children have emotional, behavioral or mental health needs. Staffed by family support professionals who have lived experience raising children with behavioral needs. Offers support in accessing services through school or insurance, and connects you with other parents and family members. <a href="tel:+15087679725">(508) 767-9725</a> &middot; <a href="https://ppal.net/ppal-central-ma/">ppal.net/ppal-central-ma</a></li>
-  </ul>
-
-  <h3>Autism &mdash; Housing / Home Modification / Equipment</h3>
-  <h4>Autism Housing Pathways (AHP)</h4>
-  <p>Autism Housing Pathways (AHP) is a family-driven, membership-based organization serving individuals with autism and other developmental disabilities and their families throughout Massachusetts.</p>
-  <p class="res-contact">Website: <a href="https://autismhousingpathways.org/">autismhousingpathways.org</a><br>
-  Contact: Cathy Boyle &mdash; <a href="mailto:ccampboyle@autismhousingpathways.org">ccampboyle@autismhousingpathways.org</a> &middot; <a href="tel:+16176044362">617-604-4362</a><br>
-  General inquiries: <a href="mailto:ahp@fcsn.org">ahp@fcsn.org</a></p>
-
-  <h4>RCAP&rsquo;s Home Modification Loan Program (HMLP)</h4>
-  <p>A state-funded lending program that provides no-interest loans to homeowners to fund necessary changes to keep themselves or a family member with a disability or mobility impairment living comfortably in their own home. More information can be found here: <a href="https://www.rcapsolutions.org/hmlp/">rcapsolutions.org/hmlp</a></p>
-
-  <h4>Easter Seals program &mdash; Assistive Technology Loan Program</h4>
-  <p>Provides low-interest financing to help people with disabilities obtain assistive technology and adaptive equipment that supports greater independence at home, school, work, and in the community.</p>
-  <ul>
-    <li>Hearing Aids / Computers / Flashing doorbells / Electric wheelchairs or scooters / Adapted vehicles</li>
-    <li>Home modifications such as portable ramps or stair lifts</li>
-  </ul>
-  <p class="res-contact">Apply Online: <a href="https://www.easterseals.com/ma/programs-and-services/assistive-technology/loan-programs.html">easterseals.com/ma &mdash; Assistive Technology Loan Programs</a></p>
-
-  <h3>Other Supports</h3>
-  <h4>The Spectrum</h4>
-  <p class="res-contact"><a href="https://thespectrum.org/">thespectrum.org</a></p>
-  <p>An educational initiative of CASP, Council of Autism Service Providers, a well-respected and trusted resource in the Autism Community. Helps families navigate autism in children.</p>
+<section class="section" id="take-action">
+  <div class="container">
+    <div class="split">
+      <div class="rv">
+        <span class="eyebrow">Let&rsquo;s Take Action</span>
+        <h2 class="title">Combining Social Justice and Literacy</h2>
+        <p>Free Worcester&rsquo;s current major campaign is the Today&rsquo;s Readers are Future Leaders / Afterschool Reading Initiative, which aims to provide disadvantaged youths with access to social justice-based educational literature over the summer that will promote equity and inclusiveness across the city of Worcester.</p>
+        <p>Free Worcester is raising funds to buy 5,000 books over the summer to support social justice-focused childhood reading across demographics and age groups.</p>
+        <div class="btn-row">
+          <a class="btn" href="contact.html">Make a Donation</a>
+        </div>
+      </div>
+      <figure class="ph media-right rv">
+        <img src="images/fw-lakeside-event.jpg" alt="A Free Worcester family event by the water at Coes Pond, with craft tables and painted pumpkins" width="1600" height="1200" loading="lazy">
+      </figure>
+    </div>
+  </div>
 </section>
 
-<footer class="page-foot">
-  <p>Worcester Autism Parent Survey: Findings and Recommendations &middot; Free Worcester Coalition &middot; July 2026 &middot; <a href="mailto:freeworcestercoalition@gmail.com">freeworcestercoalition@gmail.com</a> &middot; <a href="Worcester_Autism_Parent_Survey_Findings_and_Recommendations.pdf">Original report (PDF)</a></p>
-</footer>
-</div>
+<section class="section band-soft" id="ways-to-help">
+  <div class="container">
+    <div class="center rv" style="max-width: 640px; margin: 0 auto 2.2rem;">
+      <span class="eyebrow">Ways to Help</span>
+      <h2 class="title">For us to succeed we can&rsquo;t do it alone</h2>
+      <p class="lead" style="margin-bottom: 0;">Read about all the ways you can help us grow from an organization into a movement.</p>
+    </div>
+    <div class="grid-4">
+      <div class="fcard rv">
+        <div class="icon-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <h3>01. Volunteer</h3>
+        <p>We rely heavily on volunteers to help carry out our mission. Join today and become part of the solution.</p>
+      </div>
+      <div class="fcard rv">
+        <div class="icon-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3>02. Donate</h3>
+        <p>Every dollar we fundraise goes directly back to improving lives and creating a positive impact.</p>
+      </div>
+      <div class="fcard rv">
+        <div class="icon-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg></div>
+        <h3>03. Spread the Word</h3>
+        <p>Simply telling others about our work in the community helps us out.</p>
+      </div>
+      <div class="fcard rv">
+        <div class="icon-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <h3>04. Attend our Events</h3>
+        <p>Free Worcester holds regular rallies and public events. Keep an eye on our social media to see when they are and show up.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section band-cta" id="volunteer">
+  <div class="container center rv" style="max-width: 720px;">
+    <span class="eyebrow">Become a Volunteer</span>
+    <h2 class="title">We get one chance to create the future &mdash; let&rsquo;s do it right.</h2>
+    <p>Change doesn&rsquo;t just happen because we want it. We have to fight for it. Only through a unified approach with people across the city working together to better the community can we achieve sustainable and long-lasting change. Join us today to be a part of that change.</p>
+    <div class="btn-row">
+      <a class="btn on-dark" href="contact.html">Join as a Volunteer</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="news">
+  <div class="container">
+    <div class="center rv" style="max-width: 640px; margin: 0 auto 2.2rem;">
+      <span class="eyebrow">Latest News &amp; Events</span>
+      <h2 class="title">From our organizing work</h2>
+    </div>
+    <div class="grid-3">
+      <article class="post-card rv">
+        <div class="thumb"><img src="images/fw-flyer-youth-voices.jpg" alt="Youth Voices Against Violence flyer: presenting a youth justice platform at Worcester City Hall" loading="lazy"></div>
+        <div class="body">
+          <span class="pill">Announcement</span>
+          <h3>Worcester Anti-Violence Rally Announcement</h3>
+        </div>
+      </article>
+      <article class="post-card rv">
+        <div class="thumb"><img src="images/fw-flyer-vigil.jpg" alt="Candlelight Community Vigil flyer with hands lighting candles" loading="lazy"></div>
+        <div class="body">
+          <span class="pill">Announcement</span>
+          <h3>Candlelight Community Vigil Announcement</h3>
+        </div>
+      </article>
+      <article class="post-card rv">
+        <div class="thumb"><img src="images/fw-flyer-earn-a-bike.jpg" alt="Lakeside Earn A Bike flyer: open bike repair shop and family event at Coes Pond" loading="lazy"></div>
+        <div class="body">
+          <span class="pill">Announcement</span>
+          <h3>Equal Opportunities Bike Initiative</h3>
+        </div>
+      </article>
+    </div>
+    <div class="center rv" style="margin-top: 2rem;">
+      <a class="btn ghost" href="blog.html">View all news</a>
+    </div>
+  </div>
+</section>
+
 </main>
-</div>
-<div id="tooltip" role="status" aria-hidden="true"></div>
-<script>
-(function () {
-  'use strict';
 
-  /* ---------- Theme ---------- */
-  var root = document.documentElement;
-  var themeBtn = document.getElementById('theme-toggle');
-  var media = window.matchMedia('(prefers-color-scheme: dark)');
-  function currentTheme() {
-    if (root.dataset.theme === 'dark' || root.dataset.theme === 'light') return root.dataset.theme;
-    return 'light';
-  }
-  function applyStoredTheme() {
-    var stored = null;
-    try { stored = localStorage.getItem('theme'); } catch (e) {}
-    if (stored === 'dark' || stored === 'light') root.dataset.theme = stored;
-    syncThemeBtn();
-  }
-  function syncThemeBtn() {
-    var dark = currentTheme() === 'dark';
-    themeBtn.textContent = dark ? 'Light mode' : 'Dark mode';
-    themeBtn.setAttribute('aria-pressed', String(dark));
-  }
-  themeBtn.addEventListener('click', function () {
-    var next = currentTheme() === 'dark' ? 'light' : 'dark';
-    root.dataset.theme = next;
-    try { localStorage.setItem('theme', next); } catch (e) {}
-    syncThemeBtn();
-  });
-  if (media.addEventListener) media.addEventListener('change', syncThemeBtn);
-  applyStoredTheme();
+<footer class="site-foot">
+  <div class="cols">
+    <div>
+      <span class="logo-chip"><img src="images/free-worcester-logo.png" alt="Free Worcester logo"></span>
+      <p>Free Worcester is a registered 501(c)(3) charitable organization which exists to support and unify the community of Worcester, Massachusetts through providing essential services, educational programs, and outreach initiatives. Our mission is to empower individuals, strengthen families, and build a vibrant and inclusive community.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="about.html">Mission</a></li>
+        <li><a href="autism-survey-report.html">Accountability</a></li>
+        <li><a href="blog.html">Newsroom</a></li>
+        <li><a href="blog.html">Find Events</a></li>
+        <li><a href="contact.html">Volunteer</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html">Careers</a></li>
+        <li><a href="contact.html">Partnership</a></li>
+        <li><a href="autism-survey-report.html">Autism Parent Survey Report</a></li>
+        <li><a href="autism-survey-report.html#resources">Autism Resources</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contacts</h4>
+      <ul>
+        <li>22 Newton Ave, Worcester, MA 01602</li>
+        <li><a href="mailto:freeworcestercoalition@gmail.com">freeworcestercoalition@gmail.com</a></li>
+        <li><a href="tel:+15512507252">(551) 250-7252</a></li>
+      </ul>
+      <h4 style="margin-top: 1.5rem;">Subscribe Newsletter</h4>
+      <p>Signup our newsletter to get update information, news &amp; insight.</p>
+      <form class="newsletter" id="newsletter-form">
+        <input id="nl-email" type="email" placeholder="Email" aria-label="Email address" required>
+        <button class="btn" type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+  <div class="base">Copyright &copy; Free Worcester, All rights reserved.</div>
+</footer>
 
-  /* ---------- Mobile contents toggle ---------- */
-  var navBtn = document.getElementById('nav-toggle');
-  var toc = document.getElementById('toc');
-  navBtn.addEventListener('click', function () {
-    var open = toc.classList.toggle('open');
-    navBtn.setAttribute('aria-expanded', String(open));
-  });
-  toc.addEventListener('click', function (e) {
-    if (e.target.tagName === 'A') {
-      toc.classList.remove('open');
-      navBtn.setAttribute('aria-expanded', 'false');
-    }
-  });
-
-  /* ---------- Tooltip ---------- */
-  var tip = document.getElementById('tooltip');
-  function showTip(title, rows) {
-    tip.textContent = '';
-    var t = document.createElement('div');
-    t.className = 't-title';
-    t.textContent = title;
-    tip.appendChild(t);
-    rows.forEach(function (r) {
-      var row = document.createElement('div');
-      row.className = 't-row';
-      var v = document.createElement('span');
-      v.className = 't-val';
-      v.textContent = r[0];
-      var l = document.createElement('span');
-      l.className = 't-lab';
-      l.textContent = ' ' + r[1];
-      row.appendChild(v);
-      row.appendChild(l);
-      tip.appendChild(row);
-    });
-    tip.classList.add('show');
-    tip.setAttribute('aria-hidden', 'false');
-  }
-  function moveTip(x, y) {
-    var pad = 14;
-    var w = tip.offsetWidth, h = tip.offsetHeight;
-    var left = x + pad, top = y + pad;
-    if (left + w > window.innerWidth - 8) left = x - w - pad;
-    if (top + h > window.innerHeight - 8) top = y - h - pad;
-    tip.style.left = Math.max(8, left) + 'px';
-    tip.style.top = Math.max(8, top) + 'px';
-  }
-  function hideTip() {
-    tip.classList.remove('show');
-    tip.setAttribute('aria-hidden', 'true');
-  }
-  function bindTip(elm, getContent) {
-    elm.addEventListener('pointerenter', function (e) {
-      var c = getContent();
-      showTip(c.title, c.rows);
-      moveTip(e.clientX, e.clientY);
-    });
-    elm.addEventListener('pointermove', function (e) { moveTip(e.clientX, e.clientY); });
-    elm.addEventListener('pointerleave', hideTip);
-    elm.addEventListener('focus', function () {
-      var c = getContent();
-      showTip(c.title, c.rows);
-      var r = elm.getBoundingClientRect();
-      moveTip(r.left + Math.min(r.width * 0.6, 260), r.top);
-    });
-    elm.addEventListener('blur', hideTip);
-  }
-  window.addEventListener('scroll', hideTip, { passive: true });
-
-  /* ---------- Chart data (from the report's figures) ---------- */
-  var BARRIERS = {
-    total: 178, axisMax: 80,
-    ticks: [0, 10, 20, 30, 40, 50, 60, 70, 80],
-    rows: [
-      ['Waiting list without adequate follow-up', 69, '38.8%'],
-      ['Insurance barrier', 46, '25.8%'],
-      ['Interpretation not available', 42, '23.6%'],
-      ['Written documents not translated', 38, '21.3%'],
-      ['Transportation barrier', 31, '17.4%'],
-      ['Need help navigating information', 30, '16.9%'],
-      ['Insufficient inclusion in camps/childcare (under 6)', 30, '16.9%'],
-      ['No childcare that could accommodate child’s needs', 27, '15.2%']
-    ]
-  };
-  var AGES = {
-    total: 157, axisMax: 40,
-    ticks: [0, 5, 10, 15, 20, 25, 30, 35, 40],
-    rows: [
-      ['Ages 2–3', 29], ['Ages 3–4', 35], ['Ages 5–6', 14],
-      ['Ages 7–8', 23], ['Ages 9–11', 14], ['Ages 12–13', 10],
-      ['Ages 14–15', 13], ['Ages 16–17', 6], ['Ages 19–20', 1],
-      ['Age 20+', 7], ['Multiple age groups', 5]
-    ]
-  };
-  var BH = {
-    rows: [
-      ['Ages 2–6', 69.3, '52 of 75'],
-      ['Ages 7–11', 91.9, '34 of 37'],
-      ['Ages 12–17', 79.3, '23 of 29'],
-      ['Ages 19+', 57.1, '4 of 7']
-    ]
-  };
-
-  /* ---------- Horizontal bar chart ---------- */
-  function renderHBar(container, cfg, opts) {
-    container.textContent = '';
-    var valuePlacers = [];
-    cfg.rows.forEach(function (r) {
-      var label = r[0], n = r[1], pct = r[2];
-      var frac = n / cfg.axisMax;
-      var row = document.createElement('div');
-      row.className = 'hbar-row';
-      var lab = document.createElement('div');
-      lab.className = 'hbar-label';
-      lab.textContent = label;
-      var track = document.createElement('div');
-      track.className = 'hbar-track';
-      track.tabIndex = 0;
-      track.setAttribute('role', 'img');
-      track.setAttribute('aria-label', opts.aria(label, n, pct));
-      var fill = document.createElement('div');
-      fill.className = 'hbar-fill';
-      fill.style.setProperty('--w', (frac * 100) + '%');
-      var val = document.createElement('span');
-      val.className = 'hbar-value';
-      val.textContent = opts.valueText(n, pct);
-      track.appendChild(fill);
-      track.appendChild(val);
-      row.appendChild(lab);
-      row.appendChild(track);
-      container.appendChild(row);
-      valuePlacers.push(function () {
-        var cellW = track.clientWidth;
-        var barPx = cellW * frac;
-        var inside = barPx + val.offsetWidth + 16 > cellW && barPx > val.offsetWidth + 20;
-        val.classList.toggle('inside', inside);
-        if (inside) {
-          val.style.left = Math.round(barPx - val.offsetWidth - 8) + 'px';
-        } else {
-          val.style.left = '';
-        }
-      });
-      bindTip(track, function () {
-        return { title: label, rows: opts.tipRows(n, pct) };
-      });
-    });
-    /* axis row */
-    var axisRow = document.createElement('div');
-    axisRow.className = 'hbar-row';
-    axisRow.setAttribute('aria-hidden', 'true');
-    var spacer = document.createElement('div');
-    spacer.className = 'hbar-label';
-    var axis = document.createElement('div');
-    axis.className = 'hbar-axis';
-    cfg.ticks.forEach(function (v, i) {
-      var t = document.createElement('span');
-      t.className = 'tick' + (i % 2 === 1 ? ' minor' : '');
-      t.style.left = (v / cfg.axisMax * 100) + '%';
-      t.textContent = String(v);
-      axis.appendChild(t);
-    });
-    axisRow.appendChild(spacer);
-    axisRow.appendChild(axis);
-    container.appendChild(axisRow);
-    var titleRow = document.createElement('div');
-    titleRow.className = 'hbar-row';
-    titleRow.setAttribute('aria-hidden', 'true');
-    var spacer2 = document.createElement('div');
-    spacer2.className = 'hbar-label';
-    var at = document.createElement('div');
-    at.className = 'axis-title';
-    at.textContent = 'Number of respondents';
-    titleRow.appendChild(spacer2);
-    titleRow.appendChild(at);
-    container.appendChild(titleRow);
-    function placeAll() { valuePlacers.forEach(function (f) { f(); }); }
-    placeAll();
-    if (window.ResizeObserver) {
-      var ro = new ResizeObserver(function () { placeAll(); });
-      ro.observe(container);
-    } else {
-      window.addEventListener('resize', placeAll);
-    }
-  }
-
-  /* ---------- Column chart ---------- */
-  function renderColumns(container, cfg) {
-    container.textContent = '';
-    var plotH = 240;
-    var gutter = '2.6rem';
-    var cols = document.createElement('div');
-    cols.className = 'cols';
-    [0, 20, 40, 60, 80, 100].forEach(function (v) {
-      var g = document.createElement('div');
-      g.className = 'ygrid' + (v === 0 ? ' zero' : '');
-      g.style.bottom = (v / 100 * plotH) + 'px';
-      cols.appendChild(g);
-      var yl = document.createElement('span');
-      yl.className = 'ylab';
-      yl.style.bottom = (v / 100 * plotH) + 'px';
-      yl.style.transform = 'translateY(50%)';
-      yl.textContent = String(v);
-      cols.appendChild(yl);
-    });
-    var yTitle = document.createElement('div');
-    yTitle.className = 'axis-title axis-title-left';
-    yTitle.textContent = 'Percent reporting behavioral health challenges';
-    container.appendChild(yTitle);
-    var bandCount = cfg.rows.length;
-    cfg.rows.forEach(function (r, i) {
-      var label = r[0], pct = r[1], detail = r[2];
-      var barH = pct / 100 * plotH;
-      var band = document.createElement('div');
-      band.className = 'col-band';
-      band.tabIndex = 0;
-      band.setAttribute('role', 'img');
-      band.setAttribute('aria-label', label + ': ' + pct.toFixed(1) + '% reporting behavioral health challenges (' + detail + ' respondents).');
-      band.style.left = 'calc(' + gutter + ' + (100% - ' + gutter + ') * ' + (i / bandCount) + ')';
-      band.style.width = 'calc((100% - ' + gutter + ') * ' + (1 / bandCount) + ')';
-      var lab = document.createElement('div');
-      lab.className = 'col-label';
-      var b = document.createElement('div');
-      b.textContent = pct.toFixed(1) + '%';
-      var s = document.createElement('div');
-      s.className = 'sub';
-      s.textContent = '(' + detail + ')';
-      lab.appendChild(b);
-      lab.appendChild(s);
-      var fill = document.createElement('div');
-      fill.className = 'col-fill';
-      fill.style.setProperty('--h', barH + 'px');
-      band.appendChild(lab);
-      band.appendChild(fill);
-      cols.appendChild(band);
-      bindTip(band, function () {
-        return {
-          title: label,
-          rows: [
-            [pct.toFixed(1) + '%', 'reporting behavioral health challenges'],
-            [detail, 'respondents in this age group']
-          ]
-        };
-      });
-    });
-    container.appendChild(cols);
-    var xl = document.createElement('div');
-    xl.className = 'col-xlabels';
-    xl.setAttribute('aria-hidden', 'true');
-    cfg.rows.forEach(function (r, i) {
-      var span = document.createElement('span');
-      span.className = 'xl';
-      span.style.left = 'calc(' + gutter + ' + (100% - ' + gutter + ') * ' + ((i + 0.5) / bandCount) + ')';
-      span.textContent = r[0];
-      xl.appendChild(span);
-    });
-    container.appendChild(xl);
-  }
-
-  /* ---------- Render ---------- */
-  renderHBar(document.getElementById('chart-barriers'), BARRIERS, {
-    valueText: function (n, pct) { return n + ' (' + pct + ')'; },
-    aria: function (label, n, pct) {
-      return label + ': ' + n + ' respondents (' + pct + ' of the 178 respondents who answered the barriers question).';
-    },
-    tipRows: function (n, pct) {
-      return [
-        [String(n), 'respondents selected this barrier'],
-        [pct, 'of 178 who answered the barriers question']
-      ];
-    }
-  });
-  renderHBar(document.getElementById('chart-ages'), AGES, {
-    valueText: function (n) { return String(n); },
-    aria: function (label, n) {
-      return label + ': ' + n + ' respondents (age information was provided by 157 respondents).';
-    },
-    tipRows: function (n) {
-      return [
-        [String(n), 'respondents'],
-        ['157', 'respondents provided age information']
-      ];
-    }
-  });
-  renderColumns(document.getElementById('chart-bh'), BH);
-
-  /* ---------- Animate bars into view ---------- */
-  var charts = document.querySelectorAll('.chart');
-  if (window.IntersectionObserver) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) {
-          en.target.classList.add('in');
-          io.unobserve(en.target);
-        }
-      });
-    }, { threshold: 0.25 });
-    charts.forEach(function (c) { io.observe(c); });
-  } else {
-    charts.forEach(function (c) { c.classList.add('in'); });
-  }
-
-  /* ---------- Table of contents scroll highlighting ---------- */
-  var tocLinks = Array.prototype.slice.call(document.querySelectorAll('.toc a'));
-  var linkById = {};
-  tocLinks.forEach(function (a) {
-    var id = a.getAttribute('href').slice(1);
-    linkById[id] = a;
-  });
-  var watched = tocLinks
-    .map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); })
-    .filter(Boolean);
-  function setActive(id) {
-    tocLinks.forEach(function (a) { a.classList.remove('active'); });
-    if (linkById[id]) linkById[id].classList.add('active');
-  }
-  if (window.IntersectionObserver) {
-    var visible = {};
-    var spy = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) { visible[en.target.id] = en.isIntersecting; });
-      for (var i = 0; i < watched.length; i++) {
-        if (visible[watched[i].id]) { setActive(watched[i].id); return; }
-      }
-    }, { rootMargin: '-15% 0px -70% 0px' });
-    watched.forEach(function (s) { spy.observe(s); });
-  }
-
-  /* ---------- References dropdown: open on navigation and for print ---------- */
-  var refsDetails = document.getElementById('refs-details');
-  function openRefsIfTargeted() {
-    if (refsDetails && location.hash === '#references') refsDetails.open = true;
-  }
-  window.addEventListener('hashchange', openRefsIfTargeted);
-  openRefsIfTargeted();
-  window.addEventListener('beforeprint', function () {
-    if (refsDetails) {
-      refsDetails.dataset.wasOpen = refsDetails.open ? '1' : '';
-      refsDetails.open = true;
-    }
-  });
-  window.addEventListener('afterprint', function () {
-    if (refsDetails && !refsDetails.dataset.wasOpen) refsDetails.open = false;
-  });
-})();
-</script>
+<script src="assets/fw.js"></script>
 </body>
 </html>

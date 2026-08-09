@@ -6,8 +6,9 @@ report text word for word, with the report's three figures rendered as
 interactive charts (hover/keyboard tooltips and a data-table view for each
 figure), a linked table of contents, and light/dark themes.
 
-- `index.html` — the full report as a single self-contained web page (no external dependencies)
-- `home.html` — Free Worcester's homepage, adapted from freeworcester.org, linking to the report and resources
+- `index.html` — Free Worcester's homepage (the site default)
+- `autism-survey-report.html` — the full report as a single self-contained web page, served at /autism-survey-report
+- `home.html` — legacy redirect to the homepage
 - `about.html` — About Us: history, founder, and community partners
 - `blog.html` — News & Article: the coalition's announcements with their event flyers
 - `contact.html` — Contact Us: address, email, phone, and a message form
