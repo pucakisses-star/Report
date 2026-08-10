@@ -355,10 +355,11 @@ p { margin: 0 0 1.05rem; }
 .join-card h3 { margin: 0; font-size: 1.25rem; font-weight: 800; letter-spacing: -0.01em; }
 .join-card p { margin: 0; color: var(--ink-2); }
 .join-card .btn { border-radius: 10px; margin-top: auto; }
+.band-join, .join-hang { --photo-h: calc((min(1120px, 100vw - 2.5rem) - 2.2rem) / 3 * 2 / 3); }
 @media (min-width: 881px) {
-  .band-join { padding-bottom: 0; }
-  .join-cards { margin-bottom: -230px; }
-  .band-join + .section { padding-top: calc(230px + clamp(3rem, 7vw, 5.2rem)); }
+  .band-join { padding-bottom: calc(var(--photo-h) + 3rem); }
+  .join-hang { padding-top: 0; }
+  .join-hang .join-cards { margin-top: calc(-1 * var(--photo-h)); }
 }
 
 /* ---------- Contact ---------- */
