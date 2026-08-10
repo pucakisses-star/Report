@@ -19,9 +19,9 @@
   --accent-text: #b23a82;
   --wash-green: #e9f3ec;
   --wash-pink: #fbeef6;
-  --foot-bg: #211a33;
-  --foot-ink: #ddd8ec;
-  --foot-muted: #a79fc2;
+  --foot-bg: #1d2a20;
+  --foot-ink: #eef2ee;
+  --foot-muted: #b8c3b9;
   --radius: 18px;
 }
 :root[data-theme="dark"] {
@@ -42,7 +42,7 @@
   --accent-text: #e78fc3;
   --wash-green: #142219;
   --wash-pink: #261523;
-  --foot-bg: #16111f;
+  --foot-bg: #152017;
 }
 
 * { box-sizing: border-box; }
@@ -210,12 +210,27 @@ p { margin: 0 0 1.05rem; }
 
 /* ---------- Bands ---------- */
 .band-accent { background: linear-gradient(135deg, var(--wash-green), var(--wash-pink)); }
-.band-cta { background: linear-gradient(120deg, #1d5737, #2c7a4b 55%, #3c6d2f); color: #f2f8f3; }
+.band-cta { background: #3e4c40; color: #f4f7f4; }
 .band-cta .eyebrow { color: #b7e3c5; }
 .band-cta h2.title { color: #ffffff; }
 .band-cta p { color: #d8ecdd; }
 .band-soft { background: var(--surface-2); }
 :root[data-theme="dark"] .band-accent { background: linear-gradient(135deg, var(--wash-green), var(--wash-pink)); }
+
+.cta-row {
+  display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr) auto;
+  gap: clamp(1.5rem, 4vw, 3.5rem); align-items: center;
+}
+.cta-row h2 { margin: 0; font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 800; letter-spacing: -0.02em; color: #fff; }
+.cta-row p { margin: 0; font-size: 0.95rem; color: #dbe4dc; }
+@media (max-width: 880px) { .cta-row { grid-template-columns: 1fr; text-align: left; } }
+.btn.outline {
+  background: transparent; color: #fff; border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 8px; padding: 0.62rem 1.5rem; white-space: nowrap;
+}
+.btn.outline:hover { background: rgba(255, 255, 255, 0.12); color: #fff; box-shadow: none; }
+.btn.gold { background: #f2b90d; color: #251e00; border-radius: 8px; }
+.btn.gold:hover { background: #dfa90a; color: #251e00; }
 
 /* ---------- Partner logos ---------- */
 .logo-strip {
@@ -316,15 +331,17 @@ form.msg .btn { margin-top: 1.2rem; }
   display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2.2rem;
 }
 @media (max-width: 880px) { .site-foot .cols { grid-template-columns: 1fr; } }
-.site-foot .logo-chip {
-  background: #fff; border-radius: 14px; padding: 0.5rem 0.7rem;
-  display: inline-block; margin-bottom: 1rem;
+.site-foot .foot-bottom {
+  max-width: 1120px; margin: 0 auto; padding: 1.9rem 1.25rem 2.2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 2.2rem; align-items: center;
 }
-.site-foot .logo-chip img { height: 52px; width: auto; display: block; }
+.site-foot .foot-bottom img { height: 96px; width: auto; display: block; }
+.site-foot .copyright { margin: 0.9rem 0 0; font-size: 0.85rem; }
+@media (max-width: 640px) { .site-foot .foot-bottom { grid-template-columns: 1fr; gap: 1.2rem; } }
 .site-foot p { color: var(--foot-muted); font-size: 0.92rem; margin: 0 0 0.6rem; }
 .site-foot h4 {
-  font-size: 0.78rem; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase;
-  color: var(--foot-ink); margin: 0 0 0.9rem;
+  font-size: 1rem; font-weight: 800; color: #ffffff; margin: 0 0 0.95rem;
 }
 .site-foot ul { list-style: none; margin: 0; padding: 0; }
 .site-foot li { margin: 0 0 0.5rem; }
@@ -334,7 +351,7 @@ form.msg .btn { margin-top: 1.2rem; }
 .site-foot form.newsletter input {
   flex: 1 1 auto; min-width: 0; padding: 0.55rem 0.8rem; font: inherit; font-size: 0.9rem;
   color: #fff; background: rgba(255, 255, 255, 0.09);
-  border: 1px solid rgba(255, 255, 255, 0.22); border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 8px;
 }
 .site-foot form.newsletter input::placeholder { color: var(--foot-muted); }
 .site-foot form.newsletter .btn { padding: 0.55rem 1rem; font-size: 0.9rem; flex: 0 0 auto; }
@@ -343,7 +360,7 @@ form.msg .btn { margin-top: 1.2rem; }
   max-width: 1120px; margin: 0 auto; padding: 1.1rem 1.25rem 1.4rem;
   font-size: 0.85rem; color: var(--foot-muted);
 }
-.site-foot .cols { grid-template-columns: 1.5fr 0.8fr 0.8fr 1.3fr; }
+.site-foot .cols { grid-template-columns: 0.9fr 0.9fr 1.2fr 1.5fr; }
 @media (max-width: 980px) { .site-foot .cols { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 640px) { .site-foot .cols { grid-template-columns: 1fr; } }
 
