@@ -959,7 +959,7 @@ footer.page-foot {
 <section id="references" class="refs">
   <h2 class="sec">References</h2>
   <details id="refs-details" class="refs-list">
-  <summary>View the full reference list (22 sources)</summary>
+  <summary>View the full reference list</summary>
   <p>Attar, S. M., Benavidez, H., Gicheru, C., Alabi, C., Sapano, R., &amp; Stone, W. L. (2025). Co-designing a novel service delivery pathway to increase access to autism identification and care within a non-profit community organization serving culturally and linguistically diverse families. <em>Autism, 29</em>(8), 2097&ndash;2110. <a href="https://doi.org/10.1177/1362361325133570">https://doi.org/10.1177/1362361325133570</a></p>
   <p>Cidav, Z., Marcus, S. C., &amp; Mandell, D. S. (2012). Implications of childhood autism for parental employment and earnings. <em>Pediatrics, 129</em>(4), 617&ndash;623. <a href="https://doi.org/10.1542/peds.2011-2700">https://doi.org/10.1542/peds.2011-2700</a></p>
   <p>Collings, J. (2026, May 22). Parents, staff express outrage at Worcester Alternative School closure. <em>Telegram &amp; Gazette</em>. <a href="https://www.aol.com/articles/parents-staff-express-outrage-worcester-011739241.html">https://www.aol.com/articles/parents-staff-express-outrage-worcester-011739241.html</a></p>
@@ -1084,12 +1084,6 @@ footer.page-foot {
   </ul>
 
   <h3>Other Helpful Resources</h3>
-  <h4>Autism Speaks</h4>
-  <p class="res-contact"><a href="https://www.autismspeaks.org/">autismspeaks.org</a></p>
-  <ul>
-    <li>Tool Kits / i.e., What do you put in place for the first 100 days</li>
-  </ul>
-
   <h4>IMPORTANT! Children&rsquo;s Autism Waiver</h4>
   <p>The (AWP) allows children to receive Expanded Habilitation, Education, in-home services and supports, such as Applied Behavioral Analysis (ABA) and Floor Time, for a total of up to 3 years. After this, the child may access ongoing Supplemental Services (for example respite and goods and services, etc.) that meet the child&rsquo;s needs and help with the transition out of the intensive Autism Waiver Program until the child&rsquo;s 10th birthday.</p>
   <ul>
@@ -1583,13 +1577,8 @@ footer.page-foot {
     watched.forEach(function (s) { spy.observe(s); });
   }
 
-  /* ---------- References dropdown: open on navigation and for print ---------- */
+  /* ---------- References dropdown: open for print ---------- */
   var refsDetails = document.getElementById('refs-details');
-  function openRefsIfTargeted() {
-    if (refsDetails && location.hash === '#references') refsDetails.open = true;
-  }
-  window.addEventListener('hashchange', openRefsIfTargeted);
-  openRefsIfTargeted();
   window.addEventListener('beforeprint', function () {
     if (refsDetails) {
       refsDetails.dataset.wasOpen = refsDetails.open ? '1' : '';
