@@ -13,21 +13,14 @@ figure), a linked table of contents, and light/dark themes.
 - `blog.html` — News & Article: the coalition's announcements with their event flyers
 - `contact.html` — Contact Us: address, email, phone, and a message form
 - `Worcester_Autism_Parent_Survey_Findings_and_Recommendations.pdf` — the original report
-- `images/` — public-domain photographs (see credits below)
+- `images/` — site photos, partner logos, and report illustrations (see notes below)
 
-## Photo credits
+## Image notes
 
-The photographs in `images/` are from Worcester Public Schools and are used
-with the district's permission, obtained by the report's publishers. They are
-not public domain; any further reuse requires Worcester Public Schools'
-permission.
-
-- `wps-classroom-group.jpg` — courtesy of Worcester Public Schools
-  (worcesterschools.org)
-- `wps-classroom-desks.jpg` — courtesy of Worcester Public Schools
-  (worcesterschools.org)
-- `wps-teacher-student.jpg` — photo by Reba Saldanha for Worcester Public
-  Schools, May 2023, courtesy of Worcester Public Schools
+The report page's classroom images (`images/illus-*.jpg`) are AI-generated
+illustrations supplied by the coalition; they do not depict real students,
+and each is captioned as such on the page. The photographs elsewhere on the
+site are the coalition's own event photos and its partners' logos.
 
 Open `index.html` directly in a browser, or serve the repository with any static
 host (e.g. GitHub Pages) to publish it.
