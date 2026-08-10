@@ -233,16 +233,36 @@ p { margin: 0 0 1.05rem; }
 .btn.gold:hover { background: #dfa90a; color: #251e00; }
 
 /* ---------- Partner logos ---------- */
+.trust-title { color: var(--green-deep); }
+:root[data-theme="dark"] .trust-title { color: var(--green); }
+.accent-bar { width: 64px; height: 4px; background: #f2b90d; margin-top: 1.8rem; border-radius: 2px; }
+.partner-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1px; background: var(--border); border: 1px solid var(--border);
+}
+.partner-grid .cell {
+  background: var(--page); display: flex; align-items: center; justify-content: center;
+  padding: 1.5rem 1.1rem; min-height: 122px;
+}
+.partner-grid .cell img {
+  max-height: 62px; max-width: 84%; width: auto; object-fit: contain;
+  filter: grayscale(1); opacity: 0.78; transition: filter 0.2s ease, opacity 0.2s ease;
+}
+.partner-grid .cell:hover img { filter: none; opacity: 1; }
+:root[data-theme="dark"] .partner-grid { background: rgba(255, 255, 255, 0.18); border-color: rgba(255, 255, 255, 0.18); }
+:root[data-theme="dark"] .partner-grid .cell { background: #eceae4; }
+@media (max-width: 560px) { .partner-grid { grid-template-columns: repeat(2, 1fr); } }
+
 .logo-strip {
   display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: center; justify-content: center;
 }
-.logo-strip .partner {
-  background: #fff; border: 1px solid var(--border); border-radius: 14px;
-  padding: 0.55rem 0.95rem; display: flex; align-items: center;
-  transition: transform 0.15s ease;
+.logo-strip .partner { display: flex; align-items: center; padding: 0.4rem 0.7rem; }
+.logo-strip .partner img {
+  display: block; height: 46px; width: auto; max-width: 150px; object-fit: contain;
+  filter: grayscale(1); opacity: 0.75; transition: filter 0.2s ease, opacity 0.2s ease;
 }
-.logo-strip .partner:hover { transform: translateY(-3px); }
-.logo-strip .partner img { display: block; height: 44px; width: auto; max-width: 150px; object-fit: contain; }
+.logo-strip .partner:hover img { filter: none; opacity: 1; }
+:root[data-theme="dark"] .logo-strip .partner { background: #eceae4; border-radius: 12px; }
 .strip-label {
   text-align: center; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.14em;
   text-transform: uppercase; color: var(--muted); margin: 0 0 1.3rem;
