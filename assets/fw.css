@@ -330,6 +330,36 @@ p { margin: 0 0 1.05rem; }
   .history-founder .portrait { max-width: 320px; justify-self: start; }
 }
 @media (max-width: 640px) { .hist-cols { grid-template-columns: 1fr; } }
+@media (min-width: 901px) {
+  #history { padding-bottom: 0; }
+  .history-founder .portrait { align-self: end; margin-bottom: -96px; position: relative; z-index: 1; }
+}
+
+/* ---------- Why-join band ---------- */
+.band-join { background: #4a574c; }
+.band-join .eyebrow { color: #74d194; }
+.band-join .title { color: #fff; }
+.band-join .lead { color: rgba(255, 255, 255, 0.85); }
+:root[data-theme="dark"] .band-join { background: #222b24; }
+.join-card {
+  background: var(--surface); border-radius: 14px; overflow: hidden;
+  box-shadow: var(--shadow-lift); text-align: center;
+  display: flex; flex-direction: column;
+}
+.join-card .thumb { aspect-ratio: 3 / 2; overflow: hidden; }
+.join-card .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.join-card .body {
+  padding: 1.6rem 1.4rem 1.8rem; flex: 1;
+  display: flex; flex-direction: column; gap: 0.7rem; align-items: center;
+}
+.join-card h3 { margin: 0; font-size: 1.25rem; font-weight: 800; letter-spacing: -0.01em; }
+.join-card p { margin: 0; color: var(--ink-2); }
+.join-card .btn { border-radius: 10px; margin-top: auto; }
+@media (min-width: 881px) {
+  .band-join { padding-bottom: 0; }
+  .join-cards { margin-bottom: -230px; }
+  .band-join + .section { padding-top: calc(230px + clamp(3rem, 7vw, 5.2rem)); }
+}
 
 /* ---------- Contact ---------- */
 .contact-grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 1.4rem; align-items: start; }
