@@ -332,7 +332,7 @@ p { margin: 0 0 1.05rem; }
 @media (max-width: 640px) { .hist-cols { grid-template-columns: 1fr; } }
 @media (min-width: 901px) {
   #history { padding-bottom: 0; }
-  .history-founder .portrait { align-self: end; margin-bottom: -96px; position: relative; z-index: 1; }
+  .history-founder .portrait { align-self: end; }
 }
 
 /* ---------- Why-join band ---------- */
