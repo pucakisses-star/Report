@@ -1,7 +1,6 @@
 # Worcester Autism Parent Survey — Findings and Recommendations
 
-Web version of the July 2026 report by the Free Worcester Coalition, prepared in
-collaboration with the Worcester Area Autism Task Force. The page reproduces the
+Web version of the July 2026 report by the Free Worcester Coalition. The page reproduces the
 report text word for word, with the report's three figures rendered as
 interactive charts (hover/keyboard tooltips and a data-table view for each
 figure), a linked table of contents, and light/dark themes.
